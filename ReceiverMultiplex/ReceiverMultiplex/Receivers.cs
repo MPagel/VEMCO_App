@@ -7,12 +7,12 @@ using System.IO.Ports;
 
 namespace ReceiverMultiplex
 {
-    class Receivers
+    class Receiver
     {
         public int TTL;
         public SerialPort serialPort;
         public string portName;
-        public Receivers(int TTL, SerialPort serialPort, String portName)
+        public Receiver(int TTL, SerialPort serialPort, String portName)
         {
             this.TTL = TTL;
             this.serialPort = serialPort;

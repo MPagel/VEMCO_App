@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReceiverMultiplex
 {
-    enum RealTimeEventType {NEW_RECEIVER, DEL_RECEIVER };
+    enum RealTimeEventType {NEW_RECEIVER, DEL_RECEIVER, TAG_RECEIVER, STATUS_RECEIVER, UNPARSED_RECEIVER, UNPARSED_INTRO };
     class RealTimeEvent
     {
         RealTimeEventType eventType

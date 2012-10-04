@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ReceiverMultiplex
 {
-    interface Parser
+    class RealTimeEventDispatcher
     {
-        String areYouThere(); //This should call STATUS or INFO followed by setting RTMMODE=2
-        String pollReceiver(); //The RTMNOW command
-
+        public void dispatch(RealTimeEvent realTimeEvent);
     }
 }

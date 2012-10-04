@@ -8,9 +8,9 @@ namespace ReceiverMultiplex.RealTimeEvents
 {
     class SerialPortEvent : RealTimeEvent
     {
-        public Receivers r { get; private set; }
+        public Receiver r { get; private set; }
 
-        public SerialPortEvent(RealTimeEventType eventType, Receivers r) : base (eventType) 
+        public SerialPortEvent(RealTimeEventType eventType, Receiver r) : base (eventType) 
         {
             r.serialPort = null;
         }

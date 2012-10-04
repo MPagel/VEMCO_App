@@ -15,9 +15,11 @@ namespace ReceiverMultiplex
     public partial class Service : ServiceBase
     {
         private const int DEFAULT_TTL = 10;
-
-        private Dictionary<String, Receivers> receivers = new Dictionary<String, Receivers>();
+        private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
+        private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
+        private Dictionary<String, Receiver> receivers = new Dictionary<String, Receiver>();
         private Parser parser;
+        private RealTimeEventDispatcher d;
 
         public Service()
         {
@@ -29,7 +31,8 @@ namespace ReceiverMultiplex
 
             while (true)
             {
-                serialPortService();
+                serialPortsService();
+                pollReceivers();
 
             }
         }
@@ -38,22 +41,55 @@ namespace ReceiverMultiplex
         {
         }
 
-        protected ArrayList serialPortService()
+        protected void pollReceivers()
         {
-            ArrayList returnList = new ArrayList();
+            foreach (Receiver r in receivers.Values)
+            {
+                r.serialPort.Write(parser.pollReceiver());
+                try
+                {
+                    d.dispatch(new RealTimeEvents.UnparsedDataEvent(RealTimeEventType.UNPARSED_RECEIVER,
+                        r.serialPort.ReadTo(">"),r));
+                }
+                catch (System.TimeoutException e)
+                {
+                    r.TTL--;
+                    r.serialPort.WriteTimeout += COM_READ_TIMEOUT_SPRIAL;
+                }
+                catch (RealTimeEvents.MalformedDataException e) 
+                {
+                    r.TTL--;
+                }
+            }
+        }
+        protected void serialPortsService()
+        {
             //check for new COM ports... if there's one that we don't have check to see if it is really a VR2C receiver attached or something else
             foreach (string c in System.IO.Ports.SerialPort.GetPortNames())
             {
                 if (!receivers.ContainsKey(c))
                 {
                     //!!! We need the default values for the serial port.
-                    SerialPort _potentialReceiver = new SerialPort(c, 9600);
-                    _potentialReceiver.Write(parser.areYouThere());
-                    if (parser.validAreYouThere(_potentialReceiver.ReadLine()))
+                    SerialPort availableCOMPort = new SerialPort(c, 9600);
+                    availableCOMPort.Write(parser.areYouThere());
+                    try
                     {
-                        Receivers r = new Receivers(DEFAULT_TTL, _potentialReceiver, c);
+                        d.dispatch(new RealTimeEvents.UnparsedIntroEvent(
+                        availableCOMPort.ReadTo("#"), c));
+                        Receiver r = new Receiver(DEFAULT_TTL, availableCOMPort, c);
+                        new RealTimeEvents.SerialPortEvent(RealTimeEventType.NEW_RECEIVER, r);
+                    }
+                    catch (RealTimeEvents.MalformedDataException e)
+                    {
+                        //Should be logged?
+                    }
+                    /*
+                    if (parser.validAreYouThere(availableCOMPort.ReadLine()))
+                    {
+                        Receiver r = new Receiver(DEFAULT_TTL, availableCOMPort, c);
                         returnList.Add(new RealTimeEvents.SerialPortEvent(RealTimeEventType.NEW_RECEIVER, r));
                     }
+                    */
                 }
             }
 
@@ -63,7 +99,7 @@ namespace ReceiverMultiplex
                 if (Array.IndexOf(SerialPort.GetPortNames(), r) == -1)
                 {
                     receivers.Remove(r);
-                    Receivers tbr;
+                    Receiver tbr;
                     if (receivers.TryGetValue(r, out tbr))
                     {
                         returnList.Add(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, tbr));
@@ -73,7 +109,7 @@ namespace ReceiverMultiplex
 
             //if TTL = 0, it means that this port has been misbehaving consistently
             //removing it now effectively restarts it during the next service loop
-            foreach (Receivers r in receivers.Values)
+            foreach (Receiver r in receivers.Values)
             {
                 if (r.TTL <= 0)
                 {
@@ -82,7 +118,6 @@ namespace ReceiverMultiplex
                 }
             }
             
-            return returnList;
         }
     }
 }
