@@ -1,1 +1,3 @@
 \\VBOXSVR\src\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\ReceiverMultiplex.exe.config
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\ReceiverMultiplex.exe.config
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.csprojResolveAssemblyReference.cache
