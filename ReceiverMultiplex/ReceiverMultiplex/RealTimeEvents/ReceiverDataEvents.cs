@@ -40,7 +40,7 @@ namespace ReceiverMultiplex.RealTimeEvents
     class MalformedDataException : System.ApplicationException
     {
         UnparsedDataEvent u { get; private set; }
-        public MalformedDataException(RealTimeEvent u)
+        public MalformedDataException(UnparsedDataEvent u)
         {
             this.u = u;
         }

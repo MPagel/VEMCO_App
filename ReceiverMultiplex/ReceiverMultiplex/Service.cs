@@ -48,7 +48,7 @@ namespace ReceiverMultiplex
                 r.serialPort.Write(parser.pollReceiver());
                 try
                 {
-                    d.dispatch(new RealTimeEvents.UnparsedDataEvent(RealTimeEventType.UNPARSED_RECEIVER,
+                    d.dispatch(new RealTimeEvents.UnparsedDataEvent(
                         r.serialPort.ReadTo(">"),r));
                 }
                 catch (System.TimeoutException e)
@@ -83,13 +83,7 @@ namespace ReceiverMultiplex
                     {
                         //Should be logged?
                     }
-                    /*
-                    if (parser.validAreYouThere(availableCOMPort.ReadLine()))
-                    {
-                        Receiver r = new Receiver(DEFAULT_TTL, availableCOMPort, c);
-                        returnList.Add(new RealTimeEvents.SerialPortEvent(RealTimeEventType.NEW_RECEIVER, r));
-                    }
-                    */
+
                 }
             }
 
@@ -102,7 +96,7 @@ namespace ReceiverMultiplex
                     Receiver tbr;
                     if (receivers.TryGetValue(r, out tbr))
                     {
-                        returnList.Add(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, tbr));
+                        d.dispatch((new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, tbr)));
                     }
                 }
             }
@@ -114,7 +108,7 @@ namespace ReceiverMultiplex
                 if (r.TTL <= 0)
                 {
                     receivers.Remove(r.portName);
-                    returnList.Add(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, r));
+                    d.dispatch(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, r));
                 }
             }
             
