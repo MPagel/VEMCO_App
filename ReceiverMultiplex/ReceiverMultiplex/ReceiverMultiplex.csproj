@@ -42,12 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RealTimeEventDispatcher.cs" />
-    <Compile Include="Module.cs" />
+    <Compile Include="RealTimeEvents\RealTimeEventDispatcher.cs" />
+    <Compile Include="Interfaces\Module.cs" />
     <Compile Include="RealTimeEvents\ReceiverDataEvents.cs" />
     <Compile Include="RealTimeEvents\SerialPortEvent.cs" />
     <Compile Include="Receivers.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="Interfaces\Parser.cs" />
     <Compile Include="RealTimeEvents\RealTimeEvent.cs" />
     <Compile Include="Service.cs">
       <SubType>Component</SubType>
