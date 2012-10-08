@@ -16,9 +16,7 @@ namespace ReceiverMultiplex
 {
     public partial class Service : ServiceBase
     {
-        private const int DEFAULT_TTL = 10;
-        private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
-        private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
+        
         private Dictionary<String, Receiver> receivers = new Dictionary<String, Receiver>();
         private Parser parser;
         private RealTimeEventDispatcher d;
