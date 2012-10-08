@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Decoder.cs" />
     <Compile Include="Encoder.cs" />
+    <Compile Include="HardwareExceptions.cs" />
     <Compile Include="InvalidCommandException.cs" />
     <Compile Include="RealTimeEvents\RealTimeEventDispatcher.cs" />
     <Compile Include="Interfaces\Module.cs" />
