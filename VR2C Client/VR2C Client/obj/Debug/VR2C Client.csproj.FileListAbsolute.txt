@@ -1,0 +1,2 @@
+c:\users\derek\documents\visual studio 2012\Projects\VR2C Client\VR2C Client\bin\Debug\VR2C Client.exe.config
+C:\Users\Derek\Documents\CECS 491\VR2C Client\VR2C Client\bin\Debug\VR2C Client.exe.config
