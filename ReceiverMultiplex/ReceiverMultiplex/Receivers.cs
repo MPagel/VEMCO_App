@@ -18,6 +18,7 @@ namespace ReceiverMultiplex
 		private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
 		private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
 		private const string VR2C_COMMAND_FOLDER = "vr2c_commands";
+
 		private RealTimeEventDispatcher dispatcher { get; set; }
 		private SerialPort serialPort {  get; set; }
 		private dynamic receiverConfig { get; set; }
@@ -67,10 +68,26 @@ namespace ReceiverMultiplex
 		public int INFO()
 		{
 			serialPort.Write(commandPreamble + "INFO" + "\n");
-			dispatcher.enque(new RealTimeEvents.UnparsedDataEvent(
-						serialPort.ReadLine(), this));
-			// ^- also parse/process INFO and return an integer value representing firmware
-			return 0;
+            string infoReturns = serialPort.ReadLine();
+            if (infoReturns != "")
+            {
+                dispatcher.enque(new RealTimeEvents.UnparsedDataEvent(
+                            infoReturns, this));
+                int fw_start = infoReturns.IndexOf("FW=");
+                int fw_end = infoReturns.IndexOf(",", fw_start);
+                string fw_ver = infoReturns.Substring((fw_start + 3), (fw_end - fw_start - 3));
+                int fw_ver_firstperiod = fw_ver.IndexOf(".");
+                int fw_ver_secondperiod = fw_ver.IndexOf(".", fw_ver_firstperiod + 1);
+                string major = fw_ver.Substring(0, fw_ver_firstperiod);
+                string minor = fw_ver.Substring(fw_ver_firstperiod + 1, (fw_ver_secondperiod - fw_ver_firstperiod - 1));
+                string release = fw_ver.Substring(fw_ver_secondperiod + 1, (fw_ver.Length - fw_ver_secondperiod - 1));
+                return (Int32.Parse(major) * 10000) + (Int32.Parse(minor) * 100) + (Int32.Parse(release));
+            }
+            else
+            {
+                return -1;
+            }
+			
 		}
 
 		public async Task readHandler()
