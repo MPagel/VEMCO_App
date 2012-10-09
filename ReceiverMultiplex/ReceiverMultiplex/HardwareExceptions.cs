@@ -6,11 +6,29 @@ using System.Threading.Tasks;
 
 namespace ReceiverMultiplex
 {
-    class HardwareExceptions: Exception
+    public class HardwareExceptions: Exception
     {
-        private Boolean fatal {get; private set;}
-        private string text { get; private set; }
+        public Boolean fatal {get; private set;}
+        public string text { get; private set; }
 
-        public HardwareExceptions(string text, Boolean fatal);
+        public HardwareExceptions(string text, Boolean fatal)
+        {
+            this.fatal = fatal;
+            this.text = text;
+        }
+
+       
+    }
+
+    public class MalformedData : Exception
+    {
+        string raw { get; private set; }
+        string error { get; private set; }
+        
+        public MalformedData(string raw, string error)
+        {
+            this.raw = raw;
+            this.error = error;
+        }
     }
 }

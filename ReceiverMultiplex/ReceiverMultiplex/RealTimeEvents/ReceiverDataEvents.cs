@@ -9,14 +9,14 @@ namespace ReceiverMultiplex.RealTimeEvents
 
     class UnparsedDataEvent : RealTimeEvent
     {
-        string payload { get; private set; }
+        private string payload { get; private set; }
         Receiver r;
         public UnparsedDataEvent(string payload, Receiver r) : base (RealTimeEventType.UNPARSED_RECEIVER)
           
         {
             this.payload = payload;
             this.r = r;
-            r.serialPort = null;
+            
         }
 
     }
