@@ -22,8 +22,8 @@ namespace ReceiverMultiplex
 
     public class MalformedData : Exception
     {
-        string raw { get; private set; }
-        string error { get; private set; }
+        public string raw { get; private set; }
+        public string error { get; private set; }
         
         public MalformedData(string raw, string error)
         {

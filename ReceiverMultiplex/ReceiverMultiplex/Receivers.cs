@@ -18,12 +18,12 @@ namespace ReceiverMultiplex
 		private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
 		private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
 		private const string VR2C_COMMAND_FOLDER = "vr2c_commands";
-		private RealTimeEventDispatcher dispatcher { private get; private set; }
-		private SerialPort serialPort { private get; private set; }
-		private dynamic receiverConfig { get; private set; }
-		private int firmwareVersion {get; private set;}
-		private string commandPreamble { get; private set; }
-        private TextReader textReader { get; private set; }
+		private RealTimeEventDispatcher dispatcher { get; set; }
+		private SerialPort serialPort {  get; set; }
+		private dynamic receiverConfig { get; set; }
+		private int firmwareVersion {get; set;}
+		private string commandPreamble { get; set; }
+        private TextReader textReader { get; set; }
 
 		public Receiver(SerialPort serialPort, String portName, RealTimeEventDispatcher dispatcher)
 		{

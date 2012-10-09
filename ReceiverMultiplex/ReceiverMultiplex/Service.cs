@@ -18,8 +18,7 @@ namespace ReceiverMultiplex
     {
         
         private Dictionary<String, Receiver> receivers = new Dictionary<String, Receiver>();
-        private Parser parser;
-        private RealTimeEventDispatcher d;
+        private RealTimeEventDispatcher d = new RealTimeEventDispatcher();
 
         public Service()
         {

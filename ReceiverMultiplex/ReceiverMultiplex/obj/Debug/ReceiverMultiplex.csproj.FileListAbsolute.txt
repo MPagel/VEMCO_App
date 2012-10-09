@@ -1,3 +1,9 @@
 \\VBOXSVR\src\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\ReceiverMultiplex.exe.config
 F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\ReceiverMultiplex.exe.config
 F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.csprojResolveAssemblyReference.cache
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\ReceiverMultiplex.exe
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\ReceiverMultiplex.pdb
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\FridayThe13th.dll
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\FridayThe13th.pdb
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.exe
+F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.pdb

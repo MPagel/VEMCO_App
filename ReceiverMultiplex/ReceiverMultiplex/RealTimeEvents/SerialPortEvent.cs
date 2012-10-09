@@ -12,7 +12,6 @@ namespace ReceiverMultiplex.RealTimeEvents
 
         public SerialPortEvent(RealTimeEventType eventType, Receiver r) : base (eventType) 
         {
-            r.serialPort = null;
         }
     }
 }
