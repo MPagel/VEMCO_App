@@ -66,7 +66,7 @@ namespace ReceiverMultiplex
 
             readHandler();
 
-            dispatcher.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.NEW_RECEIVER, this));
+            dispatcher.enque(new SerialPortEvent(RealTimeEventType.NEW_RECEIVER, this));
         }
 		
 		public int INFO()
@@ -75,7 +75,7 @@ namespace ReceiverMultiplex
             string infoReturns = serialPort.ReadLine();
             if (infoReturns != "")
             {
-                dispatcher.enque(new RealTimeEvents.UnparsedDataEvent(
+                dispatcher.enque(new UnparsedDataEvent(
                             infoReturns, this));
                 int fw_start = infoReturns.IndexOf("FW=");
                 int fw_end = infoReturns.IndexOf(",", fw_start);
@@ -111,7 +111,7 @@ namespace ReceiverMultiplex
                 }
                 try
                 {
-                    dispatcher.enque(new RealTimeEvents.UnparsedDataEvent(ret, this));
+                    dispatcher.enque(new UnparsedDataEvent(ret, this));
                 }
                 catch (MalformedData md)
                 {
