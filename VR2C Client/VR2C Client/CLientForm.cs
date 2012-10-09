@@ -16,5 +16,10 @@ namespace VR2C_Client
         {
             InitializeComponent();
         }
+
+        private void MainFormPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
