@@ -1,0 +1,7 @@
+\\VBOXSVR\src\cecs491\Receiver\Receiver\bin\Debug\Receiver.dll
+\\VBOXSVR\src\cecs491\Receiver\Receiver\bin\Debug\Receiver.pdb
+\\VBOXSVR\src\cecs491\Receiver\Receiver\bin\Debug\FridayThe13th.dll
+\\VBOXSVR\src\cecs491\Receiver\Receiver\bin\Debug\FridayThe13th.pdb
+\\VBOXSVR\src\cecs491\Receiver\Receiver\obj\Debug\Receiver.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\Receiver\Receiver\obj\Debug\Receiver.dll
+\\VBOXSVR\src\cecs491\Receiver\Receiver\obj\Debug\Receiver.pdb

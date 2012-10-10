@@ -1,0 +1,4 @@
+F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll
+F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.pdb
+F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll
+F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.pdb
