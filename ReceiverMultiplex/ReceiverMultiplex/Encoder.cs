@@ -11,9 +11,7 @@ namespace ReceiverMultiplex
         private String prefix; //Will be made to be *SSSSSS.P#CC,
 
         public Encoder(int serial, int p = 0)
-        {
-            UpdatePrefix(serial, p);
-        }
+            { UpdatePrefix(serial, p); }
 
         public void UpdatePrefix(int serial, int p = 0) //Sets the prefix part of the commands. This must be called if the serial were to be changed for some reason, or if the p-value was changed.
         {
@@ -42,22 +40,16 @@ namespace ReceiverMultiplex
             }
         }
 
-        public void STATUS() //Read status string
-        {
-            SendCommand("STATUS");
-        }
+        public String STATUS() //Read status string
+            { return BuildCommand("STATUS"); }
 
-        public void INFO()
-        {
-            SendCommand("INFO");
-        }
+        public String INFO()
+            { return BuildCommand("INFO"); }
 
-        public void BAUDRATE(int baud) //Set the serial port baud rate (default rate is 9600, 8N1 protocol)
-        {
-            SendCommand("BAUDRATE=" + baud.ToString());
-        }
+        public String BAUDRATE(int baud) //Set the serial port baud rate (default rate is 9600, 8N1 protocol)
+            { return BuildCommand("BAUDRATE=" + baud.ToString()); }
 
-        public void TIME(int year, int month, int day, int hour, int minutes, int seconds) //Set receiver clock, x = 24 hour UTC time as YYYY-MM-DD HH:MM:SS or local time as YYYY-MM-DD HH:MM:SS +ZZZZ
+        public String TIME(int year, int month, int day, int hour, int minutes, int seconds) //Set receiver clock, x = 24 hour UTC time as YYYY-MM-DD HH:MM:SS or local time as YYYY-MM-DD HH:MM:SS +ZZZZ
         {
             try
             {
@@ -110,15 +102,16 @@ namespace ReceiverMultiplex
                         Seconds = "0" + Seconds;
                 }
 
-                SendCommand("TIME=" + year.ToString() + "-" + Month + "-" + Day + " " + Hour + ":" + Minutes + ":" + Seconds);
+                return BuildCommand("TIME=" + year.ToString() + "-" + Month + "-" + Day + " " + Hour + ":" + Minutes + ":" + Seconds);
             }
             catch(InvalidCommandException e)
             {
                 Console.WriteLine(e.Message);
+                return null;
             }
         }
 
-        public void TIME(int year, int month, int day, int hour, int minutes, int seconds, char offsetSign, int offsetHours, int offsetMinutes)
+        public String TIME(int year, int month, int day, int hour, int minutes, int seconds, char offsetSign, int offsetHours, int offsetMinutes)
         {
             try
             {
@@ -178,91 +171,69 @@ namespace ReceiverMultiplex
                     Offset = offsetSign + offsetHours.ToString() + offsetMinutes.ToString();
                 }
 
-                SendCommand("TIME=" + year.ToString() + "-" + Month + "-" + Day + " " + Hour + ":" + Minutes + ":" + Seconds + " " + Offset);
+                return BuildCommand("TIME=" + year.ToString() + "-" + Month + "-" + Day + " " + Hour + ":" + Minutes + ":" + Seconds + " " + Offset);
             }
             catch(InvalidCommandException e)
             {
                 Console.WriteLine(e.Message);
+                return null;
             }
         }
 
-        public void START() //Start recording
-        {
-            SendCommand("START");
-        }
+        public String START() //Start recording
+            { return BuildCommand("START"); }
 
-        public void STOP() //Stop recording (Recording restarts after an hour)
-        {
-            SendCommand("STOP");
-        }
+        public String STOP() //Stop recording (Recording restarts after an hour)
+            { return BuildCommand("STOP"); }
 
-        public void ERASE() //Erase data (must be stopped)
-        {
-            SendCommand("ERASE");
-        }
+        public String ERASE() //Erase data (must be stopped)
+            { return BuildCommand("ERASE"); }
 
-        public void RTMINFO() //Read Real-Time mode configuration
-        {
-            SendCommand("RTMINFO");
-        }
+        public String RTMINFO() //Read Real-Time mode configuration
+            { return BuildCommand("RTMINFO"); }
 
-        public void RTMOFF() //Disables RTM output
-        {
-            SendCommand("RTMOFF");
-        }
+        public String RTMOFF() //Disables RTM output
+            { return BuildCommand("RTMOFF"); }
 
-        public void RTM232() //Resets RTM state and enables output on the RS232 lines
-        {
-            SendCommand("RTM232");
-        }
+        public String RTM232() //Resets RTM state and enables output on the RS232 lines
+            { return BuildCommand("RTM232"); }
 
-        public void RTM485() //Resets RTM state and enables output on the RS485 lines
-        {
-            SendCommand("RTM485");
-        }
+        public String RTM485() //Resets RTM state and enables output on the RS485 lines
+            { return BuildCommand("RTM485"); }
 
-        public void RTMNOW() //Resets RTM schedule (used for Polling)
-        {
-            SendCommand("RTMNOW");
-        }
+        public String RTMNOW() //Resets RTM schedule (used for Polling)
+            { return BuildCommand("RTMNOW"); }
 
-        public void RTMPROFILE(int profile) //Select a RTM output method where x = 0,1,2...
+        public String RTMPROFILE(int profile) //Select a RTM output method where x = 0,1,2...
         {
             if (profile < 0)
                 throw new InvalidCommandException("Invalid profile. Valid range is nonnegative integers.");
-            SendCommand("RTMPROFILE=" + profile);
+            return BuildCommand("RTMPROFILE=" + profile);
         }
 
-        public void RTMAUTOERASE(int threshold) //Set the auto erase threshold. x = % of log to keep free, 0-50
+        public String RTMAUTOERASE(int threshold) //Set the auto erase threshold. x = % of log to keep free, 0-50
         {
             if (threshold < 0 || threshold > 50)
                 throw new InvalidCommandException("Invalid auto-erase threshold. Valid range is 0-50.");
-            SendCommand("RTMAUTOERASE=" + threshold);
+            return BuildCommand("RTMAUTOERASE=" + threshold);
         }
 
-        public void STORAGE() //Put the receiver in low power state for storage (must be stopped)
-        {
-            SendCommand("STORAGE");
-        }
+        public String STORAGE() //Put the receiver in low power state for storage (must be stopped)
+            { return BuildCommand("STORAGE"); }
 
-        public void RESET() //Reset receiver (must be stopped)
-        {
-            SendCommand("RESET");
-        }
+        public String RESET() //Reset receiver (must be stopped)
+            { return BuildCommand("RESET"); }
 
-        public void QUIT() //Exit command session (Disables serial drivers)
-        {
-            SendCommand("QUIT");
-        }
+        public String QUIT() //Exit command session (Disables serial drivers)
+            { return BuildCommand("QUIT"); }
 
-        public void RESETBATTERY() //Resets the battery indicator. ONLY TO BE USED AFTER INSTALLING A FRESH BATTERY!
-        {
-            SendCommand("RESETBATTERY");
-        }
+        public String RESETBATTERY() //Resets the battery indicator. ONLY TO BE USED AFTER INSTALLING A FRESH BATTERY!
+            { return BuildCommand("RESETBATTERY"); }
 
-        public void SendCommand(String command) //Sends the actual command -- public so a user could in theory send their own command by console using this.
-        {
-            //domagic(prefix + command + "\r");
-        }
+        public String CustomCommand(String command) //Allows for the sending of any other command.
+            { return BuildCommand(command); }
+
+        private String BuildCommand(String command) //Returns the actual command
+            { return (prefix + command + "\r"); }
     }
 }
