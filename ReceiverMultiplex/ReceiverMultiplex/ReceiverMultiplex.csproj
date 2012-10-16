@@ -31,9 +31,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ReceiverMultiplex.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FridayThe13th">
+      <HintPath>..\..\..\FridayThe13th\FridayThe13th\obj\Debug\FridayThe13th.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,7 +52,14 @@
   <ItemGroup>
     <Compile Include="Decoder.cs" />
     <Compile Include="Encoder.cs" />
+    <Compile Include="HardwareExceptions.cs" />
     <Compile Include="InvalidCommandException.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
     <Compile Include="RealTimeEvents\RealTimeEventDispatcher.cs" />
     <Compile Include="Interfaces\Module.cs" />
     <Compile Include="RealTimeEvents\ReceiverDataEvents.cs" />
@@ -52,7 +67,6 @@
     <Compile Include="Receivers.cs" />
     <Compile Include="Interfaces\Parser.cs" />
     <Compile Include="RealTimeEvents\RealTimeEvent.cs" />
-    <Compile Include="Sandbox.cs" />
     <Compile Include="Service.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -64,6 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,9 @@
+F:\cecs491\SerialPortComponents\Receiver\obj\Release\ReceiverSlice.csprojResolveAssemblyReference.cache
+F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.dll
+F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.pdb
+F:\cecs491\SerialPortComponents\Receiver\bin\Release\EventSlice.dll
+F:\cecs491\SerialPortComponents\Receiver\bin\Release\FridayThe13th.dll
+F:\cecs491\SerialPortComponents\Receiver\bin\Release\EventSlice.pdb
+F:\cecs491\SerialPortComponents\Receiver\bin\Release\FridayThe13th.pdb
+F:\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.dll
+F:\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.pdb

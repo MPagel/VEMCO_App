@@ -8,6 +8,9 @@ namespace ReceiverMultiplex
 {
     class RealTimeEventDispatcher
     {
-        public void dispatch(RealTimeEvent realTimeEvent);
+        public void enque(RealTimeEvent realTimeEvent)
+        {
+        }
+
     }
 }

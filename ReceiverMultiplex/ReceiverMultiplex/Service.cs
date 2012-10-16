@@ -9,19 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using System.IO.Ports;
-
+using System.IO;
 
 
 namespace ReceiverMultiplex
 {
     public partial class Service : ServiceBase
     {
-        private const int DEFAULT_TTL = 10;
-        private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
-        private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
+        
         private Dictionary<String, Receiver> receivers = new Dictionary<String, Receiver>();
-        private Parser parser;
-        private RealTimeEventDispatcher d;
+        private RealTimeEventDispatcher d = new RealTimeEventDispatcher();
 
         public Service()
         {
@@ -34,8 +31,6 @@ namespace ReceiverMultiplex
             while (true)
             {
                 serialPortsService();
-                pollReceivers();
-
             }
         }
 
@@ -43,27 +38,7 @@ namespace ReceiverMultiplex
         {
         }
 
-        protected void pollReceivers()
-        {
-            foreach (Receiver r in receivers.Values)
-            {
-                r.serialPort.Write(parser.pollReceiver());
-                try
-                {
-                    d.dispatch(new RealTimeEvents.UnparsedDataEvent(
-                        r.serialPort.ReadTo(">"),r));
-                }
-                catch (System.TimeoutException e)
-                {
-                    r.TTL--;
-                    r.serialPort.WriteTimeout += COM_READ_TIMEOUT_SPRIAL;
-                }
-                catch (RealTimeEvents.MalformedDataException e) 
-                {
-                    r.TTL--;
-                }
-            }
-        }
+        
         protected void serialPortsService()
         {
             //check for new COM ports... if there's one that we don't have check to see if it is really a VR2C receiver attached or something else
@@ -73,17 +48,14 @@ namespace ReceiverMultiplex
                 {
                     //!!! We need the default values for the serial port.
                     SerialPort availableCOMPort = new SerialPort(c, 9600);
-                    availableCOMPort.Write(parser.areYouThere());
                     try
                     {
-                        d.dispatch(new RealTimeEvents.UnparsedIntroEvent(
-                        availableCOMPort.ReadTo("#"), c));
-                        Receiver r = new Receiver(DEFAULT_TTL, availableCOMPort, c);
-                        new RealTimeEvents.SerialPortEvent(RealTimeEventType.NEW_RECEIVER, r);
+                        Receiver r = new Receiver(availableCOMPort, c, d);
+                        receivers.Add(c,r);
                     }
-                    catch (RealTimeEvents.MalformedDataException e)
+                    catch (HardwareExceptions e)
                     {
-                        //Should be logged?
+                        //!!!TODO
                     }
 
                 }
@@ -98,7 +70,7 @@ namespace ReceiverMultiplex
                     Receiver tbr;
                     if (receivers.TryGetValue(r, out tbr))
                     {
-                        d.dispatch((new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, tbr)));
+                        d.enque((new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, tbr)));
                     }
                 }
             }
@@ -110,7 +82,7 @@ namespace ReceiverMultiplex
                 if (r.TTL <= 0)
                 {
                     receivers.Remove(r.portName);
-                    d.dispatch(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, r));
+                    d.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, r));
                 }
             }
             

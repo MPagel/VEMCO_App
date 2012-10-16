@@ -9,7 +9,7 @@ namespace ReceiverMultiplex
     enum RealTimeEventType {NEW_RECEIVER, DEL_RECEIVER, TAG_RECEIVER, STATUS_RECEIVER, UNPARSED_RECEIVER, UNPARSED_INTRO };
     class RealTimeEvent
     {
-        RealTimeEventType eventType
+        public RealTimeEventType eventType
         {
             get;
             private set;
