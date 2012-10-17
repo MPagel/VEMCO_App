@@ -9,3 +9,6 @@ F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.pdb
 F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.csprojResolveAssemblyReference.cache
 F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.ProjectInstaller.resources
 F:\cecs491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.csproj.GenerateResource.Cache
+D:\Stuff\School\CECS 491\ReceiverMultiplex\ReceiverMultiplex\bin\Debug\ReceiverMultiplex.exe.config
+D:\Stuff\School\CECS 491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.exe
+D:\Stuff\School\CECS 491\ReceiverMultiplex\ReceiverMultiplex\obj\Debug\ReceiverMultiplex.pdb
