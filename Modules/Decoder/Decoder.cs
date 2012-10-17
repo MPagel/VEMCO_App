@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using EventSlice.Interfaces;
 
-namespace ReceiverMultiplex
+namespace Decoder
 {
-    public class Decoder
+    public class Decoder:Module
     {
         enum messageTypes { DETECTION, STATUS, GENERIC, RTMINFO, INFO, UNKNOWN };
 

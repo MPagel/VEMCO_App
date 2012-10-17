@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventSlice.Interfaces;
+using EventSlice.Interfaces;
 
-namespace ReceiverMultiplex
+namespace Decoder.RealTimeEvents
 {
     class RealTimeEventDispatcher
     {

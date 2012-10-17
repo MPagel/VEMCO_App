@@ -40,8 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dispatcher.cs" />
-    <Compile Include="Interfaces\Module.cs" />
-    <Compile Include="Interfaces\RealTimeEvent.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="RealTimeEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

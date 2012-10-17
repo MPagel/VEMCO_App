@@ -1,0 +1,1 @@
+\\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\bin\Debug\ConsoleRunner.exe.config
