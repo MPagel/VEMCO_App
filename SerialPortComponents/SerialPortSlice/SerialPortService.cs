@@ -28,9 +28,16 @@ namespace SerialPortSlice
     
         public static SerialPortService getServicer() 
         {
-            if (iam != null)
+            if (iam == null)
             {
-                iam = new SerialPortService();
+                try
+                {
+                    iam = new SerialPortService();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
             }
             System.Diagnostics.Debug.Assert(iam != null);
             return iam;
