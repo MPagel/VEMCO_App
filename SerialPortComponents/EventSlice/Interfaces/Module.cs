@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace EventSlice.Interfaces
 {
-    interface Module
+    public interface Module
     {
-        public void onRealTimeEvent(Interfaces.RealTimeEvent realTimeEvent);
+        void onRealTimeEvent(Interfaces.RealTimeEvent realTimeEvent);
     }
 }

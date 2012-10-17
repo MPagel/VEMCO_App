@@ -16,5 +16,13 @@ namespace ReceiverSlice
             this.fatal = fatal;
             this.text = text;
         }
+
+        
+    }
+
+    class InvalidCommandException : Exception
+    {
+        public InvalidCommandException(String message)
+            : base(message) { }
     }
 }

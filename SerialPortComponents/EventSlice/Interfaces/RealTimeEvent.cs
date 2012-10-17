@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventSlice.Interfaces
 {
-    interface RealTimeEvent
+    public interface RealTimeEvent
     {
     }
 }
