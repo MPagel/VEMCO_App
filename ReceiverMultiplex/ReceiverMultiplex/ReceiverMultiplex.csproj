@@ -60,10 +60,16 @@
     <Compile Include="ProjectInstaller.Designer.cs">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
+    <Compile Include="RealTimeEvents\RealTimeEventDetection.cs" />
     <Compile Include="RealTimeEvents\RealTimeEventDispatcher.cs" />
     <Compile Include="Interfaces\Module.cs" />
+    <Compile Include="RealTimeEvents\RealTimeEventGeneric.cs" />
+    <Compile Include="RealTimeEvents\RealTimeEventInfo.cs" />
+    <Compile Include="RealTimeEvents\RealTimeEventRTMInfo.cs" />
+    <Compile Include="RealTimeEvents\RealTimeEventStatus.cs" />
     <Compile Include="RealTimeEvents\ReceiverDataEvents.cs" />
     <Compile Include="RealTimeEvents\SerialPortEvent.cs" />
+    <Compile Include="RealTimeEvents\RealTimeEventUnknown.cs" />
     <Compile Include="Receivers.cs" />
     <Compile Include="Interfaces\Parser.cs" />
     <Compile Include="RealTimeEvents\RealTimeEvent.cs" />

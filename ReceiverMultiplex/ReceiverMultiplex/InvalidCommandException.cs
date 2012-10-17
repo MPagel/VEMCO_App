@@ -8,6 +8,7 @@ namespace ReceiverMultiplex
 {
     class InvalidCommandException:Exception
     {
-        public InvalidCommandException(String message) : base(message) { }
+        public InvalidCommandException(String message)
+            : base(message) { }
     }
 }
