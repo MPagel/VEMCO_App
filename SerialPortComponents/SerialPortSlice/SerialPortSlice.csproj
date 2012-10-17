@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EventSlice">
+      <HintPath>F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
+    </Reference>
     <Reference Include="Receiver">
       <HintPath>..\Receiver\obj\Release\Receiver.dll</HintPath>
     </Reference>
