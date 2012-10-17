@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSlice", "EventSlice\Ev
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPortSlice", "SerialPortSlice\SerialPortSlice.csproj", "{0B974514-BAC1-4A83-86CD-061AC22688AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleRunner", "ConsoleRunner\ConsoleRunner.csproj", "{F47ACBB8-EA27-41FC-99D9-C4955AEB6B5C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{0B974514-BAC1-4A83-86CD-061AC22688AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B974514-BAC1-4A83-86CD-061AC22688AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B974514-BAC1-4A83-86CD-061AC22688AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F47ACBB8-EA27-41FC-99D9-C4955AEB6B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F47ACBB8-EA27-41FC-99D9-C4955AEB6B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F47ACBB8-EA27-41FC-99D9-C4955AEB6B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F47ACBB8-EA27-41FC-99D9-C4955AEB6B5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

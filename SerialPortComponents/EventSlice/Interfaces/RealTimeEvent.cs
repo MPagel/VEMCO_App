@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReceiverMultiplex
+namespace EventSlice.Interfaces
 {
-    interface Module
+    interface RealTimeEvent
     {
-        void on_new_receiver();
-        void on_del_receiver();
     }
 }

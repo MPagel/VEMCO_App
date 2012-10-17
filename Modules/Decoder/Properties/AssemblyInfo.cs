@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ReceiverMultiplex")]
+[assembly: AssemblyTitle("Decoder")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ReceiverMultiplex")]
+[assembly: AssemblyProduct("Decoder")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bbc40fce-1acd-4c86-a88e-9fef381149cf")]
+[assembly: Guid("28e5679f-f21d-49cd-8e0e-6ec542b3fe2a")]
 
 // Version information for an assembly consists of the following four values:
 //
