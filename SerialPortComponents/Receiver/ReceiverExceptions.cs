@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReceiverSlice
 {
-    class ReceiverExceptions: Exception
+    public class ReceiverExceptions: Exception
     {
         public Boolean fatal {get; private set;}
         public string text { get; private set; }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
 using System.IO;
+using System.Threading;
 
 using FridayThe13th;
 using EventSlice;
@@ -18,6 +19,7 @@ namespace ReceiverSlice
         public string portName { get; private set; }
         public int TTL { get; private set; }
 
+
         private const int DEFAULT_TTL = 10;
         private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
         private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
@@ -29,14 +31,15 @@ namespace ReceiverSlice
         private int firmwareVersion { get; set; }
         private string commandPreamble { get; set; }
         private TextReader textReader { get; set; }
+        private int goState = 1;
 
-        public Receiver(SerialPort serialPort, String portName)
+        public Receiver(SerialPort serialPort, String portName, Dispatcher dispatcher)
         {
             Dictionary<int, string> configFiles = new Dictionary<int, string>();
             this.TTL = DEFAULT_TTL;
             this.serialPort = serialPort;
             this.portName = portName;
-            //            this.dispatcher = dispatcher;
+            this.dispatcher = dispatcher;
 
             int fw_ver = INFO();
             if (fw_ver < 0)
@@ -98,9 +101,27 @@ namespace ReceiverSlice
 
         }
 
+        public void shutdown()
+        {
+            goState = 0;
+            for (int i = 0; i <= 5; i++)
+            {
+
+                if (goState == -1)
+                {
+                    //dispatcher.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, this));
+                    serialPort.Close();
+                    return;
+                }
+                Thread.Sleep(500);
+            }
+            //dispatcher.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, this));
+            serialPort.Close();
+        }
+
         public async Task readHandler()
         {
-            while (true)
+            while (goState > 0)
             {
                 var ret = string.Empty;
                 var buffer = new char[1]; // Not the most efficient...
@@ -121,7 +142,9 @@ namespace ReceiverSlice
                     {
                         TTL--;
                     } */
-                } 
             }
+            goState = -1;
         }
+
     }
+}

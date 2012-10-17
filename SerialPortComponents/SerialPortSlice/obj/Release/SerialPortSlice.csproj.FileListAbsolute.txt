@@ -1,0 +1,9 @@
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\EventSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\EventSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.pdb
