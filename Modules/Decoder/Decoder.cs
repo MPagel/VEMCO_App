@@ -199,5 +199,10 @@ namespace Decoder
         {
             return new RealTimeEvents.RealTimeEventUnknown(RealTimeEventType.UNKNOWN_EVENT, unknownMessage);
         }
+
+        public void onRealTimeEvent(ReceiverSlice.RealTimeEvents.UnparsedMessage unparsedMessage)
+        {
+            //do magic here
+        }
     }
 }

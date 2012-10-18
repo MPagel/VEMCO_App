@@ -1,0 +1,1 @@
+\\VBOXSVR\src\cecs491\Modules\Decoder\obj\Release\Decoder.csprojResolveAssemblyReference.cache
