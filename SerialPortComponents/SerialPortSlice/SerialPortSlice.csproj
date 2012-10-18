@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RealTimeEvents.cs" />
     <Compile Include="SerialPortService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

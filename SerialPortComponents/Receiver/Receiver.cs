@@ -73,7 +73,7 @@ namespace ReceiverSlice
 
             readHandler();
 
-            //dispatcher.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.NEW_RECEIVER, this));
+            dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this));
         }
 
         public int INFO()
@@ -82,8 +82,7 @@ namespace ReceiverSlice
             string infoReturns = serialPort.ReadLine();
             if (infoReturns != "")
             {
-                // dispatcher.enque(new RealTimeEvents.UnparsedDataEvent(
-                //             infoReturns, this));
+                
                 int fw_start = infoReturns.IndexOf("FW=");
                 int fw_end = infoReturns.IndexOf(",", fw_start);
                 string fw_ver = infoReturns.Substring((fw_start + 3), (fw_end - fw_start - 3));
@@ -109,13 +108,13 @@ namespace ReceiverSlice
 
                 if (goState == -1)
                 {
-                    //dispatcher.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, this));
+                    dispatcher.enqueueEvent(new RealTimeEvents.DelReceiver(this));
                     serialPort.Close();
                     return;
                 }
                 Thread.Sleep(500);
             }
-            //dispatcher.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, this));
+            dispatcher.enqueueEvent(new RealTimeEvents.DelReceiver(this));
             serialPort.Close();
         }
 
@@ -134,14 +133,7 @@ namespace ReceiverSlice
                     }
                     ret += charsRead;
                 }
-                /*    try
-                    {
-                        dispatcher.enque(new RealTimeEvents.UnparsedDataEvent(ret, this));
-                    }
-                    catch (MalformedData md)
-                    {
-                        TTL--;
-                    } */
+                dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(this, ret));
             }
             goState = -1;
         }

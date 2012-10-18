@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventSlice.Interfaces;
-using EventSlice.Interfaces;
 
 namespace Decoder.RealTimeEvents
 {
