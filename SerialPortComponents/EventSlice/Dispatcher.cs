@@ -10,13 +10,15 @@ namespace EventSlice
 {
     public class Dispatcher
     {
+        private const String MODULES_PATH = " 
         private int busyWaitTime = 0;
         private Thread serviceThread = null;
         private ConcurrentQueue<Interfaces.RealTimeEvent> realTimeEventQueue = new ConcurrentQueue<Interfaces.RealTimeEvent>();
         private List<Interfaces.Module> modules = new List<Interfaces.Module>();
-
+        
         public Dispatcher()
         {
+
         }
 
         public void addModule(Interfaces.Module module)
