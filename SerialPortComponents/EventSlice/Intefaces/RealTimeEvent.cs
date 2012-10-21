@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace EventSlice.Interfaces
 {
-    public interface RealTimeEvent
+    public abstract class RealTimeEvent
     {
+        private string message;
+
+        public RealTimeEvent(string message)
+        {
+            this.message = message;
+        }
+
+        public string toString()
+        {
+            return message;
+        }
     }
 }

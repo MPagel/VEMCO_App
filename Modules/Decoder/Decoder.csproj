@@ -33,6 +33,9 @@
     <Reference Include="EventSlice">
       <HintPath>F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
     </Reference>
+    <Reference Include="Receiver">
+      <HintPath>F:\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +54,9 @@
     <Compile Include="RealTimeEvents\RealTimeEventRTMInfo.cs" />
     <Compile Include="RealTimeEvents\RealTimeEventStatus.cs" />
     <Compile Include="RealTimeEvents\RealTimeEventUnknown.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,26 +18,20 @@ namespace SerialPortSlice
         private static SerialPortService iam = null;
         private Thread serviceThread = null;
         private Dictionary<String, Receiver> receivers = new Dictionary<String, Receiver>();
-        private Dispatcher d = new Dispatcher();
+        private Dispatcher dispatcher = new Dispatcher();
 
         private int serviceTime = 0;
 
         private SerialPortService()
         {
+               
         }
     
         public static SerialPortService getServicer() 
         {
             if (iam == null)
             {
-                try
-                {
                     iam = new SerialPortService();
-                }
-                catch (Exception e)
-                {
-                    throw e;
-                }
             }
             System.Diagnostics.Debug.Assert(iam != null);
             return iam;
@@ -49,10 +43,12 @@ namespace SerialPortSlice
             {
                 serviceThread = new Thread(new ThreadStart(this.serialPortsService));
             }
+            dispatcher.enqueueEvent(new RealTimeEvents.ServerStartUp());
         }
 
         public void stop()
         {
+            dispatcher.enqueueEvent(new RealTimeEvents.ServerStop());
             if (serviceThread != null && serviceThread.IsAlive)
             {
                 int waitTimeForShutdown = receivers.Count;
@@ -70,6 +66,7 @@ namespace SerialPortSlice
                 serviceThread.Abort();
                 serviceThread = null;
             }
+            dispatcher.enqueueEvent(new RealTimeEvents.ServerStopped());
         }
 
         private void serialPortsService()
@@ -85,7 +82,7 @@ namespace SerialPortSlice
                         SerialPort availableCOMPort = new SerialPort(c, 9600);
                         try
                         {
-                            Receiver r = new Receiver(availableCOMPort, c, d);
+                            Receiver r = new Receiver(availableCOMPort, c, dispatcher);
                             receivers.Add(c, r);
                         }
                         catch (ReceiverExceptions e)
@@ -101,12 +98,13 @@ namespace SerialPortSlice
                 {
                     if (Array.IndexOf(SerialPort.GetPortNames(), r) == -1)
                     {
-                        receivers.Remove(r);
+                        
                         Receiver tbr;
                         if (receivers.TryGetValue(r, out tbr))
                         {
-    //                        d.enque((new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, tbr)));
+                            dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(tbr));
                         }
+                        receivers.Remove(r);
                     }
                 }
 
@@ -117,7 +115,7 @@ namespace SerialPortSlice
                     if (r.TTL <= 0)
                     {
                         receivers.Remove(r.portName);
-     //                   d.enque(new RealTimeEvents.SerialPortEvent(RealTimeEventType.DEL_RECEIVER, r));
+                        dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(r));
                     }
                 }
                 Thread.Sleep(serviceTime);

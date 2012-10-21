@@ -1,0 +1,7 @@
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.dll
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.pdb
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\bin\Debug\EventSlice.dll
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\bin\Debug\EventSlice.pdb
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.dll
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.pdb
