@@ -22,7 +22,7 @@ namespace ReceiverSlice.RealTimeEvents
     public class UnparsedMessage : RealTimeEvent
     {
         private Receiver receiver;
-        private String unparsedMessage;
+        public String unparsedMessage { get; private set; }
 
         public UnparsedMessage(Receiver receiver, String unparsedMessage)
             : base(unparsedMessage + " from receiver on " + receiver.portName)
@@ -30,6 +30,7 @@ namespace ReceiverSlice.RealTimeEvents
             this.receiver = receiver;
             this.unparsedMessage = unparsedMessage;
         }
+
     }
 
     public class DelReceiver : RealTimeEvent

@@ -87,10 +87,10 @@ namespace Decoder
                     case messageTypes.UNKNOWN:
                         return decodeUnknownEvent(message);
                     default:
-                        throw new InvalidCommandException("Critical decoding error.");
+                        throw new Exception("Critical decoding error.");
                 }   
             }
-            catch (InvalidCommandException e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return null;
@@ -134,7 +134,7 @@ namespace Decoder
             tSerial = Regex.Match(detectionMessage, transmitterSerial).Value;
             data = Regex.Match(detectionMessage, tSerial + ',' + detectionData).Value.Substring(tSerial.Length+1);
 
-            return new RealTimeEvents.RealTimeEventDetection(RealTimeEventType.DETECTION_EVENT, rSerial, dCounter, tstamp, tSerial, data);
+            return new RealTimeEvents.RealTimeEventDetection(rSerial, dCounter, tstamp, tSerial, data);
         }
 
         private RealTimeEvents.RealTimeEventStatus decodeStatusEvent(string statusMessage)
@@ -154,7 +154,7 @@ namespace Decoder
             double Y_Value = double.Parse(XYZ_Values[1]);
             double Z_Value = double.Parse(XYZ_Values[2]);
 
-            return new RealTimeEvents.RealTimeEventStatus(RealTimeEventType.STATUS_EVENT, DC_Value, PC_Value, LV_Value, BV_Value, BU_Value, I_Value, T_Value, DU_Value, RU_Value, X_Value, Y_Value, Z_Value);
+            return new RealTimeEvents.RealTimeEventStatus(DC_Value, PC_Value, LV_Value, BV_Value, BU_Value, I_Value, T_Value, DU_Value, RU_Value, X_Value, Y_Value, Z_Value);
         }
 
         private RealTimeEvents.RealTimeEventGeneric decodeGenericEvent(string genericMessage)
@@ -168,7 +168,7 @@ namespace Decoder
             else
                 returnStatus = 2;
 
-            return new RealTimeEvents.RealTimeEventGeneric(RealTimeEventType.GENERIC_EVENT, returnStatus);
+            return new RealTimeEvents.RealTimeEventGeneric(returnStatus);
         }
 
         private RealTimeEvents.RealTimeEventRTMInfo decodeRTMInfoEvent(string RTMInfoMessage)
@@ -180,7 +180,7 @@ namespace Decoder
             string MA_Value = Regex.Match(RTMInfoMessage, MA).Value.Substring(3);
             string FMT_Value = Regex.Match(RTMInfoMessage, FMT).Value.Substring(4);
 
-            return new RealTimeEvents.RealTimeEventRTMInfo(RealTimeEventType.RTMINFO_EVENT, RTM_Mode, SI_Value, BL_Value, BI_Value, MA_Value, FMT_Value);
+            return new RealTimeEvents.RealTimeEventRTMInfo(RTM_Mode, SI_Value, BL_Value, BI_Value, MA_Value, FMT_Value);
         }
 
         private RealTimeEvents.RealTimeEventInfo decodeInfoEvent(string infoMessage)
@@ -192,17 +192,21 @@ namespace Decoder
             string FW = Regex.Match(infoMessage, firmwareVersion).Value.Substring(3);
             string HW = Regex.Match(infoMessage, hardwareVersion).Value.Substring(3);
 
-            return new RealTimeEvents.RealTimeEventInfo(RealTimeEventType.INFO_EVENT, serial, sName, Map, Codespace, FW, HW);
+            return new RealTimeEvents.RealTimeEventInfo(serial, sName, Map, Codespace, FW, HW);
         }
 
         private RealTimeEvents.RealTimeEventUnknown decodeUnknownEvent(string unknownMessage)
         {
-            return new RealTimeEvents.RealTimeEventUnknown(RealTimeEventType.UNKNOWN_EVENT, unknownMessage);
+            return new RealTimeEvents.RealTimeEventUnknown(unknownMessage);
         }
 
+        public void onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent rte)
+        {
+            
+        }
         public void onRealTimeEvent(ReceiverSlice.RealTimeEvents.UnparsedMessage unparsedMessage)
         {
-            //do magic here
+            Decode(unparsedMessage.unparsedMessage);
         }
     }
 }

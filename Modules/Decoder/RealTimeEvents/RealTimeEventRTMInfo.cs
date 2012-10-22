@@ -17,8 +17,8 @@ namespace Decoder.RealTimeEvents
         public string MA { get; private set; } //max age filter in seconds, U for unfiltered
         public string FMT { get; private set; } //format options: SER = serial number, SEQ = sequence number, UTC = ASCII universal time, LCL = ASCII local time, DEC_UTC = decimal universal time, DEC_LCL = decimal local time, CS = checksum
 
-        public RealTimeEventRTMInfo(RealTimeEventType type, string RTMMode, string SI, string BL, string BI, string MA, string FMT)
-            : base(type)
+        public RealTimeEventRTMInfo(string RTMMode, string SI, string BL, string BI, string MA, string FMT)
+            : base("RTM INFO Mode" + RTMMode + " SI: " + SI + " BL: " + BL + " BI: " + BI + " MA: " + MA + " FMT: " + FMT)
         {
             this.RTMMode = RTMMode;
             this.SI = SI;

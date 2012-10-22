@@ -11,8 +11,8 @@ namespace Decoder.RealTimeEvents
     {
         public int returnStatus { get; private set; } //0 = "OK" 1 = "FAILURE" 2 = "INVALID"
 
-        public RealTimeEventGeneric(RealTimeEventType type, int returnStatus)
-            : base(type)
+        public RealTimeEventGeneric(int returnStatus)
+            : base("Return Status: " + returnStatus)
         {
             this.returnStatus = returnStatus;
         }

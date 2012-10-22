@@ -11,8 +11,8 @@ namespace Decoder.RealTimeEvents
     {
         public string unknownMessage { get; private set; }
 
-        public RealTimeEventUnknown(RealTimeEventType type, string message)
-            : base(type)
+        public RealTimeEventUnknown(string message)
+            : base(message)
         {
             unknownMessage = message;
         }

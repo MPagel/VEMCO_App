@@ -16,8 +16,9 @@ namespace Decoder.RealTimeEvents
         public string firmwareVersion { get; private set; }
         public string hardwareVersion { get; private set; }
 
-        public RealTimeEventInfo(RealTimeEventType type, string serial, string studyName, string map, string codespace, string firmwareVersion, string hardwareVersion)
-            : base(type)
+        public RealTimeEventInfo(string serial, string studyName, string map, string codespace, string firmwareVersion, string hardwareVersion)
+            : base("RealTimeEvent Info - Serial: " + serial + " studyName: " + studyName + " map: " + map + " codespace: " +
+                    codespace + "  firmwareVersion: " + firmwareVersion + " hardwareVersion: " + hardwareVersion)
         {
             this.serial = serial;
             this.studyName = studyName;

@@ -18,8 +18,9 @@ namespace Decoder.RealTimeEvents
         public string data { get; private set; }
 
         //receiverSerial + ',' + detectionCounter + ',' + timestamp + ',' + transmitterSerial + ',' + detectionData + hexSum
-        public RealTimeEventDetection(RealTimeEventType type, string receiverSerial, string detectionCounter, DateTime timestamp, string transmitterSerial, string data)
-            : base(type)
+        public RealTimeEventDetection(string receiverSerial, string detectionCounter, DateTime timestamp, string transmitterSerial, string data)
+            : base("RealTimeEventDetection receiverSerial: " + receiverSerial + " detectionCounter: " + detectionCounter
+                    + " time stamp: " + timestamp + " transmitterSerial: " + transmitterSerial + " data: " + data)
         {
             this.receiverSerial = receiverSerial;
             this.detectionCounter = detectionCounter;

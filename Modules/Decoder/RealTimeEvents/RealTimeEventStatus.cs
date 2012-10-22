@@ -22,8 +22,9 @@ namespace Decoder.RealTimeEvents
         public double Y { get; private set; } //Y-tilt
         public double Z { get; private set; } //Z-tilt
 
-        public RealTimeEventStatus(RealTimeEventType type, int DC, int PC, double LV, double BV, double BU, double I, double T, double DU, double RU, double X, double Y, double Z)
-            : base(type)
+        public RealTimeEventStatus(int DC, int PC, double LV, double BV, double BU, double I, double T, double DU, double RU, double X, double Y, double Z)
+            : base("Real Time Event Status DC: " + DC + " PC: " + PC + " LV: " + LV + " BV: " + BV + " BU: " + BU + " I: " + I +
+                    " T: " + T + " DU: " + DU + " RU: " + RU + " X: " + X + " Y: " + Y + " Z: " + Z)
         {
             this.DC = DC;
             this.PC = PC;
