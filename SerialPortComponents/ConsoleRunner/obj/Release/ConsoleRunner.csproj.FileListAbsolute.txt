@@ -6,3 +6,7 @@
 \\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\obj\Release\ConsoleRunner.csprojResolveAssemblyReference.cache
 \\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\obj\Release\ConsoleRunner.exe
 \\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\obj\Release\ConsoleRunner.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\bin\Release\EventSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\bin\Release\Receiver.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\bin\Release\EventSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\ConsoleRunner\bin\Release\Receiver.pdb

@@ -15,7 +15,7 @@ namespace EventSlice.Interfaces
             this.message = message;
         }
 
-        public string toString()
+        public override string ToString()
         {
             return message;
         }

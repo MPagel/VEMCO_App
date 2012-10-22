@@ -36,10 +36,23 @@ namespace ReceiverSlice.RealTimeEvents
     {
         Receiver receiver;
         public DelReceiver(Receiver receiver)
-            : base("Receiver on " + receiver.portName)
+            : base("Receiver on " + receiver.portName + " removed.")
         {
             this.receiver = receiver;
         }
 
+    }
+
+    public class ExcepReceiver : RealTimeEvent
+    {
+        Receiver receiver;
+        Boolean fatal;
+
+        public ExcepReceiver(Receiver receiver, Boolean fatal)
+            : base("Receiver o " + receiver.portName + " entered exceptional condition. Fatal: " + fatal)
+        {
+            this.receiver = receiver;
+            this.fatal = fatal;
+        }
     }
 }

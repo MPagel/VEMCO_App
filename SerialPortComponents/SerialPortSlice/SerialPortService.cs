@@ -39,10 +39,13 @@ namespace SerialPortSlice
 
         public void run()
         {
-            if (serviceThread != null)
+            if (serviceThread == null)
             {
                 serviceThread = new Thread(new ThreadStart(this.serialPortsService));
             }
+            serviceThread.Start();
+            while (!serviceThread.IsAlive);
+            dispatcher.run();
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStartUp());
         }
 
@@ -67,6 +70,7 @@ namespace SerialPortSlice
                 serviceThread = null;
             }
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStopped());
+            dispatcher.stop();
         }
 
         private void serialPortsService()

@@ -4,3 +4,4 @@
 \\VBOXSVR\src\cecs491\Modules\ConsoleLogger\bin\Release\EventSlice.pdb
 \\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Release\ConsoleLogger.dll
 \\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Release\ConsoleLogger.pdb
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Release\ConsoleLogger.csprojResolveAssemblyReference.cache

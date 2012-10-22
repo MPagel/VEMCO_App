@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
+using System.Reflection;
 
 namespace EventSlice
 {
     public class Dispatcher
     {
-        private const String MODULES_PATH = " 
+        private const String MODULES_PATH = "modules"; 
         private int busyWaitTime = 0;
         private Thread serviceThread = null;
         private ConcurrentQueue<Interfaces.RealTimeEvent> realTimeEventQueue = new ConcurrentQueue<Interfaces.RealTimeEvent>();
@@ -18,7 +20,43 @@ namespace EventSlice
         
         public Dispatcher()
         {
+            foreach (string filename in System.IO.Directory.GetFiles(MODULES_PATH))
+            {
+                if(filename.Contains(".dll") || filename.Contains(".DLL"))
+                {
+                    Assembly DLL = Assembly.LoadFrom(filename);
+                    string className = filename.Substring(filename.IndexOf('\\')+1, filename.IndexOf('.')-filename.IndexOf('\\')-1);
+                    Type classType = DLL.GetType(String.Format("{0}.{0}",className));
+                    try
+                    {
+                        modules.Add(((Interfaces.Module)Activator.CreateInstance(classType)));
+                    }
+                    catch(Exception e)
+                    {
+                        
+                    }
+                }
+            }
+            //if (File.Exists(MODULES_PATH))
+            //{
+            //    // Execute the method from the requested .dll using reflection (System.Reflection).
+            //    Assembly DLL = Assembly.LoadFrom(MODULES_PATH);
+            //    Type classType = DLL.GetType(String.Format("{0}.{1}", strNmSpaceNm, strClassNm));
+            //    if (classType != null)
+            //    {
+            //        // Create class instance.
+            //        classInst = Activator.CreateInstance(classType);
 
+            //        // Invoke required method.
+            //        MethodInfo methodInfo = classType.GetMethod(strMethodName);
+            //        if (methodInfo != null)
+            //        {
+            //            object result = null;
+            //            result = methodInfo.Invoke(classInst, new object[] { dllParams });
+            //            return result.ToString();
+            //        }
+            //    }
+            //}
         }
 
         public void addModule(Interfaces.Module module)
@@ -60,7 +98,9 @@ namespace EventSlice
         public void run()
         {
             busyWaitTime = 1000;
-            serviceThread = new Thread(new ThreadStart(service));
+            serviceThread = new Thread(new ThreadStart(this.service));
+            serviceThread.Start();
+            while (!serviceThread.IsAlive);
         }
         public void stop()
         {

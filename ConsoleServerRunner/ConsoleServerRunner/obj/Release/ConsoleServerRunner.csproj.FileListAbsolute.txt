@@ -1,0 +1,14 @@
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\ConsoleServerRunner.exe.config
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\ConsoleServerRunner.exe
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\ConsoleServerRunner.pdb
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\EventSlice.dll
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\FridayThe13th.dll
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Receiver.dll
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\SerialPortSlice.dll
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\EventSlice.pdb
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\FridayThe13th.pdb
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Receiver.pdb
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\SerialPortSlice.pdb
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.exe
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.pdb

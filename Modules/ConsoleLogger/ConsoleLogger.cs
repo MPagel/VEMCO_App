@@ -11,7 +11,7 @@ namespace ConsoleLogger
     {
         public void onRealTimeEvent(RealTimeEvent rte)
         {
-            System.Console.WriteLine(rte);
+            System.Console.WriteLine("(event) " + rte);
         }
         
     }

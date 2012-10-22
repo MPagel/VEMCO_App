@@ -23,7 +23,7 @@ namespace ReceiverSlice
         private const int DEFAULT_TTL = 10;
         private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
         private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
-        private const string VR2C_COMMAND_FOLDER = "vr2c_commands";
+        private const string VR2C_COMMAND_FOLDER = "config";
 
         private Dispatcher dispatcher { get; set; }
         private SerialPort serialPort { get; set; }
@@ -41,10 +41,12 @@ namespace ReceiverSlice
             this.portName = portName;
             this.dispatcher = dispatcher;
 
+            serialPort.Open();
             int fw_ver = INFO();
             if (fw_ver < 0)
             {
                 serialPort.Close();
+                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(this, true));
                 throw new ReceiverExceptions("INFO command failed to return firmware version.", true);
             }
 
@@ -66,6 +68,7 @@ namespace ReceiverSlice
             if (fw_use < 0 || receiverConfig == null)
             {
                 serialPort.Close();
+                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(this, true));
                 throw new ReceiverExceptions("Valid json config not found for receiver firmware.", true);
             }
 

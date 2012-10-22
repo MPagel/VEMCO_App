@@ -16,6 +16,7 @@ namespace ConsoleServerRunner
             s.run();
             Thread.Sleep(10000);
             s.stop();
+            Console.ReadLine();
 
         }
     }
