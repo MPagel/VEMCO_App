@@ -14,7 +14,7 @@ namespace ConsoleServerRunner
         {
             SerialPortService s = SerialPortService.getServicer();
             s.run();
-            Thread.Sleep(10000);
+            while (true) ;
             s.stop();
             Console.ReadLine();
 

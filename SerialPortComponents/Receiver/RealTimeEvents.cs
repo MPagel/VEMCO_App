@@ -56,4 +56,15 @@ namespace ReceiverSlice.RealTimeEvents
             this.fatal = fatal;
         }
     }
+
+    public class NoteReceiver : RealTimeEvent
+    {
+        Receiver receiver;
+
+        public NoteReceiver(Receiver receiver, String text)
+            : base("(" + receiver.portName + ")" + text)
+        {
+            this.receiver = receiver;
+        }
+    }
 }

@@ -12,3 +12,15 @@
 \\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.csprojResolveAssemblyReference.cache
 \\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.exe
 \\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.pdb
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\ConsoleServerRunner.exe.config
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.exe
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.pdb
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\ConsoleServerRunner.exe
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\ConsoleServerRunner.pdb
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\EventSlice.pdb
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\SerialPortSlice.pdb
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.csprojResolveAssemblyReference.cache
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\EventSlice.dll
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Receiver.dll
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\SerialPortSlice.dll
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Receiver.pdb

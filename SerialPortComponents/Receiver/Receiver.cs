@@ -32,6 +32,9 @@ namespace ReceiverSlice
         private string commandPreamble { get; set; }
         private TextReader textReader { get; set; }
         private int goState = 1;
+        private static char[] crlf = new char[2] { '\x0D', '\x0A' };
+        private static char[] lfcr = new char[2] { '\x0A', '\x0D' };
+        private static string crlf_string = new string(crlf);
 
         public Receiver(SerialPort serialPort, String portName, Dispatcher dispatcher)
         {
@@ -43,37 +46,46 @@ namespace ReceiverSlice
 
             serialPort.Open();
             int fw_ver = INFO();
-            if (fw_ver < 0)
-            {
-                serialPort.Close();
-                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(this, true));
-                throw new ReceiverExceptions("INFO command failed to return firmware version.", true);
-            }
+            //if (fw_ver < 0)
+            //{
+            //    serialPort.Close();
+            //    dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(this, true));
+            //    throw new ReceiverExceptions("INFO command failed to return firmware version.", true);
+            //}
 
-            int fw_use = -1;
-            var jsonParser = new JsonParser() { CamelizeProperties = false };
+            //int fw_use = -1;
+            //var jsonParser = new JsonParser() { CamelizeProperties = false };
 
-            foreach (string filename in System.IO.Directory.GetFiles(VR2C_COMMAND_FOLDER))
-            {
+            //foreach (string filename in System.IO.Directory.GetFiles(VR2C_COMMAND_FOLDER))
+            //{
 
-                string text = System.IO.File.ReadAllText(filename);
-                dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
+            //    string text = System.IO.File.ReadAllText(filename);
+            //    dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
 
-                if (config.FwVersion >= fw_use && config.FwVersion <= fw_ver)
-                {
-                    fw_use = (Int32)config.FwVersion;
-                    receiverConfig = config;
-                }
-            }
-            if (fw_use < 0 || receiverConfig == null)
-            {
-                serialPort.Close();
-                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(this, true));
-                throw new ReceiverExceptions("Valid json config not found for receiver firmware.", true);
-            }
+            //    if (config.FwVersion >= fw_use && config.FwVersion <= fw_ver)
+            //    {
+            //        fw_use = (Int32)config.FwVersion;
+            //        receiverConfig = config;
+            //    }
+            //}
+            //if (fw_use < 0 || receiverConfig == null)
+            //{
+            //    serialPort.Close();
+            //    dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(this, true));
+            //    throw new ReceiverExceptions("Valid json config not found for receiver firmware.", true);
+            //}
 
             this.textReader = new StreamReader(serialPort.BaseStream, serialPort.Encoding);
-
+            serialPort.Write(crlf, 0, 2);
+            serialPort.Write("*450052.0#16,RTMPROFILE=0");
+            serialPort.Write(crlf, 0, 2);
+            serialPort.Write("*450052.0#16,START");
+            serialPort.Write(crlf, 0, 2);
+            Thread.Sleep(500);
+            if (serialPort.BytesToRead > 0)
+            {
+                dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this,"Read: " + serialPort.ReadExisting()));
+            }
             readHandler();
 
             dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this));
@@ -81,26 +93,39 @@ namespace ReceiverSlice
 
         public int INFO()
         {
-            serialPort.Write(commandPreamble + "INFO" + "\n");
-            string infoReturns = serialPort.ReadLine();
-            if (infoReturns != "")
-            {
-                
-                int fw_start = infoReturns.IndexOf("FW=");
-                int fw_end = infoReturns.IndexOf(",", fw_start);
-                string fw_ver = infoReturns.Substring((fw_start + 3), (fw_end - fw_start - 3));
-                int fw_ver_firstperiod = fw_ver.IndexOf(".");
-                int fw_ver_secondperiod = fw_ver.IndexOf(".", fw_ver_firstperiod + 1);
-                string major = fw_ver.Substring(0, fw_ver_firstperiod);
-                string minor = fw_ver.Substring(fw_ver_firstperiod + 1, (fw_ver_secondperiod - fw_ver_firstperiod - 1));
-                string release = fw_ver.Substring(fw_ver_secondperiod + 1, (fw_ver.Length - fw_ver_secondperiod - 1));
-                return (Int32.Parse(major) * 10000) + (Int32.Parse(minor) * 100) + (Int32.Parse(release));
-            }
-            else
-            {
-                return -1;
-            }
 
+
+            serialPort.Write(crlf, 0, 2);
+ //           serialPort.Write("....................");
+            serialPort.Write("*450052.0#16,INFO");
+            serialPort.Write(crlf, 0, 2);
+ 
+            //serialPort.Write("\r");
+            //Thread.Sleep(100);
+            //serialPort.Write("\n");
+            //Thread.Sleep(100);
+            while (serialPort.BytesToRead <= 0) ;
+            string infoReturns = serialPort.ReadExisting();
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "Read: " + infoReturns));
+            //string infoReturns = serialPort.ReadLine();
+            //if (infoReturns != "")
+            //{
+                
+            //    int fw_start = infoReturns.IndexOf("FW=");
+            //    int fw_end = infoReturns.IndexOf(",", fw_start);
+            //    string fw_ver = infoReturns.Substring((fw_start + 3), (fw_end - fw_start - 3));
+            //    int fw_ver_firstperiod = fw_ver.IndexOf(".");
+            //    int fw_ver_secondperiod = fw_ver.IndexOf(".", fw_ver_firstperiod + 1);
+            //    string major = fw_ver.Substring(0, fw_ver_firstperiod);
+            //    string minor = fw_ver.Substring(fw_ver_firstperiod + 1, (fw_ver_secondperiod - fw_ver_firstperiod - 1));
+            //    string release = fw_ver.Substring(fw_ver_secondperiod + 1, (fw_ver.Length - fw_ver_secondperiod - 1));
+            //    return (Int32.Parse(major) * 10000) + (Int32.Parse(minor) * 100) + (Int32.Parse(release));
+            //}
+            //else
+            //{
+            //    return -1;
+            //}
+            return 1;
         }
 
         public void shutdown()
@@ -127,7 +152,7 @@ namespace ReceiverSlice
             {
                 var ret = string.Empty;
                 var buffer = new char[1]; // Not the most efficient...
-                while (!ret.Contains('\n'))
+                while (!ret.Contains(crlf_string))
                 {
                     var charsRead = await textReader.ReadAsync(buffer, 0, 1);
                     if (charsRead == 0)

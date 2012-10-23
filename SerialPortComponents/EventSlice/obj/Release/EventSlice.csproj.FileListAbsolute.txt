@@ -6,3 +6,7 @@ F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.pdb
 \\VBOXSVR\src\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.pdb
 \\VBOXSVR\src\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll
 \\VBOXSVR\src\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.pdb
+C:\Users\Derek\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll
+C:\Users\Derek\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.pdb
+C:\Users\Derek\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll
+C:\Users\Derek\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.pdb
