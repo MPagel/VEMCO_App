@@ -1,0 +1,533 @@
+.rt01{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000066;
+}
+.rt01w{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	list-style-image: url(../images/bullet_White.gif);
+}
+.rt02w{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+.rt02 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+/*	color: #000066;*/
+	line-height: 17px;
+}
+
+/* fieldset { -moz-border-radius: 8px; }*/
+
+fieldset {
+    padding: 10px;    
+    
+}
+
+legend { 
+    font-weight: bold;
+    
+    /* keep below in sync with rt02 */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+/*	color: #000066;*/
+/*	line-height: 17px;*/
+}
+
+.rt03 {
+	font-family: verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000066;
+	line-height: 15px;
+}
+
+h1.page_heading {
+	font-weight: bold; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+}
+h2.small_heading  {
+ 	font-family: verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000066;
+	line-height: 15px; 
+}
+h3.light_heading { 
+	color: #000066; 
+	font-style: italic; 
+	font-weight: normal; 
+	font-size: 8pt; 
+	line-height: 15px; 
+	font-family: verdana, Arial, Helvetica, sans-serif 
+}
+em.plain_em  { 
+	font-style: normal; 
+}
+
+
+.rt01w a:link {color:#FFFFFF; text-decoration:none;} 
+.rt01w a:visited {color:#FFFFFF; text-decoration:none;} 
+.rt01w a:hover {color:#FFCC33; text-decoration:none;}
+
+
+/*a:link { text-decoration:underline; color:#0000CC;} 
+a:visited {text-decoration:underline; color: #0000CC;} 
+ a:hover {text-decoration:none; color:#0000CC}*/ 
+
+/* Fix link appearance? */
+/*a:link {  text-decoration:none; color:#1c2cb0;} 
+a:visited { text-decoration:none; color: #1c2cb0;}
+a:hover { text-decoration:underline; color: #1c2cb0;}*/
+
+a:link {  text-decoration:none; color:#0000CC;} 
+a:visited { text-decoration:none; color: #0000CC;}
+a:hover { text-decoration:underline; color: #0000CC;}
+
+
+a.a01:link {color:#FFCC33; text-decoration:none;} 
+a.a01:visited {color:#FFCC33; text-decoration:none;} 
+a.a01:hover {color:#FFFFFF; text-decoration:none;}
+
+a.a02:link {color:#FFFFFF; text-decoration:underline;} 
+a.a02:visited {color:#FFFFFF; text-decoration:underline;} 
+a.a02:hover {color:#FFCC33; text-decoration:none;}
+
+
+a.productID:link {color:#0000CC; text-decoration:underline;} 
+a.productID:visited {color: #0000CC; text-decoration:none;} 
+a.productID:hover {color:#000066; text-decoration:none;}
+
+a.redlink:link {color:#FF0000; text-decoration:underline;} 
+a.redlink:visited {color: #FF0000; text-decoration:underline;} 
+a.redlink:hover {color:#000066; text-decoration:none;}
+
+A.sublink:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 100%; COLOR: #0033CC; TEXT-DECORATION: none
+}
+A.sublink:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 100%; COLOR: #0033CC; TEXT-DECORATION: none
+}
+A.sublink:hover {
+	BACKGROUND: #FFCC00; COLOR: #000066; TEXT-DECORATION: none
+}
+
+.comments {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #003399;
+
+}
+.formbut {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #333333;
+	padding: 1px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+.textbox 
+{  	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	height: 20px;
+	color: #003399;	
+	width: 230px;
+
+}
+.textbox02 
+{  	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	height: 20px;
+	color: #003399;	
+}
+.selectbt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+body
+{
+	background-image: url(../../images/background.gif);
+	margin: 0px 0px
+}
+ul
+{
+list-style-image: url(../../images/bullet.gif)
+}
+
+a.c6 {
+	color: #333333; font-family: Arial; font-size: 64%; text-decoration: none
+}
+span.c5 {
+	font-size: 10px; font-family: Arial, Helvetica, sans-serif
+}
+span.c4 {
+	color: #56A145
+}
+span.c3 {
+	color: #475780
+}
+strong.c2 {
+	color: #FF0000
+}
+p.c1 {
+	text-align: center
+}
+.top_bk {
+	background-image: url(../images/top_bk.gif);
+}
+.nav_bk {
+	background-image: url(../images/nav_bk.gif);
+}
+.nav_bk_old {
+	background-image: url(../images/nav_bk_old.gif);
+}
+.tl_bk {
+	background-image: url(../images/tlbk.gif);
+}
+.ln_bk {
+	background-image: url(../images/ln.gif);
+}
+.in_sd_bk {
+	background-image: url(../images/in_sd.gif);
+}
+.sd_bk {
+	background-image: url(../images/sdbk.gif);
+}
+.bt_bk {
+	background-image: url(../images/btbk.gif);
+}
+.search_bk {
+	background-image: url(../images/searchbk.gif);
+}
+.main_div_bk {
+	background-image: url(../images/main_div.gif);
+}
+.sdbkOpen_bk {
+	background-image: url(../images/sdbk0pen.gif);
+}
+.table_dashed {
+
+border-style: dashed; border-width: 1; border-color: #FFffff;
+}
+.fm_bk {
+	background-image: url(../images/fmbk.gif);
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}
+.hidelayer {	
+		display: none;
+}
+.showlayer {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}
+#popup {
+	position:absolute;
+	left:375px;
+	top:200px;
+	width:300px;
+	z-index:1;
+	background-color: #000066;
+}
+.hide_fb {
+	display: none;
+}
+.show_fb {
+	display: list-item;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}
+.hide_ssc {
+	display: none;
+}
+.show_ssc {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}
+.hide_ip {
+	display: none;
+}
+.show_ip {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}
+.hide_sec {
+	display: none;
+}
+.show_sec {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}
+.hide_poe {
+	display: none;
+}
+.show_poe {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}
+.hide_wa {
+	display: none;
+}
+.show_wa {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000066;
+	line-height: 17px;
+	list-style-image: url(../images/bullet.gif)}	
+.line {
+      line-height:normal;
+         
+		  border:1px solid #CCCCCC;
+      }
+      
+/* -------------- */      
+.error_field {
+    border-color: #DC0000;
+    border-style: solid;
+/*    background-color: #FDDCDC; */
+/*    font-weight: bold; */
+}      
+
+/* body {
+     background-color: #eaedef; 
+} */
+
+/*body > table
+{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}*/
+
+.main_table
+{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+input.numerical {text-align:right;}
+
+.disabled_text { }
+
+.hidden { display:none }
+.bold { font-weight:bold }
+      
+
+/* YUI overrides (place these in separate file?) */
+/* .yui-panel .hd { background-color: #696969; } */
+
+/* This is the default yui color, but want to spell it out explicitly here */
+.yui-panel .hd { background-color: #3d77cb; } 
+
+.yui-panel     { background-color: #eaedef; }
+/*.yui-panel .bd { padding: 5px }*/
+
+#tabContainer, .tabContainer { margin-top:10px;margin-left:5px;margin-right:5px }
+#tabView .loading {
+    background-image:url(../images/yui/loading.gif);
+    background-position:center center;
+    background-repeat:no-repeat;
+}
+
+#tabView .loading * {
+    display:none;
+}
+#tabView .yui-content {
+    padding:5px 10px 5px 10px;
+    min-height:330px;
+    *height:330px; /* IE6/7 quirks *hack* */
+}
+
+/* custom css*/
+.yuiTableContainer .yui-dt-scrollable  thead, 
+.yuiTableContainer_nohover .yui-dt-scrollable  thead
+{
+    /*background:#696969;*/ /* for ie */
+    background-color:#3d77cb;
+}
+
+.yuiTableContainer, 
+.yuiTableContainer_nohover {/*margin:10px;*/ margin-bottom:50px;}
+/* #hostTableContainer table {border-collapse:collapse; padding:2px;} */
+ .yuiTableContainer table,
+ .yuiTableContainer_nohover table {border:1px solid black;}
+/*#hostTableContainer td { padding:2px;} */
+.yuiTableContainer th, 
+.yuiTableContainer td,
+.yuiTableContainer_nohover th, 
+.yuiTableContainer_nohover td
+{
+    /* border:1px solid #000;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+.yuiTableContainer th,
+.yuiTableContainer_nohover th
+    {background-color:/* #696969  */ #3d77cb; color:#fff;}/*dark gray*/
+    
+.yuiTableContainer a:link,
+.yuiTableContainer a:visited,
+.yuiTableContainer_nohover a:hover, 
+.yuiTableContainer_nohover a:link,
+.yuiTableContainer_nohover a:visited,
+.yuiTableContainer_nohover a:hover
+    {color:#fff; }
+    
+.yuiTableContainer .yui-dt-odd,
+.yuiTableContainer_nohover .yui-dt-odd {background-color:/* #eee */ #fff;}
+
+.yuiTableContainer .yui-dt-selected,
+.yuiTableContainer_nohover .yui-dt-selected {background-color: #5479D2;}
+
+
+
+.yuiTableContainer table,
+.yuiTableContainer_nohover table
+{
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;    
+}
+
+.yuiTableContainer table td,
+.yuiTableContainer_nohover table td
+{
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+.yuiTableContainer tr:hover {background-color: #a6c2e7;}
+
+
+/* buttons - this matches YUI: .button-group button */
+button {
+	cursor: hand;
+	vertical-align: middle;
+/*	border: 2px solid #797979;
+	border-top-color:#FFF;
+	border-left-color:#FFF;*/
+	margin:2px;
+	padding:2px;
+    
+}
+
+button.default {
+	font-weight:bold;
+}
+
+
+/* STYLES FOR SHARED TABLES - (consider placing this in a different file) */
+
+
+
+    /* BEGIN IE Only hacks */
+
+    * #multihostTableContainer table thead tr td,
+    * #multihostTableContainer table thead tr th {
+        position:relative;
+        top:expression(document.getElementById("multihostTableContainer").scrollTop-2); 
+    }
+    
+    * #multihostTableContainer {	
+        /*overflow-x:hidden;
+        overflow-y: auto;*/
+        width:400px;                      
+    }
+    
+    /* END IE Only hacks */
+    
+    /* customized css for scrolling */
+    #multihostTableContainer .yui-dt-scrollable  {
+        width:400px; /* SET OVERALL WIDTH HERE for ie (make sure columns add up to this total) */
+        height:200px; /* SET HEIGHT HERE for ie */
+    }
+    #multihostTableContainer .yui-dt-scrollbody {
+        height:200px; /* SET HEIGHT HERE for non-ie */
+        *height:auto; /* for ie */
+    }
+    #multihostTableContainer 
+    {
+        height:230px;  /* Must set this height correctly for IE6/7 scrolling */
+        text-align:center
+        margin: 0 auto; 
+    }
+    
+    #multihostTableContainer  .col_host { width:250px; }
+    #multihostTableContainer  .col_tcp    { width:150px; }
+
+/* TODO: SSL */
+    
+    /* BEGIN IE Only hacks */
+
+/*    * #sslCiphersTableContainer table thead tr td,
+    * #sslCiphersTableContainer table thead tr th {
+        position:relative;
+        top:expression(document.getElementById("sslCiphersTableContainer").scrollTop-2); 
+    }*/
+    
+    * #sslCiphersTableContainer {	
+        /*overflow-x:hidden;
+        overflow-y: auto;*/
+        width:480px;                      
+    }
+    
+    /* END IE Only hacks */
+    
+    /* customized css for scrolling */
+    #sslCiphersTableContainer .yui-dt-scrollable  {
+        width:480px; /* SET OVERALL WIDTH HERE for ie (make sure columns add up to this total) */
+        height:140px; /* SET HEIGHT HERE for ie */
+    }
+    #sslCiphersTableContainer .yui-dt-scrollbody {
+        height:140px; /* SET HEIGHT HERE for non-ie */
+        *height:auto; /* for ie */
+    }
+    #sslCiphersTableContainer 
+    {
+        height:150px;  /* Must set this height correctly for IE6/7 scrolling */
+        text-align:center
+        margin: 0 auto; 
+    }
+    
+    #sslCiphersTableContainer  .col_encrypt { width:100px; }
+    #sslCiphersTableContainer  .col_key_min    { width:90px; }
+    #sslCiphersTableContainer  .col_key_max    { width:90px; }
+    #sslCiphersTableContainer  .col_key_exchange    { width:100px; }
+    #sslCiphersTableContainer  .col_key_hmac    { width:100px; }
+    
+    
+    
