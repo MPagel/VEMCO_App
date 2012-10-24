@@ -1,0 +1,169 @@
+=============================================================================
+         Perle TruePort Daemon and Driver for SCO UnixWare
+           Copyright (C) 2004-2008, Perle Systems Limited
+=============================================================================
+  Release           : 6.2.0
+  Date              : November 2008 
+  O/S Compatibility : SCO Unixware 7.x
+=============================================================================
+
+Introduction: 
+=============
+
+This is the readme belonging to the Trueport for UnixWare 7 software. 
+
+This software supports UnixWare 7. NOTE: SCO Open UNIX 8.0 is equivalent to
+UnixWare 7.1.2
+
+TruePort creates standard UNIX TTY's in the /dev/term/ directory. Each TTY is 
+connected to a unique TCP/IP port number on the device server. This port 
+number is used to uniquely identify the port and the connection to the UNIX 
+server computer.
+
+TruePort for Unixware is a TTY serial port emulation system for the Perle 
+device/terminal server families. TruePort provides a standard TTY interface to 
+application software which is achieved using the TruePort serial device driver.
+
+
+TruePort Full mode protocol will allow an application to take full control of the 
+remote serial port and use all functions available e.g. setting baud rates, flow
+control settings and raising and lowering modem pins etc.
+
+TruePort Lite Mode will allow an application to just transmit and receive data 
+to and from the port.  Any baud rates or flow control settings must be 
+configured on the terminal server before the application is started.
+
+TruePort supports the following Perle hardware in TruePort Full mode
+protocol:
+    - All IOLAN Family Models, including DS, TS, SDS, STS, SCS
+    - JetStream 8500, JetStream 4000
+    - LanStream 2000
+    - LinkStream 2000.
+
+It also supports IOLAN+ and other 3rd party multi-port terminal servers in Lite
+(raw) mode.
+
+NOTE: 	
+For TruePort Full Mode the JetStream 8500, JetStream 4000 and LanStream 2000 
+require firmware version 2.3.3 or later and the LinkStream 2000 requires 
+version 6.04 or later.
+
+
+Installation and Configuration:
+===============================
+
+Copy the supplied installable files onto the filesystem of the host computer, 
+we recommend /tmp.
+
+Before installation, make sure that you are logged in as the root user.
+
+Install the device drivers with the following commands:
+
+# cd /tmp
+# uncompress tpuw-<version>.pkg.Z
+# pkgadd -d /tmp/tpuw-<version>.pkg all
+
+You will be prompted to allow super user permissions. The files will be 
+installed and the device drivers will be loaded. You do not need to reboot.
+
+TruePort administrative files and utilities are installed in 
+the /etc/trueport directory.
+
+The standard installation installs 256 minor node devices (ports), however you 
+must enable these ports before they can be used. Each installed TTY is assigned 
+a name by the operating system; this will be in the range 0-255 if you have no 
+previous multi-port serial installation. You may link these names to your own 
+TTY names if you require.
+
+The standard installation creates device nodes /dev/term/tps/0 through 
+/dev/term/tps/255.  To enable a range of ports, we have provided a script 
+/etc/trueport/addports that starts the TruePort service. The "addports" command 
+edits the TruePort configuration files and starts the required daemons and 
+drivers.  
+
+Once the "addports" command has configured the system, TruePort will be started 
+automatically on each system reboot.
+
+Once the ports have been enabled, you may use them as standard UNIX serial TTY's.
+
+See the TruePort Unixware User Guide for more information on the use of this 
+script and other configuration utilities.
+
+
+Tuning your system
+==================
+
+System Processes:
+
+For both Full and Lite modes the system will require 1 process for each TruePort
+port, in addition to all other processes running including any
+services that use the ports. To check and change the maximum number of processes
+allowed, you can use the SCO Admin application or the idtune command.
+
+With SCO Admin, use the System Tuner application in the System section. The
+parameter is NPROC in the Process Limit Parameters group.
+
+To check the maximum processes using the idtune command use:
+#/etc/conf/bin/idtune -g NPROC
+The first number is the current setting. The last number is highest value that
+can be set.
+
+To set it, use the following commands:
+# /etc/conf/bin/idtune -c -f NPROC num
+# /etc/conf/bin/idbuild -K
+where num is the value to set. The system must be rebooted for the new value to
+take effect.
+
+
+Pseudo TTYs (ptys): 
+===================
+For Lite mode when a port is configured for Server mode, a pseudo TTY device is 
+needed for each TruePort port in addition to any pseudo ttys needed for other 
+purposes. To check the current number of ptys available, you can use the 
+SCO Admin application or the idtune command.
+
+With SCO Admin, use the System Tuner in the System section. The parameter is
+NUMREGPT in the Device Driver Parameters group.
+
+To check the number of ptys using the idtune command use 
+# /etc/conf/bin/idtune -g NUMREGPT
+The first number is the current setting. The last number is highest value that
+can be set.
+
+To set the number of pseudo TTYs supported, the nsu (Network Support Utilities)
+package, provided with the system, must be reinstalled. During installation of
+the package, you will be prompted for the number of pseudo TTYs to create. The
+system must be rebooted for the new value to take effect.
+
+
+
+Release History
+===============
+
+  Version     Description
+  -------    -----------
+   6.2.0      * Detection and support of running TruePort Full mode with no UDP 
+                protocol
+              * Resolve TCSBRK drain failure when openwaittime set to -1 
+   6.1.0      * Resolved serial driver incompatability issues.
+              * Added new configuration fields
+    6.0.0     * Added Client initiated mode which will initiate the TCP
+                connection from the TruePort host when the application opens
+                the TTY device.
+              * Added Client I/O Access which allows Modbus Serial ASCII/RTU 
+                applications or custom applications using the Perle I/O API 
+                to access I/O register from Perle IOLAN DS devices.
+              * Added Packet Forwarding feature which allows you to conntrol 
+                how UnixWare application data is packetized before it is sent 
+                over the network.
+              * Allow specifying of IP address or DNS name for server mode
+   5.1.0      * Maintenance release.
+   5.0.1      * Maintenance release.
+   5.0.0      * Added support for SSL connection
+                feature and hangup feature.
+              * The version number jumped from 2.10 to 5.0.0 so that all
+                versions of TruePort with SSL would be at the same level.
+   2.10       * Added -nopace option to increase performance when connecting a
+                telnet session directly to the TruePort daemon port.
+
+   2.0        * First release of TruePort for Unixware
