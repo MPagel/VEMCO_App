@@ -29,7 +29,7 @@ namespace ReceiverSlice
         private SerialPort serialPort { get; set; }
         private dynamic receiverConfig = null;
         private int firmwareVersion { get; set; }
-        private string commandPreamble { get; set; }
+        private String commandPreamble { get; set; }
         private TextReader textReader { get; set; }
         private int goState = 1;
         private static char[] crlf = new char[2] { '\x0D', '\x0A' };
@@ -94,19 +94,46 @@ namespace ReceiverSlice
         public int INFO()
         {
 
+            String discoveryReturns = "";
 
-            serialPort.Write(crlf, 0, 2);
+            //serialPort.Write(crlf, 0, 2);
+            //serialPort.Write(crlf, 0, 2);
  //           serialPort.Write("....................");
-            serialPort.Write("*450052.0#16,INFO");
-            serialPort.Write(crlf, 0, 2);
+            //serialPort.Write("*BROADC.A#ST,QUIT");
+            //serialPort.Write("*BROADC.A#ST,DISCOVERY");
+            
+            //serialPort.Write("*DISCOV.E#RY,DISCOVERY");
+ //           serialPort.Write("*DISCOV.E#RY,DISCOVERY");
+ //           serialPort.Write("*DISCOV.E#RY,DISCOVERY");
+ //           serialPort.Write("*450052.0#16,INFO");
+//            serialPort.Write(crlf, 0, 2);
  
             //serialPort.Write("\r");
             //Thread.Sleep(100);
             //serialPort.Write("\n");
             //Thread.Sleep(100);
-            while (serialPort.BytesToRead <= 0) ;
-            string infoReturns = serialPort.ReadExisting();
-            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "Read: " + infoReturns));
+            while (serialPort.BytesToRead <= 0)
+            {
+                serialPort.Write(crlf, 0, 2);
+                Thread.Sleep(100);
+                serialPort.Write("*BROADC.A#ST,QUIT");
+                serialPort.Write(crlf, 0, 2);
+                Thread.Sleep(100);
+                serialPort.Write("*BROADC.A#ST,DISCOVERY");
+                serialPort.Write(crlf, 0, 2);
+                Thread.Sleep(100);
+                serialPort.Write("*DISCOV.E#RY,DISCOVERY");
+                serialPort.Write(crlf, 0, 2);
+                Thread.Sleep(200);
+            }
+            while (serialPort.BytesToRead > 0)
+            {
+                discoveryReturns = serialPort.ReadExisting();
+            }
+            
+            commandPreamble = crlf + discoveryReturns.Substring(0, 12) + ",";
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) command preamble: " + discoveryReturns.Substring(0,12) + ","));
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) read: " + discoveryReturns));
             //string infoReturns = serialPort.ReadLine();
             //if (infoReturns != "")
             //{
@@ -152,14 +179,14 @@ namespace ReceiverSlice
             {
                 var ret = string.Empty;
                 var buffer = new char[1]; // Not the most efficient...
-                while (!ret.Contains(crlf_string))
+                while (!ret.Contains("\n") && (!ret.Contains("\r")))
                 {
                     var charsRead = await textReader.ReadAsync(buffer, 0, 1);
                     if (charsRead == 0)
                     {
                         throw new EndOfStreamException();
                     }
-                    ret += charsRead;
+                    ret += buffer[0];
                 }
                 dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(this, ret));
             }
