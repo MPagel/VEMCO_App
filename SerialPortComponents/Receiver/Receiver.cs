@@ -45,7 +45,7 @@ namespace ReceiverSlice
             this.dispatcher = dispatcher;
 
             serialPort.Open();
-            int fw_ver = INFO();
+            int fw_ver = discovery();
             //if (fw_ver < 0)
             //{
             //    serialPort.Close();
@@ -86,12 +86,12 @@ namespace ReceiverSlice
             {
                 dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this,"Read: " + serialPort.ReadExisting()));
             }
-            readHandler();
+            run();
 
             dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this));
         }
 
-        public int INFO()
+        public int discovery()
         {
 
             String discoveryReturns = "";
@@ -173,7 +173,8 @@ namespace ReceiverSlice
             serialPort.Close();
         }
 
-        public async Task readHandler()
+        
+        public async Task run()
         {
             while (goState > 0)
             {
@@ -188,7 +189,11 @@ namespace ReceiverSlice
                     }
                     ret += buffer[0];
                 }
-                dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(this, ret));
+
+                if (ret.Length > 1)
+                {
+                    dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(this, ret));
+                }
             }
             goState = -1;
         }
