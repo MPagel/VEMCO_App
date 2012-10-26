@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSlice", "EventSlice\Ev
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPortSlice", "SerialPortSlice\SerialPortSlice.csproj", "{0B974514-BAC1-4A83-86CD-061AC22688AA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D6D1A95-3DBF-4100-8774-61ACE65BF818}"
+	ProjectSection(SolutionItems) = preProject
+		..\ConsoleServerRunner\ConsoleServerRunner\bin\Release\config\0.txt = ..\ConsoleServerRunner\ConsoleServerRunner\bin\Release\config\0.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

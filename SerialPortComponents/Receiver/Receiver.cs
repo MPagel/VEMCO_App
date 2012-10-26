@@ -9,6 +9,8 @@ using System.Threading;
 
 using FridayThe13th;
 using EventSlice;
+using System.Runtime.CompilerServices;
+using System.Runtime.Remoting;
 
 
 namespace ReceiverSlice
@@ -29,13 +31,17 @@ namespace ReceiverSlice
         private SerialPort serialPort { get; set; }
         private dynamic receiverConfig = null;
         private int firmwareVersion { get; set; }
-        private string commandPreamble { get; set; }
+        private String commandPreamble { get; set; }
         private TextReader textReader { get; set; }
         private int goState = 1;
+        private int write_wait = 100;
+
+
+
         private static char[] crlf = new char[2] { '\x0D', '\x0A' };
         private static char[] lfcr = new char[2] { '\x0A', '\x0D' };
         private static string crlf_string = new string(crlf);
-
+        
         public Receiver(SerialPort serialPort, String portName, Dispatcher dispatcher)
         {
             Dictionary<int, string> configFiles = new Dictionary<int, string>();
@@ -45,7 +51,7 @@ namespace ReceiverSlice
             this.dispatcher = dispatcher;
 
             serialPort.Open();
-            int fw_ver = INFO();
+            discovery();
             //if (fw_ver < 0)
             //{
             //    serialPort.Close();
@@ -86,27 +92,65 @@ namespace ReceiverSlice
             {
                 dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this,"Read: " + serialPort.ReadExisting()));
             }
-            readHandler();
+            run();
 
             dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this));
         }
 
-        public int INFO()
+        public dynamic discovery()
         {
+            Dictionary<Int32, List<dynamic>> discoveryMethods = new Dictionary<Int32, List<dynamic>>();
+            String discoveryReturns = "";
+            
 
+            var jsonParser = new JsonParser() { CamelizeProperties = false };
 
-            serialPort.Write(crlf, 0, 2);
- //           serialPort.Write("....................");
-            serialPort.Write("*450052.0#16,INFO");
-            serialPort.Write(crlf, 0, 2);
- 
-            //serialPort.Write("\r");
-            //Thread.Sleep(100);
-            //serialPort.Write("\n");
-            //Thread.Sleep(100);
-            while (serialPort.BytesToRead <= 0) ;
-            string infoReturns = serialPort.ReadExisting();
-            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "Read: " + infoReturns));
+            foreach (string filename in System.IO.Directory.GetFiles(VR2C_COMMAND_FOLDER))
+            {
+
+                string text = System.IO.File.ReadAllText(filename);
+                dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
+                var dc = config.discovery_commands;
+                var fwver = config.firmware_version;
+                if(Object.ReferenceEquals(((ObjectHandle)dc).Unwrap().GetType(),typeof(List<dynamic>)) &&
+                    Object.ReferenceEquals(((ObjectHandle)fwver).Unwrap().GetType(),typeof(Int32)))
+                {
+                    discoveryMethods.Add(fwver, dc);
+                }
+
+            }
+
+            List<dynamic> default_discovery = new List<dynamic>();
+            default_discovery.Add("*BROADC.A#ST,QUIT");
+            default_discovery.Add("*BROADC.A#ST,DISCOVERY");
+            default_discovery.Add("*DISCOV.E#RY,DISCOVERY");
+            discoveryMethods.Add(-1, default_discovery);
+
+            int discovery_attempts = 0;
+            while (serialPort.BytesToRead <= 0 && discovery_attempts < 5)
+            {
+                write_wait = (discovery_attempts + 1) * 100;
+                foreach (List<dynamic> l in discoveryMethods.Values)
+                {
+                    foreach(var command in l) {
+                        write(command);
+                    }
+                }
+                discovery_attempts++;
+            }
+            if (discovery_attempts >= 5)
+            {
+
+            }
+
+            while (serialPort.BytesToRead > 0)
+            {
+                discoveryReturns = serialPort.ReadExisting();
+            }
+            
+            commandPreamble = crlf + discoveryReturns.Substring(0, 12) + ",";
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) command preamble: " + discoveryReturns.Substring(0,12) + ","));
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) read: " + discoveryReturns));
             //string infoReturns = serialPort.ReadLine();
             //if (infoReturns != "")
             //{
@@ -128,6 +172,17 @@ namespace ReceiverSlice
             return 1;
         }
 
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public void write(string text)
+        {
+            serialPort.Write(crlf, 0, 2);
+            Thread.Sleep(100);
+            serialPort.Write(text);
+            serialPort.Write(crlf, 0, 2);
+            Thread.Sleep(100);
+            
+        }
+
         public void shutdown()
         {
             goState = 0;
@@ -146,22 +201,27 @@ namespace ReceiverSlice
             serialPort.Close();
         }
 
-        public async Task readHandler()
+        
+        public async Task run()
         {
             while (goState > 0)
             {
                 var ret = string.Empty;
                 var buffer = new char[1]; // Not the most efficient...
-                while (!ret.Contains(crlf_string))
+                while (!ret.Contains("\n") && (!ret.Contains("\r")))
                 {
                     var charsRead = await textReader.ReadAsync(buffer, 0, 1);
                     if (charsRead == 0)
                     {
                         throw new EndOfStreamException();
                     }
-                    ret += charsRead;
+                    ret += buffer[0];
                 }
-                dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(this, ret));
+
+                if (ret.Length > 1)
+                {
+                    dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(this, ret));
+                }
             }
             goState = -1;
         }

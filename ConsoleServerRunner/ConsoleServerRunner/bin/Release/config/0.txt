@@ -1,0 +1,4 @@
+{
+	"firmware_version" : 0,
+	"discovery_commands" : [ "*BROADC.A#ST,QUIT", "*BROADC.A#ST,DISCOVERY", "*DISCOV.E#RY,DISCOVERY" ]
+}

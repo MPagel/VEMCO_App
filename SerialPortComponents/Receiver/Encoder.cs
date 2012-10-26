@@ -13,6 +13,11 @@ namespace ReceiverSlice
         public Encoder(int serial, int p = 0)
             { UpdatePrefix(serial, p); }
 
+
+        public void UpdatePrefix(string prefix)
+        {
+
+        }
         public void UpdatePrefix(int serial, int p = 0) //Sets the prefix part of the commands. This must be called if the serial were to be changed for some reason, or if the p-value was changed.
         {
             try
@@ -180,6 +185,7 @@ namespace ReceiverSlice
             }
         }
 
+        
         public String START() //Start recording
             { return BuildCommand("START"); }
 
@@ -235,5 +241,7 @@ namespace ReceiverSlice
 
         private String BuildCommand(String command) //Returns the actual command
             { return (prefix + command + "\r"); }
+
+        
     }
 }

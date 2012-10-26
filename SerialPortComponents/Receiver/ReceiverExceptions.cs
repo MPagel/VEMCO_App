@@ -10,11 +10,13 @@ namespace ReceiverSlice
     {
         public Boolean fatal {get; private set;}
         public string text { get; private set; }
+        public Receiver receiver { get; private set; }
 
-        public ReceiverExceptions(string text, Boolean fatal)
+        public ReceiverExceptions(Receiver receiver, string text, Boolean fatal)
         {
             this.fatal = fatal;
             this.text = text;
+            this.receiver = receiver;
         }
 
         

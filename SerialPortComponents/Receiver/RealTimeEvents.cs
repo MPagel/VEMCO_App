@@ -55,6 +55,9 @@ namespace ReceiverSlice.RealTimeEvents
             this.receiver = receiver;
             this.fatal = fatal;
         }
+
+        public ExcepReceiver(ReceiverExceptions re)
+            : base("Receiver o " + 
     }
 
     public class NoteReceiver : RealTimeEvent
