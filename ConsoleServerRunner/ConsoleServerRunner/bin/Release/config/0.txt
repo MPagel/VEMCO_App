@@ -1,4 +1,25 @@
 {
-	"firmware_version" : 0,
-	"discovery_commands" : [ "*BROADC.A#ST,QUIT", "*BROADC.A#ST,DISCOVERY", "*DISCOV.E#RY,DISCOVERY" ]
+   "firmware_version":0,
+   "discovery_commands":[
+      "*BROADC.A#ST,QUIT",
+      "*BROADC.A#ST,DISCOVERY",
+      "*DISCOV.E#RY,DISCOVERY"
+   ],
+   "encoder":{
+      "INFO":"{0}INFO",
+      "START":"{0}START",
+      "STOP":"{0}STOP",
+      "ERASE":"{0}ERASE",
+      "RTMINFO":"{0}RTMINFO",
+      "RTMOFF":"{0}RTMOFF",
+      "RTM232":"{0}RTM232",
+      "RTM485":"{0}RTM485",
+      "RTMPROFILE=":"{0}RTMPROFILE={1}",
+      "RTMAUTOERASE=":"{0}RTMAUTOERASE={1}",
+      "STORAGE":"{0}STORAGE",
+      "TIME":"{0}TIME={1}-{2}-{3} {4}:{5}:{6} {7}",
+      "RESET":"{0}RESET",
+      "QUIT":"{0}QUIT",
+      "RESETBATTERY":"{0}RESETBATTERY"
+   }
 }

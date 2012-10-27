@@ -27,11 +27,11 @@ namespace ReceiverSlice
         private const int COM_READ_TIMEOUT_SPRIAL = 100; //additional ms to allow for response on next go-'round
         private const string VR2C_COMMAND_FOLDER = "config";
 
+        private Encoder encoder { get; set; }
         private Dispatcher dispatcher { get; set; }
         private SerialPort serialPort { get; set; }
         private dynamic receiverConfig = null;
         private int firmwareVersion { get; set; }
-        private String commandPreamble { get; set; }
         private TextReader textReader { get; set; }
         private int goState = 1;
         private int write_wait = 100;
@@ -51,7 +51,7 @@ namespace ReceiverSlice
             this.dispatcher = dispatcher;
 
             serialPort.Open();
-            discovery();
+            init();
             //if (fw_ver < 0)
             //{
             //    serialPort.Close();
@@ -97,7 +97,7 @@ namespace ReceiverSlice
             dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this));
         }
 
-        public dynamic discovery()
+        public void init()
         {
             Dictionary<Int32, List<dynamic>> discoveryMethods = new Dictionary<Int32, List<dynamic>>();
             String discoveryReturns = "";
@@ -140,7 +140,10 @@ namespace ReceiverSlice
             }
             if (discovery_attempts >= 5)
             {
-
+                ReceiverExceptions re = new ReceiverExceptions(this, "Not able to discover VEMCO receiver attached on this port.", true);
+                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
+                serialPort.Close();
+                throw re;
             }
 
             while (serialPort.BytesToRead > 0)
@@ -148,9 +151,17 @@ namespace ReceiverSlice
                 discoveryReturns = serialPort.ReadExisting();
             }
             
-            commandPreamble = crlf + discoveryReturns.Substring(0, 12) + ",";
+
+            string commandPreamble = discoveryReturns.Substring(0, 12) + ",";
             dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) command preamble: " + discoveryReturns.Substring(0,12) + ","));
             dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) read: " + discoveryReturns));
+            
+            int info_attempts = 0;
+            while (serialPort.BytesToRead <= 0 && info_attempts < 5)
+            {
+
+                info_attempts++;
+            }
             //string infoReturns = serialPort.ReadLine();
             //if (infoReturns != "")
             //{
@@ -169,11 +180,11 @@ namespace ReceiverSlice
             //{
             //    return -1;
             //}
-            return 1;
+            
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public void write(string text)
+        private void write(string text)
         {
             serialPort.Write(crlf, 0, 2);
             Thread.Sleep(100);
@@ -181,6 +192,12 @@ namespace ReceiverSlice
             serialPort.Write(crlf, 0, 2);
             Thread.Sleep(100);
             
+        }
+
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        public void write(string command, object[] arguments)
+        {
+            write(encoder.build(command, arguments));
         }
 
         public void shutdown()

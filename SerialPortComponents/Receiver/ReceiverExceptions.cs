@@ -22,6 +22,26 @@ namespace ReceiverSlice
         
     }
 
+    public class EncoderExceptions : Exception
+    {
+        public string text { get; private set; }
+        public Exception e { get; private set; }
+        public string deviceSerial { get; private set; }
+
+        public EncoderExceptions(string commandPrefix, string text)
+        {
+            this.deviceSerial = commandPrefix.Substring(1, 8);
+            this.text = text;
+            this.e = null;
+        }
+
+        public EncoderExceptions(string commandPrefix, string text, Exception e)
+        {
+            this.deviceSerial = commandPrefix.Substring(1, 8);
+            this.text = text;
+            this.e = e;
+        }
+    }
     class InvalidCommandException : Exception
     {
         public InvalidCommandException(String message)

@@ -48,7 +48,7 @@ namespace ReceiverSlice.RealTimeEvents
     {
         Receiver receiver;
         Boolean fatal;
-
+        String text = "";
         public ExcepReceiver(Receiver receiver, Boolean fatal)
             : base("Receiver o " + receiver.portName + " entered exceptional condition. Fatal: " + fatal)
         {
@@ -57,7 +57,13 @@ namespace ReceiverSlice.RealTimeEvents
         }
 
         public ExcepReceiver(ReceiverExceptions re)
-            : base("Receiver o " + 
+            : base("Receiver o " + re.receiver.portName + "entered exception condition. Fatal? " + re.fatal + 
+             " Exception text: " + re.text)
+        {
+            this.receiver = re.receiver;
+            this.fatal = re.fatal;
+            this.text = re.text;
+        }
     }
 
     public class NoteReceiver : RealTimeEvent
