@@ -21,5 +21,10 @@
       "RESET":"{0}RESET",
       "QUIT":"{0}QUIT",
       "RESETBATTERY":"{0}RESETBATTERY"
+   },
+   "decoder": {
+		"words": {
+			
+		}
    }
 }
