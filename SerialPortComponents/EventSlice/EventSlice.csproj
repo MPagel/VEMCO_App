@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Dispatcher.cs" />
     <Compile Include="Intefaces\Module.cs" />
+    <Compile Include="Intefaces\ModuleExceptions.cs" />
     <Compile Include="Intefaces\RealTimeEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

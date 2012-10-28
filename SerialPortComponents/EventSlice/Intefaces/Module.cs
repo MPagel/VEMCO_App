@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace EventSlice.Interfaces
 {
-    public interface Module
+    public abstract class Module
     {
-        void onRealTimeEvent(Interfaces.RealTimeEvent realTimeEvent);
+        public abstract string getModuleName();
+        public void onRealTimeEvent(Interfaces.RealTimeEvent realTimeEvent) { }
     }
+
+    
 }

@@ -28,5 +28,11 @@ namespace Decoder.RealTimeEvents
             this.transmitterSerial = transmitterSerial;
             this.data = data;
         }
+
+        public RealTimeEventDetection(string eventText, dynamic config)
+            : base("Detection Event: " + eventText)
+        {
+
+        }
     }
 }

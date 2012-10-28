@@ -17,14 +17,15 @@ namespace ConsoleApplication4
             RealTimeEvent r = new RealTimeEventSub();
             RealTimeEventSub s = new RealTimeEventSub();
 
- // infinite loop           g.onRealTimeEvent(r);
+g.onRealTimeEvent(r);
             g.onRealTimeEvent(s); //ok
- // infinite loop           b.onRealTimeEvent(r);
- // infinite loop           b.onRealTimeEvent(s);
-// infinite loop            m.onRealTimeEvent(r);
-//infinite loop            m.onRealTimeEvent(s);
-//infinite loop            n.onRealTimeEvent(r);
-//infinite loop            n.onRealTimeEvent(s);
+b.onRealTimeEvent(r);
+ b.onRealTimeEvent(s);
+            m.onRealTimeEvent(r);
+          m.onRealTimeEvent(s);
+       n.onRealTimeEvent(r);
+          n.onRealTimeEvent(s);
+          Console.ReadLine();
         }
     }
 
@@ -35,10 +36,12 @@ namespace ConsoleApplication4
 
     public class goodImplModule : Module
     {
-        
+        public goodImplModule() {
+            
+        }
         public void onRealTimeEvent(RealTimeEventSub rtes)
         {
-            Console.Write("OK!");
+            Console.WriteLine("OK!");
         }
     }
 
@@ -49,7 +52,10 @@ namespace ConsoleApplication4
 
     public abstract class Module
     {
-        delegate void onRealTimeEvent(RealTimeEvent realTimeEvent);
+        public void onRealTimeEvent(RealTimeEvent realTimeEvent)
+        {
+            Console.WriteLine(realTimeEvent.GetType());
+        }
 
     }
 
