@@ -23,12 +23,14 @@ namespace ReceiverSlice.RealTimeEvents
     {
         private Receiver receiver;
         public String unparsedMessage { get; private set; }
+        public dynamic config { get; private set; }
 
-        public UnparsedMessage(Receiver receiver, String unparsedMessage)
+        public UnparsedMessage(Receiver receiver, String unparsedMessage, dynamic config)
             : base(unparsedMessage + " from receiver on " + receiver.portName)
         {
             this.receiver = receiver;
             this.unparsedMessage = unparsedMessage;
+            this.config = config;
         }
 
     }

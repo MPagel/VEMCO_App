@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Decoder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RealTimeEvents\RealTimeEventDecoder.cs" />
+    <Compile Include="RealTimeEvents\RealTimeEventDecoded.cs" />
     <Compile Include="RealTimeEvents\RealTimeEventDetection.cs" />
     <Compile Include="RealTimeEvents\RealTimeEventDispatcher.cs" />
     <Compile Include="RealTimeEvents\RealTimeEventGeneric.cs" />

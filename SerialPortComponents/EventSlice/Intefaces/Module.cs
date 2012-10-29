@@ -8,8 +8,15 @@ namespace EventSlice.Interfaces
 {
     public abstract class Module
     {
+        protected Dispatcher dispatcher;
+
+        public Module(Dispatcher dispatcher)
+        {
+            this.dispatcher = dispatcher;
+        }
+
         public abstract string getModuleName();
-        public void onRealTimeEvent(Interfaces.RealTimeEvent realTimeEvent) { }
+        public virtual void onRealTimeEvent(Interfaces.RealTimeEvent realTimeEvent) { }
     }
 
     

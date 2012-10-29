@@ -9,7 +9,7 @@ namespace ReceiverSlice
     public class Encoder
     {
         private String prefix; //Will be made to be *SSSSSS.P#CC,
-        private dynamic encoderConfig;
+        public dynamic encoderConfig { get; private set; }
 
         public Encoder(string prefix, dynamic encoderConfig)
         {
@@ -17,16 +17,26 @@ namespace ReceiverSlice
             this.prefix = prefix;
         }
 
-        public String build(string command, object[] arguments)
+        public String build(string command)
         {
+            return(build(command,new Object[0]));
+        }
+
+        public String build(string command, object[] arguments)
+        {           
             try
             {
+                List<Object> l = new List<Object>();
+                l.Add(this.prefix);
+                foreach (Object a in arguments)
+                {
+                    l.Add(a);
+                }
                 String built = String.Format(encoderConfig.encoder[command], arguments);
                 if (valid(built) == false)
                 {
                     throw new EncoderExceptions( prefix,
                         String.Format("Invalid command: {0}  Receiver prefix: {1}", command, prefix));
-                    
                 }
                 return built;
             }

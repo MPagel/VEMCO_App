@@ -1,0 +1,12 @@
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\TestSuite.exe.config
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\TestSuite.exe
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\TestSuite.pdb
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\EventSlice.dll
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\FridayThe13th.dll
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\Receiver.dll
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\EventSlice.pdb
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\FridayThe13th.pdb
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\bin\Debug\Receiver.pdb
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\obj\Debug\TestSuite.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\obj\Debug\TestSuite.exe
+\\VBOXSVR\src\cecs491\TestSuite\TestSuite\obj\Debug\TestSuite.pdb
