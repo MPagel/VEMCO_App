@@ -9,9 +9,9 @@ namespace Decoder.RealTimeEvents
 {
     class RealTimeEventGeneric:RealTimeEvent
     {
-        public int returnStatus { get; private set; } //0 = "OK" 1 = "FAILURE" 2 = "INVALID"
+        public string returnStatus { get; private set; } //"OK", "FAILURE", "INVALID"
 
-        public RealTimeEventGeneric(int returnStatus)
+        public RealTimeEventGeneric(string returnStatus)
             : base("Return Status: " + returnStatus)
         {
             this.returnStatus = returnStatus;

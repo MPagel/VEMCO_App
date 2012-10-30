@@ -15,10 +15,10 @@ namespace Decoder
         //"Words"
         private static string timestamp = "[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}"; //Note: The timestamp given during the main part of the message is given in UTC, regardless of the offset.
         private static string receiverSerial = "[0-9]{6}";
-        private static string transmitterSerial = "[A-Z0-9]{3}-[A-Z0-9]{4}"; //Note: The only serials we have seen were specifically of the form [A-Z][0-9]{2}-[0-9]{4}, so this may be more open than need be.
+        private static string frequencyCodespace = "[A-Z0-9]{3}-[A-Z0-9]{4}"; //Note: The only serials we have seen were specifically of the form [A-Z][0-9]{2}-[0-9]{4}, so this may be more open than need be.
         private static string detectionCounter = "[0-9]{3}";
         private static string hexSum = "#[A-F0-9]{2}";
-        private static string detectionData = "([0-9]+,)*[0-9]+"; //Little worried about this one, as it could catch many things. However, this might just solve the different transmitter type problem. Note that it ends with a comma.
+        private static string transmitterId_sensorValue = "([0-9]+,)*[0-9]+"; //Doesn't always have a sensor value.
         private static string status = "(OK|FAILURE|INVALID)";
         private static string p = "[0-9]"; //Currently always 0, but we should provide as much functionality for the possibility of that changing in the future.
         private static string decimalSum = "#[0-9]{2}";
@@ -49,7 +49,7 @@ namespace Decoder
         private static string endline = "\\r\\n";
 
         //"Sentences"
-        private static string detectionEvent = receiverSerial + ',' + detectionCounter + ',' + timestamp + ',' + transmitterSerial + ',' + detectionData + hexSum; //Note that detectionData ends with a comma, and that the transmitterSerial is considered part of the info field
+        private static string detectionEvent = receiverSerial + ',' + detectionCounter + ',' + timestamp + ',' + frequencyCodespace + ',' + detectionData + hexSum; //Note that detectionData ends with a comma, and that the transmitterSerial is considered part of the info field
             //[0-9]{6},[0-9]{3},[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2},[A-Z0-9]{3}-[A-Z0-9]{4},([0-9]+,)*#[A-F0-9]{2}\r\n
         //Responses arrive in the format *SSSSSS.P#CC[LLLL],response,status,#HH\r\n
             //The responsePrefix handles the *SSSSSS.P#CC[LLLL], portion.
@@ -118,8 +118,9 @@ namespace Decoder
             string rSerial;
             string dCounter;
             DateTime tstamp;
-            string tSerial;
-            string data;
+            string frequency_codespace;
+            int transmitter_id;
+            double sensor_value = -1;
 
             rSerial = Regex.Match(detectionMessage, receiverSerial).Value;
             dCounter = Regex.Match(detectionMessage, ','+detectionCounter).Value.Substring(1);
@@ -131,10 +132,17 @@ namespace Decoder
             int minute = int.Parse(time.Substring(14,2));
             int second = int.Parse(time.Substring(17,2));
             tstamp = new DateTime(year, month, day, hour, minute, second);
-            tSerial = Regex.Match(detectionMessage, transmitterSerial).Value;
-            data = Regex.Match(detectionMessage, tSerial + ',' + detectionData).Value.Substring(tSerial.Length+1);
+            frequency_codespace = Regex.Match(detectionMessage, frequencyCodespace).Value;
+            string tID_sValue = Regex.Match(detectionMessage, frequency_codespace + ',' + transmitterId_sensorValue).Value.Substring(frequency_codespace.Length+1);
+            if (tID_sValue.Contains(','))
+            {
+                transmitter_id = int.Parse(tID_sValue.Substring(0, tID_sValue.IndexOf(',')));
+                sensor_value = double.Parse(tID_sValue.Substring(tID_sValue.IndexOf(',')+1));
+            }
+            else
+                transmitter_id = int.Parse(tID_sValue);
 
-            return new RealTimeEvents.RealTimeEventDetection(rSerial, dCounter, tstamp, tSerial, data);
+            return new RealTimeEvents.RealTimeEventDetection(rSerial, dCounter, tstamp, frequency_codespace, transmitter_id, sensor_value);
         }
 
         private RealTimeEvents.RealTimeEventStatus decodeStatusEvent(string statusMessage)
@@ -159,15 +167,7 @@ namespace Decoder
 
         private RealTimeEvents.RealTimeEventGeneric decodeGenericEvent(string genericMessage)
         {
-            string Status = Regex.Match(genericMessage, status).Value;
-            int returnStatus; //0 = "OK" 1 = "FAILURE" 2 = "INVALID"
-            if (Status == "OK")
-                returnStatus = 0;
-            else if (Status == "FAILURE")
-                returnStatus = 1;
-            else
-                returnStatus = 2;
-
+            string returnStatus = Regex.Match(genericMessage, status).Value; //"OK", "FAILURE", "INVALID"
             return new RealTimeEvents.RealTimeEventGeneric(returnStatus);
         }
 
