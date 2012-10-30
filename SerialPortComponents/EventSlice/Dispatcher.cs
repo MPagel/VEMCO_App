@@ -36,8 +36,12 @@ namespace EventSlice
                         
                     }
                 }
+                
             }
-            
+            foreach (Interfaces.Module m in modules)
+            {
+                m.dispatcher = this;
+            }
             //if (File.Exists(MODULES_PATH))
             //{
             //    // Execute the method from the requested .dll using reflection (System.Reflection).

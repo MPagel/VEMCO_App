@@ -11,10 +11,6 @@ namespace Decoder
 {
     public class Decoder:Module
     {
-        public Decoder(Dispatcher dispatcher)
-            : base(dispatcher)
-        {
-        }
 
         public override string getModuleName()
         {
@@ -49,7 +45,7 @@ namespace Decoder
                     {
                         wordExpansions.Add(config.decoder.words[((String)o)]);
                     }
-                    if(Regex.Match(unparsedMessage, String.Format(sentence.format, wordExpansions)))
+                    if(Regex.IsMatch(unparsedMessage, String.Format(sentence.format, wordExpansions)))
                     {
                         return sentence;
                     }
@@ -64,9 +60,13 @@ namespace Decoder
             
         }
    
-        public void onRealTimeEvent(ReceiverSlice.RealTimeEvents.UnparsedMessage unparsedMessage)
+        public override void onRealTimeEvent(RealTimeEvent rte)
         {
-            Decode(unparsedMessage.unparsedMessage, unparsedMessage.config);
+            if(rte.GetType() == typeof(ReceiverSlice.RealTimeEvents.UnparsedMessage))
+            {
+                rte=rte;
+            }
+            //Decode(unparsedMessage.unparsedMessage, unparsedMessage.config);
         }
     }
 }

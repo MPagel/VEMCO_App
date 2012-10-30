@@ -7,3 +7,10 @@
 \\VBOXSVR\src\cecs491\Modules\Decoder\bin\Release\Receiver.pdb
 \\VBOXSVR\src\cecs491\Modules\Decoder\obj\Release\Decoder.dll
 \\VBOXSVR\src\cecs491\Modules\Decoder\obj\Release\Decoder.pdb
+C:\Users\Derek\cecs491\Modules\Decoder\bin\Release\Decoder.dll
+C:\Users\Derek\cecs491\Modules\Decoder\bin\Release\Decoder.pdb
+C:\Users\Derek\cecs491\Modules\Decoder\bin\Release\EventSlice.pdb
+C:\Users\Derek\cecs491\Modules\Decoder\obj\Release\Decoder.csprojResolveAssemblyReference.cache
+C:\Users\Derek\cecs491\Modules\Decoder\obj\Release\Decoder.dll
+C:\Users\Derek\cecs491\Modules\Decoder\obj\Release\Decoder.pdb
+C:\Users\Derek\cecs491\Modules\Decoder\bin\Release\EventSlice.dll

@@ -32,7 +32,7 @@ namespace ReceiverSlice
                 {
                     l.Add(a);
                 }
-                String built = String.Format(encoderConfig.encoder[command], arguments);
+                String built = String.Format(encoderConfig.encoder[command], l.ToArray());
                 if (valid(built) == false)
                 {
                     throw new EncoderExceptions( prefix,

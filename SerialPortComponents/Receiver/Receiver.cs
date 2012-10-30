@@ -7,6 +7,8 @@ using System.IO.Ports;
 using System.IO;
 using System.Threading;
 
+using System.Text.RegularExpressions;
+
 using FridayThe13th;
 using EventSlice;
 using System.Runtime.CompilerServices;
@@ -91,20 +93,24 @@ namespace ReceiverSlice
                 dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
                 var dc = config.discovery_commands;
                 var fwver = config.firmware_version;
+                //try
+                //{
+                //    var infoa = config.encoder;
+                //    infoMethods.Add(fwver, (string)config.encoder.INFO);
+                //}
+                //finally
+                //{
+                //}
+
                 try
                 {
-                    infoMethods.Add(fwver, (string)config.encoder.INFO);
+                    discoveryMethods.Add(((int)fwver), dc);
                 }
-                finally
+                catch (Exception e)
                 {
-                }
 
-                if(Object.ReferenceEquals(((ObjectHandle)dc).GetType(),typeof(List<dynamic>)) &&
-                    Object.ReferenceEquals(((ObjectHandle)fwver).GetType(),typeof(Int32)))
-                {
-                    discoveryMethods.Add(fwver, dc);
-                    
                 }
+                
 
             }
 
@@ -117,6 +123,7 @@ namespace ReceiverSlice
             discoveryMethods.Add(-1, default_discovery);
 
             int discovery_attempts = 0;
+            serialPort.ReadExisting();
             while (serialPort.BytesToRead <= 0 && discovery_attempts < 5)
             {
                 write_wait = (discovery_attempts + 1) * 100;
@@ -148,27 +155,54 @@ namespace ReceiverSlice
 
             infoMethods.Add(-1, commandPreamble + "INFO");
             int info_attempts = 0;
-            while (serialPort.BytesToRead <= 0 && info_attempts < 5)
+            serialPort.ReadExisting();
+            Boolean gotINFO = false;
+            String infoReturns = "";
+            int read_attempts = 0;
+
+            while (!gotINFO && read_attempts < 5)
             {
-                foreach (String infoc in infoMethods.Values)
+                info_attempts = 0;
+                serialPort.ReadExisting();
+                while (serialPort.BytesToRead <= 0 && info_attempts < 5)
                 {
-                    _write(infoc);
+                    foreach (String infoc in infoMethods.Values)
+                    {
+                        dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) attempting INFO command with " + infoc));
+                        _write(infoc);
+                        Thread.Sleep(500);
+                    }
+                    info_attempts++;
                 }
-                info_attempts++;
+
+                while (serialPort.BytesToRead > 0)
+                {
+                    infoReturns = serialPort.ReadExisting();
+
+                    foreach (string filename in System.IO.Directory.GetFiles(VR2C_COMMAND_FOLDER))
+                    {
+                        List<String> wordExpansions = new List<String>();
+                        dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
+                        foreach (Object o in config.decoder.sentences["info_response"].word_order)
+                        {
+                            wordExpansions.Add(config.decoder.words[((String)o)]);
+                        }
+                        if (Regex.IsMatch(infoReturns, String.Format(config.decoder.sentences["info_response"].format, wordExpansions.ToArray<String>())))
+                        {
+                            gotINFO = true;
+                        }
+
+                    }
+                }
+                read_attempts++;
             }
-            if (info_attempts >= 5)
+            if (read_attempts >= 5)
             {
                 ReceiverExceptions re = new ReceiverExceptions(this, "(receiver fatal) Not able to get INFO from the VEMCO receiver attached on this port.", true);
                 dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
                 serialPort.Close();
                 throw re;
             }
-            String infoReturns = "";
-            while (serialPort.BytesToRead > 0)
-            {
-                infoReturns = serialPort.ReadExisting();
-            }
-
 
             int RECEIVER_FW_VERSION = -1;
             if (infoReturns != "")
@@ -184,6 +218,7 @@ namespace ReceiverSlice
                 string release = fw_ver.Substring(fw_ver_secondperiod + 1, (fw_ver.Length - fw_ver_secondperiod - 1));
                 RECEIVER_FW_VERSION = (Int32.Parse(major) * 10000) + (Int32.Parse(minor) * 100) + (Int32.Parse(release));
             }
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this,"(receiver note) detected firmware version: " + RECEIVER_FW_VERSION));
             if (RECEIVER_FW_VERSION >= 0)
             {
                 int fw_use = -1;
@@ -194,9 +229,9 @@ namespace ReceiverSlice
                     string text = System.IO.File.ReadAllText(filename);
                     dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
 
-                    if (config.FwVersion >= fw_use && config.FwVersion <= RECEIVER_FW_VERSION)
+                    if (config.firmware_version >= fw_use && config.firmware_version <= RECEIVER_FW_VERSION)
                     {
-                        fw_use = (Int32)config.FwVersion;
+                        fw_use = (Int32)config.firmware_version;
                         
                         encoder = new Encoder(commandPreamble, config);
                     }
@@ -216,6 +251,7 @@ namespace ReceiverSlice
                 serialPort.Close();
                 throw re;
             }
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) Successfully configured encoder with fw version = " + encoder.encoderConfig.firmware_version));
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]

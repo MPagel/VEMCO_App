@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EventSlice">
-      <HintPath>F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
+    <Reference Include="EventSlice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

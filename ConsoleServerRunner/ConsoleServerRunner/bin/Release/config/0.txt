@@ -14,8 +14,8 @@
       "RTMOFF":"{0}RTMOFF",
       "RTM232":"{0}RTM232",
       "RTM485":"{0}RTM485",
-      "RTMPROFILE=":"{0}RTMPROFILE={1}",
-      "RTMAUTOERASE=":"{0}RTMAUTOERASE={1}",
+      "RTMPROFILE":"{0}RTMPROFILE={1}",
+      "RTMAUTOERASE":"{0}RTMAUTOERASE={1}",
       "STORAGE":"{0}STORAGE",
       "TIME":"{0}TIME={1}-{2}-{3} {4}:{5}:{6} {7}",
       "RESET":"{0}RESET",
@@ -73,7 +73,7 @@
 			},
 			"info_response": {
 				"format":"{0}{1},{2},{3} {4},{5},{6}",
-				"word_order":["info_serial","receiver_serial","study_name","map","codespace","firmware_version","hardware_version"]
+				"word_order":["info_serial","receiver_serial","study_name","map","code_space","firmware_version","hardware_version"]
 			},
 			"status_response": {
 				"format":"{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",

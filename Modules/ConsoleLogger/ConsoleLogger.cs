@@ -10,10 +10,9 @@ namespace ConsoleLogger
 {
     public class ConsoleLogger : Module
     {
-        public ConsoleLogger(Dispatcher dispatcher)
-            : base(dispatcher)
-        {
-        }
+
+        
+
         public override void onRealTimeEvent(RealTimeEvent rte)
         {
             System.Console.WriteLine("(event) " + rte);
