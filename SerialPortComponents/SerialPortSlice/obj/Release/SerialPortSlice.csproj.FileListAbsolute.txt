@@ -10,7 +10,7 @@
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.pdb
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.dll
-C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.pdb
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.csprojResolveAssemblyReference.cache
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.pdb
+C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.pdb

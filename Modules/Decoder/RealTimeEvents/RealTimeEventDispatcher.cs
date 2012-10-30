@@ -9,7 +9,7 @@ namespace Decoder.RealTimeEvents
 {
     class RealTimeEventDispatcher
     {
-        public void enque(RealTimeEvent realTimeEvent)
+        public void enqueue(RealTimeEvent realTimeEvent)
         {
         }
 
