@@ -14,7 +14,6 @@ using EventSlice;
 using System.Runtime.CompilerServices;
 using System.Runtime.Remoting;
 
-
 namespace ReceiverSlice
 {
     /// <summary>

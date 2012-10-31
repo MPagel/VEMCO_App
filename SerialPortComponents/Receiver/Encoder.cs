@@ -6,22 +6,49 @@ using System.Threading.Tasks;
 
 namespace ReceiverSlice
 {
+    /// <summary>
+    /// The Encoder builds commands as requested by the Receiver (possibly through public write() methods),
+    /// by looking up the requested command in the configuration file.  The configuration file specifies
+    /// the format and the encoder uses String.Format to build the string that is finally returned.  Before
+    /// returning the string, however, it is verified as conforming to the config's spec.
+    /// </summary>
     public class Encoder
     {
         private String prefix; //Will be made to be *SSSSSS.P#CC,
         public dynamic encoderConfig { get; private set; }
 
+        /// <summary>
+        /// This constructor uses the command prefix and encoder.<see cref="RealTimeSlice.Receiver"/>
+        /// </summary>
+        /// <param name="prefix"> *SSSSSS.P#CC where SSSSSS is the serial number of the receiver.</param>
+        /// <param name="encoderConfig">Configuration containing 'encoder' entries.</param>
         public Encoder(string prefix, dynamic encoderConfig)
         {
             this.encoderConfig = encoderConfig;
             this.prefix = prefix;
         }
 
+        /// <summary>
+        /// Builds a command with no arguments called.
+        /// </summary>
+        /// <param name="command">The name of the command as defined in the configuration.</param>
+        /// <returns>String formatted as a VEMCO command to be sent to the VR2C hardware.</returns>
+        /// <remarks>This is a wrapper to the build(string,object[]) method.  The command prefix does
+        /// not need to be passed to support</remarks>
         public String build(string command)
         {
             return(build(command,new Object[0]));
         }
 
+        /// <summary>
+        /// Builds a command with arguments.
+        /// </summary>
+        /// <param name="command">The name of the command as defined in the configuration.</param>
+        /// <param name="arguments">The parameters required to complete the build.</param>
+        /// <returns>This is a wrapper to the build(string,object[]) method.</returns>
+        /// <remarks>
+        /// The
+        /// </remarks>
         public String build(string command, object[] arguments)
         {           
             try
