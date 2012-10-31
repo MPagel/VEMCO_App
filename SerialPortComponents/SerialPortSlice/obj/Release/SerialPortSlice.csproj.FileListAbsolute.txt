@@ -14,3 +14,4 @@ C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.csprojResolveAssemblyReference.cache
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML

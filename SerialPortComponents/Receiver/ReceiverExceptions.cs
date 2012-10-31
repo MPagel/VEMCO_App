@@ -11,12 +11,22 @@ namespace ReceiverSlice
         public Boolean fatal {get; private set;}
         public string text { get; private set; }
         public Receiver receiver { get; private set; }
+        public Exception originatingException { get; private set; }
 
         public ReceiverExceptions(Receiver receiver, string text, Boolean fatal)
         {
             this.fatal = fatal;
             this.text = text;
             this.receiver = receiver;
+            this.originatingException = null;
+        }
+
+        public ReceiverExceptions(Receiver receiver, string text, Boolean fatal, Exception originatingException)
+        {
+            this.fatal = fatal;
+            this.text = text;
+            this.receiver = receiver;
+            this.originatingException = originatingException;
         }
 
         
