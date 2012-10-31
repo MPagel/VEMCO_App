@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="4d956049-9723-466e-a3cd-f083904ae17b" Title="ReceiverSlice Namespace" Url="html/cf52342e-1a7b-a75e-8ebb-2f9c30d90d47.htm">
+    <HelpTOCNode Id="bee795c3-f058-4d4b-8062-0309b89fb4eb" Title="Encoder Class" Url="html/ab9dcafa-88c8-30da-0a53-c4ac8ce37884.htm">
+      <HelpTOCNode Title="Encoder Members" Url="html/bd30e395-e66c-8ff5-57e5-7ed93e33bacd.htm" />
+      <HelpTOCNode Title="Encoder Constructor " Url="html/f0994948-940f-2f55-9e9e-e0b10c4e6bf0.htm" />
+      <HelpTOCNode Id="b2c55aa4-234e-4854-b83e-761bbee90b66" Title="Encoder Methods" Url="html/63b56877-13cb-c35e-cdc4-f94f3a8459e9.htm">
+        <HelpTOCNode Id="20af134d-ea99-4026-9aa9-8c6f8f3b9caf" Title="build Method " Url="html/7335078f-c86a-4896-d350-777e70849b2c.htm">
+          <HelpTOCNode Title="build Method (String)" Url="html/74609002-2537-f785-52c2-42c0241d5d7e.htm" />
+          <HelpTOCNode Title="build Method (String, Object[])" Url="html/128ff223-4694-e606-52c0-05e2a06b812c.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="valid Method " Url="html/f19c0f75-0b1a-fa48-ba87-bb02ed36cb5e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="26a786b4-bc76-405a-ac77-0858037a9d85" Title="Encoder Properties" Url="html/1f8cf854-0de3-c33b-97b8-dd720310e68d.htm">
+        <HelpTOCNode Title="encoderConfig Property " Url="html/4ca1a3d5-f517-28c4-44c2-982deb917238.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c8cc9fe0-058d-479d-95d7-affcce53205d" Title="EncoderExceptions Class" Url="html/ae468b2b-3b71-15bc-e285-ceb12f8906ee.htm">
+      <HelpTOCNode Title="EncoderExceptions Members" Url="html/fec74ae1-f2a2-c22a-64dc-44d26246d986.htm" />
+      <HelpTOCNode Id="0b72b8f2-57e9-416b-a96a-d75f00355af2" Title="EncoderExceptions Constructor " Url="html/cd9f5350-a08e-dd12-2bc9-ea2a37118b11.htm">
+        <HelpTOCNode Title="EncoderExceptions Constructor (String, String)" Url="html/bbd55b5e-c242-cb18-3a69-cca926fc7d48.htm" />
+        <HelpTOCNode Title="EncoderExceptions Constructor (String, String, Exception)" Url="html/6dbf36e8-1606-6a53-525b-cb4598891944.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="EncoderExceptions Methods" Url="html/0fc22645-1ab9-bceb-9b0c-ccf8221807b5.htm" />
+      <HelpTOCNode Id="3eda9ba2-771d-410b-a206-8ba333a32702" Title="EncoderExceptions Properties" Url="html/53f0b588-417e-3002-274a-a3972af71320.htm">
+        <HelpTOCNode Title="deviceSerial Property " Url="html/0ea08034-9b4d-3507-2a33-1f6636b35686.htm" />
+        <HelpTOCNode Title="e Property " Url="html/5d85c86c-b488-1f74-ecf5-d6888cb64c5c.htm" />
+        <HelpTOCNode Title="text Property " Url="html/ac5f79a7-a357-9db5-7d2a-a2a1f71c85bc.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="EncoderExceptions Events" Url="html/ad6080f0-b9d4-ad86-9aa5-fea1835c8480.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="3c44ccad-16d4-4ef3-8169-2203ae254015" Title="Receiver Class" Url="html/96e17908-5b5b-70ed-ee27-1425aa783bd3.htm">
+      <HelpTOCNode Title="Receiver Members" Url="html/b27984e7-ee1f-06ac-e027-0bebf4e409f5.htm" />
+      <HelpTOCNode Title="Receiver Constructor " Url="html/bdbcfb38-8ef0-83f3-9ae9-0a93f22de7ac.htm" />
+      <HelpTOCNode Id="776aff2f-5215-4cf3-9b2a-6992bf1515d7" Title="Receiver Methods" Url="html/a2932d0a-fe31-cec8-96dc-3b495940b609.htm">
+        <HelpTOCNode Title="init Method " Url="html/a78855f1-bb2e-8542-ff0d-f16955e606ad.htm" />
+        <HelpTOCNode Title="run Method " Url="html/81077d8c-7f3b-b821-0658-64df42701cc1.htm" />
+        <HelpTOCNode Title="shutdown Method " Url="html/2d85b6b1-f240-bafc-03c8-d1d01ed2d85d.htm" />
+        <HelpTOCNode Id="b7ee39b7-287f-4bd8-99ef-848e83eb4037" Title="write Method " Url="html/ae83c066-b23d-6ed2-0d92-1dc3a4c0853a.htm">
+          <HelpTOCNode Title="write Method (String)" Url="html/d796f1b7-da87-24eb-1dd5-587b1eaa48b3.htm" />
+          <HelpTOCNode Title="write Method (String, Object[])" Url="html/2529976b-5605-3440-8429-5f4f3de289a5.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="96fb43fc-aaba-43d9-af7c-d7fa72c98a7a" Title="Receiver Properties" Url="html/88521c07-ac69-d841-b16c-b75f1e1428a2.htm">
+        <HelpTOCNode Title="portName Property " Url="html/87ab173e-f838-c13b-46c6-5ce916220980.htm" />
+        <HelpTOCNode Title="TTL Property " Url="html/62d4b7b8-f6d7-13a8-5a55-40ea2dcd3c88.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="49c6bde1-88c5-41ae-960e-bf289cff3b40" Title="ReceiverExceptions Class" Url="html/ac12ad37-b6ba-0619-3839-8548c37a8f5f.htm">
+      <HelpTOCNode Title="ReceiverExceptions Members" Url="html/0996ce0e-cae2-dcdd-2d2f-e5950185fab6.htm" />
+      <HelpTOCNode Id="df4116b9-90d2-4bc6-97b1-b14ee51623cc" Title="ReceiverExceptions Constructor " Url="html/4d36520e-6a29-a571-ec4d-2241ccfad121.htm">
+        <HelpTOCNode Title="ReceiverExceptions Constructor (Receiver, String, Boolean)" Url="html/6c5c1a44-11b1-97b0-08e8-9f6135a60719.htm" />
+        <HelpTOCNode Title="ReceiverExceptions Constructor (Receiver, String, Boolean, Exception)" Url="html/44e7ea6c-ab59-339a-d7fd-a6bb4c1aac43.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ReceiverExceptions Methods" Url="html/690c0dfc-ce35-0066-4d1f-7e5cf1758b48.htm" />
+      <HelpTOCNode Id="fb18dd84-1b55-432c-8fd3-bebf70361a31" Title="ReceiverExceptions Properties" Url="html/ec1d7ed4-9c32-847f-3943-c06af6dd7df6.htm">
+        <HelpTOCNode Title="fatal Property " Url="html/e8857290-9094-0bb4-9960-46626f6fefde.htm" />
+        <HelpTOCNode Title="originatingException Property " Url="html/85be1681-cbc3-de54-6bcf-2e2b608c9a73.htm" />
+        <HelpTOCNode Title="receiver Property " Url="html/e7ff42ff-c512-564e-b4d5-d43619e1d70f.htm" />
+        <HelpTOCNode Title="text Property " Url="html/12d53d94-3039-17c6-13a8-69b0ae4a4bb4.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ReceiverExceptions Events" Url="html/218ba5e2-fe5c-f35c-ae39-fb64a114129a.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="f5b1a234-9101-449c-92f7-8d4ab78df422" Title="ReceiverSlice.RealTimeEvents Namespace" Url="html/c7f7da4f-2ae5-3c7f-f597-7dc96177da84.htm">
+    <HelpTOCNode Id="041dd74b-59d0-4a04-be0b-82664319b2d3" Title="DelReceiver Class" Url="html/ed9c8e50-45c4-1407-1959-0c767483bac7.htm">
+      <HelpTOCNode Title="DelReceiver Members" Url="html/33f5a2cc-80bd-3d29-7fc9-6de07954a621.htm" />
+      <HelpTOCNode Title="DelReceiver Constructor " Url="html/3b1b3dfb-c96a-92e5-84f6-405cf76145a9.htm" />
+      <HelpTOCNode Title="DelReceiver Methods" Url="html/5235dc9b-b1ae-42d3-8275-8738114f02fb.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="4c486bec-b4db-47ef-bb61-2ca2166fd008" Title="ExcepReceiver Class" Url="html/7d3a4c54-4fd5-5b04-add3-5d691bfcbff7.htm">
+      <HelpTOCNode Title="ExcepReceiver Members" Url="html/370c8c1a-6a10-525a-8ce4-05764d62a870.htm" />
+      <HelpTOCNode Id="def73f1d-426a-4f82-aecb-c847d2097486" Title="ExcepReceiver Constructor " Url="html/f701503a-f73c-316f-339c-39d10cdfadd1.htm">
+        <HelpTOCNode Title="ExcepReceiver Constructor (ReceiverExceptions)" Url="html/9542adb5-a90f-14e0-8ed9-a11bcd4e591f.htm" />
+        <HelpTOCNode Title="ExcepReceiver Constructor (Receiver, Boolean)" Url="html/218a5403-11b6-f889-5181-d5d30036b1c0.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="ExcepReceiver Methods" Url="html/a4b07f74-b774-5a58-e012-9bea0fb0dc05.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="19d1cccf-e4bb-4abc-88df-d40cdb9f7b88" Title="NewReceiver Class" Url="html/7da170a2-a935-c09b-bb29-9098de2e7ce3.htm">
+      <HelpTOCNode Title="NewReceiver Members" Url="html/9dffc7e5-c99b-3d03-6ef4-53bd379110d0.htm" />
+      <HelpTOCNode Title="NewReceiver Constructor " Url="html/bfa86faf-0d01-61ed-454c-6e199f3dcbb1.htm" />
+      <HelpTOCNode Title="NewReceiver Methods" Url="html/0dfaaac6-3e29-bf63-566b-31e22bb73bd1.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="ad4fc7ad-d45b-445d-921a-671954c9e581" Title="NoteReceiver Class" Url="html/c3efe7da-6d22-0599-f3d2-fd1d70f27033.htm">
+      <HelpTOCNode Title="NoteReceiver Members" Url="html/13453879-9c3c-754f-0973-c6afa54df60e.htm" />
+      <HelpTOCNode Title="NoteReceiver Constructor " Url="html/a51f9a06-2661-f28a-fb6e-bace708f6b2b.htm" />
+      <HelpTOCNode Title="NoteReceiver Methods" Url="html/0b564395-f74b-aa49-d178-6f5a2c98b041.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="fd702d11-8d80-466c-8fa6-44270e4b7c63" Title="UnparsedMessage Class" Url="html/dfdb2de3-4307-5ba9-af34-1953f8d8219a.htm">
+      <HelpTOCNode Title="UnparsedMessage Members" Url="html/b5d960a5-7b46-0170-4189-f0fcf2074d31.htm" />
+      <HelpTOCNode Title="UnparsedMessage Constructor " Url="html/cd5e9d6e-c349-7eef-43e5-f6bba2421245.htm" />
+      <HelpTOCNode Title="UnparsedMessage Methods" Url="html/dc0854f3-41d4-4536-a040-4f5f8c2f5a27.htm" />
+      <HelpTOCNode Id="4596df8b-1807-402a-9795-e3bffe75becf" Title="UnparsedMessage Properties" Url="html/1ddde719-aee3-22b6-4f8e-cbcb6d013eaf.htm">
+        <HelpTOCNode Title="config Property " Url="html/044dada6-f7e2-0e9b-9306-6b28bdb340b3.htm" />
+        <HelpTOCNode Title="unparsedMessage Property " Url="html/eccd74c0-86d2-8476-5200-0d8990305716.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
