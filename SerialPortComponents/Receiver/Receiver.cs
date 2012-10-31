@@ -44,8 +44,7 @@ namespace ReceiverSlice
 
 
         private static char[] crlf = new char[2] { '\x0D', '\x0A' };
-        private static char[] lfcr = new char[2] { '\x0A', '\x0D' };
-        private static string crlf_string = new string(crlf);
+
         
         public Receiver(SerialPort serialPort, String portName, Dispatcher dispatcher)
         {
@@ -148,14 +147,13 @@ namespace ReceiverSlice
                 dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
                 var dc = config.discovery_commands;
                 var fwver = config.firmware_version;
-                //try
-                //{
-                //    var infoa = config.encoder;
-                //    infoMethods.Add(fwver, (string)config.encoder.INFO);
-                //}
-                //finally
-                //{
-                //}
+                try
+                {
+                    infoMethods.Add(fwver, (string)config.encoder["INFO"]);
+                }
+                catch(Exception e)
+                {
+                }
 
                 try
                 {
