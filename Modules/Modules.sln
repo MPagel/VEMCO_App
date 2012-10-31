@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decoder", "Decoder\Decoder.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLogger", "ConsoleLogger\ConsoleLogger.csproj", "{F19B44FB-B3C1-422A-A34A-ACE374CA96F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{30231B33-86BB-476A-A725-E35187541402}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{F19B44FB-B3C1-422A-A34A-ACE374CA96F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19B44FB-B3C1-422A-A34A-ACE374CA96F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F19B44FB-B3C1-422A-A34A-ACE374CA96F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30231B33-86BB-476A-A725-E35187541402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30231B33-86BB-476A-A725-E35187541402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30231B33-86BB-476A-A725-E35187541402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30231B33-86BB-476A-A725-E35187541402}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
