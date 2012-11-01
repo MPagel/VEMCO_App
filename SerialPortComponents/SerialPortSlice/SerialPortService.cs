@@ -13,6 +13,12 @@ using EventSlice;
 namespace SerialPortSlice
 {
     
+    /// <summary>
+    /// This class monitors the system for changes in the serial port enumeration (new or removed serial ports).  
+    /// When a new serial port is discovered a Receiver is created.  When the serial
+    /// port is removed from the system enumeration or a Receiver has TTL = 0, the device
+    /// is removed from the service.
+    /// </summary>
     public class SerialPortService
     {
         private static SerialPortService iam = null;

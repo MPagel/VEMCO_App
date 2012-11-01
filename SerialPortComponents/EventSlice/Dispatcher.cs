@@ -10,6 +10,11 @@ using System.Reflection;
 
 namespace EventSlice
 {
+    /// <summary>
+    /// The dispatcher maintains a thread-safe queue of events.  When a new event arrives, the event is dispatched to
+    /// any registered Modules.  Any registered module may also enqueue a RealTimeEvent
+    /// for distribution.
+    /// </summary>
     public class Dispatcher
     {
         private const String MODULES_PATH = "modules"; 
@@ -27,6 +32,7 @@ namespace EventSlice
                     Assembly DLL = Assembly.LoadFrom(filename);
                     string className = filename.Substring(filename.IndexOf('\\')+1, filename.IndexOf('.')-filename.IndexOf('\\')-1);
                     Type classType = DLL.GetType(String.Format("{0}.{0}",className));
+                    
                     try
                     {
                         modules.Add(((Interfaces.Module)Activator.CreateInstance(classType)));

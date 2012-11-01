@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace EventSlice.Interfaces
 {
+    /// <summary>
+    /// This class contains the specification all classes wishing to participate in the event system
+    /// must implement.
+    /// </summary>
     public abstract class Module
     {
 
