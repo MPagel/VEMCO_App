@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="1.9.5.0" projectFile="F:\cecs491\docs\MarineBiologyVR2C.shfbproj" started="10/31/2012 12:26:22 AM">
+<shfbBuild product="Sandcastle Help File Builder" version="1.9.5.0" projectFile="F:\cecs491\docs\MarineBiologyVR2C.shfbproj" started="10/31/2012 5:25:54 PM">
 <buildStep step="Initializing">
 </buildStep>
 <buildStep step="ClearWorkFolder">
@@ -13,32 +13,40 @@ Found HTML Help 1 compiler in &#39;C:\Program Files\HTML Help Workshop\&#39;
 </buildStep>
 <buildStep step="ValidatingDocumentationSources">
 Validating and copying documentation source information
+Source: F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll
+    Found assembly &#39;F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll&#39;
+Source: F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.XML
 Source: F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.dll
     Found assembly &#39;F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.dll&#39;
 Source: F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.XML
+Source: F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll
+    Found assembly &#39;F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll&#39;
+Source: F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML
 
 Copying XML comments files
+    F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.XML -&gt; F:\cecs491\docs\Help\Working\EventSlice.XML
     F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.XML -&gt; F:\cecs491\docs\Help\Working\Receiver.XML
+    F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML -&gt; F:\cecs491\docs\Help\Working\SerialPortSlice.XML
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.3591
+    Last step completed in 00:00:00.1702
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0010
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
   MRefBuilder (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
-  Info: Loaded 1 assemblies for reflection and 1 dependency assemblies.
-  Info: Wrote information on 2 namespaces, 9 types, and 32 members
+  Info: Loaded 3 assemblies for reflection and 1 dependency assemblies.
+  Info: Wrote information on 5 namespaces, 14 types, and 52 members
   XslTransform (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\MergeDuplicates.xsl&#39;.
-    Last step completed in 00:00:01.4476
+    Last step completed in 00:00:02.2933
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
@@ -49,7 +57,7 @@ Applying visibility properties to reflection information file
     0 attribute nodes removed
     0 explicit interface implementations removed
     0 local and base class EII elements removed
-    Last step completed in 00:00:00.0361
+    Last step completed in 00:00:00.0501
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
@@ -61,12 +69,12 @@ Transforming reflection output...
   XslTransform (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl&#39;.
-    Last step completed in 00:00:00.7394
+    Last step completed in 00:00:00.9113
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
     No changes required
-    Last step completed in 00:00:00.0211
+    Last step completed in 00:00:00.0401
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
@@ -458,16 +466,16 @@ C:\Program Files\Sandcastle\Presentation\vs2010\branding -&gt; F:\cecs491\docs\H
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-instrumentedLink.xslt -> F:\cecs491\docs\Help\Working\branding\ps-instrumentedLink.xslt
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-languageSpecificText.xslt -> F:\cecs491\docs\Help\Working\branding\ps-languageSpecificText.xslt
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-codesnippet.xslt -> F:\cecs491\docs\Help\Working\branding\ps-codesnippet.xslt
-    Last step completed in 00:00:02.5190
+    Last step completed in 00:00:02.5336
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 No additional content to copy
-    Last step completed in 00:00:00.0070
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0080
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
@@ -476,12 +484,12 @@ Generating intermediate table of contents file...
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\CreateVSToc.xsl&#39;.
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.5056
+    Last step completed in 00:00:00.3805
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.0351
+    Last step completed in 00:00:00.0701
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
@@ -498,7 +506,7 @@ Building reference help topics...
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files\Sandcastle\Data\Reflection&#39;.
   Info: CopyFromIndexComponent: Searching for files that match &#39;reflection.xml&#39;.
-  Info: CopyFromIndexComponent: Indexed 193895 elements in 410 files.
+  Info: CopyFromIndexComponent: Indexed 193937 elements in 410 files.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
@@ -543,8 +551,10 @@ Building reference help topics...
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5&#39;.
   Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0&#39;.
+  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\EventSlice.XML&#39;.
   Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\Receiver.XML&#39;.
-  Info: CopyFromIndexComponent: Indexed 157811 elements in 123 files.
+  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\SerialPortSlice.XML&#39;.
+  Info: CopyFromIndexComponent: Indexed 157821 elements in 125 files.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
   Info: ForEachComponent: Instantiating component.
   Info: ForEachComponent: Loading subcomponents.
@@ -630,7 +640,7 @@ Building reference help topics...
   Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
   Info: ResolveReferenceLinksComponent2: Searching directory &#39;C:\Program Files\Sandcastle\Data\Reflection&#39; for targets files of the form &#39;*.xml&#39;.
   Info: ResolveReferenceLinksComponent2: Searching directory &#39;F:\cecs491\docs\Help\Working&#39; for targets files of the form &#39;reflection.xml&#39;.
-  Info: ResolveReferenceLinksComponent2: Loaded 193895 reference targets.
+  Info: ResolveReferenceLinksComponent2: Loaded 193937 reference targets.
   Info: BrandingComponent: Instantiating component.
   Info: BrandingComponent: Branding Transform &quot;F:\cecs491\docs\Help\Working\branding\branding-en-us.xslt&quot; catalogProductFamily=VS catalogProductVersion=100 catalogLocale=en-us
   Info: SaveComponent: Instantiating component.
@@ -681,32 +691,106 @@ Building reference help topics...
   Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
   Info: ResolveReferenceLinksComponent2: Searching directory &#39;C:\Program Files\Sandcastle\Data\Reflection&#39; for targets files of the form &#39;*.xml&#39;.
   Info: ResolveReferenceLinksComponent2: Searching directory &#39;F:\cecs491\docs\Help\Working&#39; for targets files of the form &#39;reflection.xml&#39;.
-  Info: ResolveReferenceLinksComponent2: Loaded 193895 reference targets.
+  Info: ResolveReferenceLinksComponent2: Loaded 193937 reference targets.
   Info: BrandingComponent: Instantiating component.
   Info: BrandingComponent: Branding Transform &quot;F:\cecs491\docs\Help\Working\branding\branding-en-us.xslt&quot; catalogProductFamily=VS catalogProductVersion=100 catalogLocale=en-us
   Info: SaveComponent: Instantiating component.
+  Info: BuildAssembler: Building topic N:EventSlice
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:EventSlice
+  Info: BuildAssembler: Building topic T:EventSlice.Dispatcher
+  Warn: ResolveReferenceLinksComponent2: MSDN URL not found for target &#39;T:System.Object&#39;.
+  Warn: ResolveReferenceLinksComponent2: MSDN URL not found for target &#39;T:System.Object&#39;.
+  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Dispatcher
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Dispatcher.#ctor
+  Info: BuildAssembler: Building topic Methods.T:EventSlice.Dispatcher
+  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.#ctor
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Dispatcher.#ctor
+  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)
+  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;realTimeEvent&quot;/&gt; documentation for M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
+  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.remoteModule(EventSlice.Interfaces.Module)
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.remoteModule(EventSlice.Interfaces.Module)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Dispatcher.remoteModule(EventSlice.Interfaces.Module)
+  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.run
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.run
+  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.stop
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.stop
+  Info: BuildAssembler: Building topic N:EventSlice.Interfaces
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:EventSlice.Interfaces
+  Info: BuildAssembler: Building topic T:EventSlice.Interfaces.Module
+  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Interfaces.Module
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.Module.#ctor
+  Info: BuildAssembler: Building topic Methods.T:EventSlice.Interfaces.Module
+  Info: BuildAssembler: Building topic Properties.T:EventSlice.Interfaces.Module
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.#ctor
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.Module.#ctor
+  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.Module.dispatcher
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.Module.dispatcher
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.getModuleName
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.Module.getModuleName
+  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Interfaces.Module.getModuleName
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;realTimeEvent&quot;/&gt; documentation for M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Info: BuildAssembler: Building topic T:EventSlice.Interfaces.ModuleException
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:EventSlice.Interfaces.ModuleException
+  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Interfaces.ModuleException
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
+  Info: BuildAssembler: Building topic Methods.T:EventSlice.Interfaces.ModuleException
+  Info: BuildAssembler: Building topic Properties.T:EventSlice.Interfaces.ModuleException
+  Info: BuildAssembler: Building topic Events.T:EventSlice.Interfaces.ModuleException
+  Info: BuildAssembler: Building topic Overload:EventSlice.Interfaces.ModuleException.#ctor
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;exceptionText&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;exceptionText&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;originatingException&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
+  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.ModuleException.exceptionText
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.ModuleException.exceptionText
+  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.ModuleException.module
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.ModuleException.module
+  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.ModuleException.originatingExecption
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.ModuleException.originatingExecption
+  Info: BuildAssembler: Building topic T:EventSlice.Interfaces.RealTimeEvent
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:EventSlice.Interfaces.RealTimeEvent
+  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Interfaces.RealTimeEvent
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.RealTimeEvent.#ctor
+  Info: BuildAssembler: Building topic Methods.T:EventSlice.Interfaces.RealTimeEvent
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String)
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;message&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String)
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.ToString
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.ToString
+  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.ToString
   Info: BuildAssembler: Building topic N:ReceiverSlice
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:ReceiverSlice
   Info: BuildAssembler: Building topic T:ReceiverSlice.Encoder
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:ReceiverSlice.Encoder
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.Encoder
-  Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.Encoder.#ctor
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;!:RealTimeSlice.Receiver&#39;.
+  Warn: ResolveReferenceLinksComponent2: Invalid reference link target &#39;!:RealTimeSlice.Receiver&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;!:RealTimeSlice.Receiver&#39;.
+  Warn: ResolveReferenceLinksComponent2: Invalid reference link target &#39;!:RealTimeSlice.Receiver&#39;.
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.Encoder
   Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.Encoder
   Info: BuildAssembler: Building topic Overload:ReceiverSlice.Encoder.build
   Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.#ctor(System.String,System.Object)
-  Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.Encoder.#ctor(System.String,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;prefix&quot;/&gt; documentation for M:ReceiverSlice.Encoder.#ctor(System.String,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;encoderConfig&quot;/&gt; documentation for M:ReceiverSlice.Encoder.#ctor(System.String,System.Object)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;!:RealTimeSlice.Receiver&#39;.
+  Warn: ResolveReferenceLinksComponent2: Invalid reference link target &#39;!:RealTimeSlice.Receiver&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;!:RealTimeSlice.Receiver&#39;.
+  Warn: ResolveReferenceLinksComponent2: Invalid reference link target &#39;!:RealTimeSlice.Receiver&#39;.
   Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.build(System.String)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:ReceiverSlice.Encoder.build(System.String)
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:ReceiverSlice.Encoder.build(System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;command&quot;/&gt; documentation for M:ReceiverSlice.Encoder.build(System.String)
   Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.build(System.String,System.Object[])
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:ReceiverSlice.Encoder.build(System.String,System.Object[])
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:ReceiverSlice.Encoder.build(System.String,System.Object[])
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;command&quot;/&gt; documentation for M:ReceiverSlice.Encoder.build(System.String,System.Object[])
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;arguments&quot;/&gt; documentation for M:ReceiverSlice.Encoder.build(System.String,System.Object[])
   Info: BuildAssembler: Building topic P:ReceiverSlice.Encoder.encoderConfig
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:ReceiverSlice.Encoder.encoderConfig
   Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.valid(System.String)
@@ -745,14 +829,6 @@ Building reference help topics...
   Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.Receiver
   Info: BuildAssembler: Building topic Overload:ReceiverSlice.Receiver.write
   Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.#ctor(System.IO.Ports.SerialPort,System.String,EventSlice.Dispatcher)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
   Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.init
   Info: BuildAssembler: Building topic P:ReceiverSlice.Receiver.portName
   Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.run
@@ -795,50 +871,18 @@ Building reference help topics...
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:ReceiverSlice.RealTimeEvents
   Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.DelReceiver
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.DelReceiver
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.DelReceiver.#ctor
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.DelReceiver.#ctor(ReceiverSlice.Receiver)
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.DelReceiver.#ctor(ReceiverSlice.Receiver)
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;receiver&quot;/&gt; documentation for M:ReceiverSlice.RealTimeEvents.DelReceiver.#ctor(ReceiverSlice.Receiver)
   Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.ExcepReceiver
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.ExcepReceiver
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic Overload:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor
@@ -851,74 +895,26 @@ Building reference help topics...
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;re&quot;/&gt; documentation for M:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor(ReceiverSlice.ReceiverExceptions)
   Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.NewReceiver
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.NewReceiver
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.NewReceiver.#ctor
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.NewReceiver.#ctor(ReceiverSlice.Receiver)
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.NewReceiver.#ctor(ReceiverSlice.Receiver)
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;receiver&quot;/&gt; documentation for M:ReceiverSlice.RealTimeEvents.NewReceiver.#ctor(ReceiverSlice.Receiver)
   Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.NoteReceiver
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.NoteReceiver
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor(ReceiverSlice.Receiver,System.String)
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor(ReceiverSlice.Receiver,System.String)
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;receiver&quot;/&gt; documentation for M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor(ReceiverSlice.Receiver,System.String)
   Warn: ShowMissingComponent: Missing &lt;param name=&quot;text&quot;/&gt; documentation for M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor(ReceiverSlice.Receiver,System.String)
   Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.UnparsedMessage
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.UnparsedMessage.#ctor
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
   Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
   Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.UnparsedMessage.#ctor(ReceiverSlice.Receiver,System.String,System.Object)
   Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.UnparsedMessage.#ctor(ReceiverSlice.Receiver,System.String,System.Object)
@@ -929,14 +925,26 @@ Building reference help topics...
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:ReceiverSlice.RealTimeEvents.UnparsedMessage.config
   Info: BuildAssembler: Building topic P:ReceiverSlice.RealTimeEvents.UnparsedMessage.unparsedMessage
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:ReceiverSlice.RealTimeEvents.UnparsedMessage.unparsedMessage
-  Info: Processed 73 topics
-    Last step completed in 00:02:29.0203
+  Info: BuildAssembler: Building topic N:SerialPortSlice
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:SerialPortSlice
+  Info: BuildAssembler: Building topic T:SerialPortSlice.SerialPortService
+  Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.SerialPortService
+  Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.SerialPortService
+  Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.getServicer
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:SerialPortSlice.SerialPortService.getServicer
+  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:SerialPortSlice.SerialPortService.getServicer
+  Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.run
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:SerialPortSlice.SerialPortService.run
+  Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.stop
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:SerialPortSlice.SerialPortService.stop
+  Info: Processed 115 topics
+    Last step completed in 00:02:22.8154
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.0552
+    Last step completed in 00:00:00.0401
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -948,29 +956,29 @@ E-Mail: Eric@EWoodruff.us
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
 Processing Help 1 files in F:\cecs491\docs\Help\Working\Output\HtmlHelp1
-Processed 73 HTML files
+Processed 115 HTML files
 Sorting keywords and generating See Also indices
 Saving HTML Help 1 keyword index to F:\cecs491\docs\Help\Working\Documentation.hhk
 Saving HTML Help 1 table of contents to F:\cecs491\docs\Help\Working\Documentation.hhc
 
 Processing website files in F:\cecs491\docs\Help\Working\Output\Website
-Processed 73 HTML files
+Processed 115 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to F:\cecs491\docs\Help\Working\WebKI.xml
 Saving website table of contents to F:\cecs491\docs\Help\Working\WebTOC.xml
-    Last step completed in 00:00:03.6085
+    Last step completed in 00:00:02.9643
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
-    Last step completed in 00:00:00.0662
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1 index file...
-    Last step completed in 00:00:00.0030
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00.0933
+    Last step completed in 00:00:00.0901
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
@@ -985,13 +993,13 @@ Compiling HTML Help 1 file...
   
   
   
-  Compile time: 0 minutes, 3 seconds
+  Compile time: 0 minutes, 1 second
   
-  75	Topics
+  117	Topics
   
-  791	Local links
+  1,310	Local links
   
-  548	Internet links
+  0	Internet links
   
   0	Graphics
   
@@ -999,20 +1007,20 @@ Compiling HTML Help 1 file...
   
   
   
-  Created f:\cecs491\docs\Help\Working\Output\HtmlHelp1\Documentation.chm, 146,831 bytes
+  Created f:\cecs491\docs\Help\Working\Output\HtmlHelp1\Documentation.chm, 192,377 bytes
   
-  Compression decreased file by 722,275 bytes.
+  Compression decreased file by 1,019,750 bytes.
   
-    Last step completed in 00:00:05.7544
+    Last step completed in 00:00:03.3648
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
-    Last step completed in 00:00:00.0050
+    Last step completed in 00:00:00.0100
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
-    Last step completed in 00:00:00.7303
+    Last step completed in 00:00:00.7811
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -1040,50 +1048,76 @@ F:\cecs491\docs\Help\Working\Output\Website\fti\FTI_97.json -&gt; F:\cecs491\doc
 F:\cecs491\docs\Help\Working\Output\Website\fti\FTI_98.json -&gt; F:\cecs491\docs\Help\fti\FTI_98.json
 F:\cecs491\docs\Help\Working\Output\Website\fti\FTI_99.json -&gt; F:\cecs491\docs\Help\fti\FTI_99.json
 F:\cecs491\docs\Help\Working\Output\Website\fti\FTI_Files.json -&gt; F:\cecs491\docs\Help\fti\FTI_Files.json
+F:\cecs491\docs\Help\Working\Output\Website\html\00df2515-344f-720c-4d40-470038c5177f.htm -&gt; F:\cecs491\docs\Help\html\00df2515-344f-720c-4d40-470038c5177f.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\044dada6-f7e2-0e9b-9306-6b28bdb340b3.htm -&gt; F:\cecs491\docs\Help\html\044dada6-f7e2-0e9b-9306-6b28bdb340b3.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\08696295-7666-eb8e-db19-598d63bdff3b.htm -&gt; F:\cecs491\docs\Help\html\08696295-7666-eb8e-db19-598d63bdff3b.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\0996ce0e-cae2-dcdd-2d2f-e5950185fab6.htm -&gt; F:\cecs491\docs\Help\html\0996ce0e-cae2-dcdd-2d2f-e5950185fab6.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\0b564395-f74b-aa49-d178-6f5a2c98b041.htm -&gt; F:\cecs491\docs\Help\html\0b564395-f74b-aa49-d178-6f5a2c98b041.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\0cbfe11a-a292-d661-8acb-fe8d777638a6.htm -&gt; F:\cecs491\docs\Help\html\0cbfe11a-a292-d661-8acb-fe8d777638a6.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\0dfaaac6-3e29-bf63-566b-31e22bb73bd1.htm -&gt; F:\cecs491\docs\Help\html\0dfaaac6-3e29-bf63-566b-31e22bb73bd1.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\0ea08034-9b4d-3507-2a33-1f6636b35686.htm -&gt; F:\cecs491\docs\Help\html\0ea08034-9b4d-3507-2a33-1f6636b35686.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\0fc22645-1ab9-bceb-9b0c-ccf8221807b5.htm -&gt; F:\cecs491\docs\Help\html\0fc22645-1ab9-bceb-9b0c-ccf8221807b5.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\128ff223-4694-e606-52c0-05e2a06b812c.htm -&gt; F:\cecs491\docs\Help\html\128ff223-4694-e606-52c0-05e2a06b812c.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\12d53d94-3039-17c6-13a8-69b0ae4a4bb4.htm -&gt; F:\cecs491\docs\Help\html\12d53d94-3039-17c6-13a8-69b0ae4a4bb4.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\13453879-9c3c-754f-0973-c6afa54df60e.htm -&gt; F:\cecs491\docs\Help\html\13453879-9c3c-754f-0973-c6afa54df60e.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\1563e253-e201-0ee8-ba1c-886835b50413.htm -&gt; F:\cecs491\docs\Help\html\1563e253-e201-0ee8-ba1c-886835b50413.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\171a2441-77cb-5416-56f8-396b4ebecadb.htm -&gt; F:\cecs491\docs\Help\html\171a2441-77cb-5416-56f8-396b4ebecadb.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\1a1938a3-da02-9227-2937-b8e003402b48.htm -&gt; F:\cecs491\docs\Help\html\1a1938a3-da02-9227-2937-b8e003402b48.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\1ddde719-aee3-22b6-4f8e-cbcb6d013eaf.htm -&gt; F:\cecs491\docs\Help\html\1ddde719-aee3-22b6-4f8e-cbcb6d013eaf.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\1f144c87-87ed-a3a7-d1b6-f2fa68fbea9e.htm -&gt; F:\cecs491\docs\Help\html\1f144c87-87ed-a3a7-d1b6-f2fa68fbea9e.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\1f8cf854-0de3-c33b-97b8-dd720310e68d.htm -&gt; F:\cecs491\docs\Help\html\1f8cf854-0de3-c33b-97b8-dd720310e68d.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\218a5403-11b6-f889-5181-d5d30036b1c0.htm -&gt; F:\cecs491\docs\Help\html\218a5403-11b6-f889-5181-d5d30036b1c0.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\218ba5e2-fe5c-f35c-ae39-fb64a114129a.htm -&gt; F:\cecs491\docs\Help\html\218ba5e2-fe5c-f35c-ae39-fb64a114129a.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\2529976b-5605-3440-8429-5f4f3de289a5.htm -&gt; F:\cecs491\docs\Help\html\2529976b-5605-3440-8429-5f4f3de289a5.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\2d85b6b1-f240-bafc-03c8-d1d01ed2d85d.htm -&gt; F:\cecs491\docs\Help\html\2d85b6b1-f240-bafc-03c8-d1d01ed2d85d.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\2e30ca23-9598-b902-49e0-90486b7f7b06.htm -&gt; F:\cecs491\docs\Help\html\2e30ca23-9598-b902-49e0-90486b7f7b06.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\33f5a2cc-80bd-3d29-7fc9-6de07954a621.htm -&gt; F:\cecs491\docs\Help\html\33f5a2cc-80bd-3d29-7fc9-6de07954a621.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\370c8c1a-6a10-525a-8ce4-05764d62a870.htm -&gt; F:\cecs491\docs\Help\html\370c8c1a-6a10-525a-8ce4-05764d62a870.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\3729c5b9-7cbd-fcf3-af81-0857316e8d9b.htm -&gt; F:\cecs491\docs\Help\html\3729c5b9-7cbd-fcf3-af81-0857316e8d9b.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\3b1b3dfb-c96a-92e5-84f6-405cf76145a9.htm -&gt; F:\cecs491\docs\Help\html\3b1b3dfb-c96a-92e5-84f6-405cf76145a9.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\44e7ea6c-ab59-339a-d7fd-a6bb4c1aac43.htm -&gt; F:\cecs491\docs\Help\html\44e7ea6c-ab59-339a-d7fd-a6bb4c1aac43.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\4ca1a3d5-f517-28c4-44c2-982deb917238.htm -&gt; F:\cecs491\docs\Help\html\4ca1a3d5-f517-28c4-44c2-982deb917238.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\4d36520e-6a29-a571-ec4d-2241ccfad121.htm -&gt; F:\cecs491\docs\Help\html\4d36520e-6a29-a571-ec4d-2241ccfad121.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\4de49e37-7e6b-b398-3e9f-48a5a36b10ec.htm -&gt; F:\cecs491\docs\Help\html\4de49e37-7e6b-b398-3e9f-48a5a36b10ec.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\5235dc9b-b1ae-42d3-8275-8738114f02fb.htm -&gt; F:\cecs491\docs\Help\html\5235dc9b-b1ae-42d3-8275-8738114f02fb.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\53f0b588-417e-3002-274a-a3972af71320.htm -&gt; F:\cecs491\docs\Help\html\53f0b588-417e-3002-274a-a3972af71320.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\57d68b62-5cd4-d8d5-637d-d2bc7b5eb208.htm -&gt; F:\cecs491\docs\Help\html\57d68b62-5cd4-d8d5-637d-d2bc7b5eb208.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\5d85c86c-b488-1f74-ecf5-d6888cb64c5c.htm -&gt; F:\cecs491\docs\Help\html\5d85c86c-b488-1f74-ecf5-d6888cb64c5c.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\60c72379-4403-5a25-5813-36ff7d3539af.htm -&gt; F:\cecs491\docs\Help\html\60c72379-4403-5a25-5813-36ff7d3539af.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\62d4b7b8-f6d7-13a8-5a55-40ea2dcd3c88.htm -&gt; F:\cecs491\docs\Help\html\62d4b7b8-f6d7-13a8-5a55-40ea2dcd3c88.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\63b56877-13cb-c35e-cdc4-f94f3a8459e9.htm -&gt; F:\cecs491\docs\Help\html\63b56877-13cb-c35e-cdc4-f94f3a8459e9.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\64218f43-ed81-2fa2-a98b-74dd6f15a790.htm -&gt; F:\cecs491\docs\Help\html\64218f43-ed81-2fa2-a98b-74dd6f15a790.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\690c0dfc-ce35-0066-4d1f-7e5cf1758b48.htm -&gt; F:\cecs491\docs\Help\html\690c0dfc-ce35-0066-4d1f-7e5cf1758b48.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\6a443fac-886c-c0f2-ed9e-1b31ced2b2dc.htm -&gt; F:\cecs491\docs\Help\html\6a443fac-886c-c0f2-ed9e-1b31ced2b2dc.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\6c5c1a44-11b1-97b0-08e8-9f6135a60719.htm -&gt; F:\cecs491\docs\Help\html\6c5c1a44-11b1-97b0-08e8-9f6135a60719.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\6dbf36e8-1606-6a53-525b-cb4598891944.htm -&gt; F:\cecs491\docs\Help\html\6dbf36e8-1606-6a53-525b-cb4598891944.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\6edfe233-8aa6-96a9-de1b-40765efca7ed.htm -&gt; F:\cecs491\docs\Help\html\6edfe233-8aa6-96a9-de1b-40765efca7ed.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\71379f9e-edde-d6c7-38b6-17bb7c92bc53.htm -&gt; F:\cecs491\docs\Help\html\71379f9e-edde-d6c7-38b6-17bb7c92bc53.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\7335078f-c86a-4896-d350-777e70849b2c.htm -&gt; F:\cecs491\docs\Help\html\7335078f-c86a-4896-d350-777e70849b2c.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\74609002-2537-f785-52c2-42c0241d5d7e.htm -&gt; F:\cecs491\docs\Help\html\74609002-2537-f785-52c2-42c0241d5d7e.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\76df8720-7031-7646-cb0f-50716bad95d8.htm -&gt; F:\cecs491\docs\Help\html\76df8720-7031-7646-cb0f-50716bad95d8.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\7d3a4c54-4fd5-5b04-add3-5d691bfcbff7.htm -&gt; F:\cecs491\docs\Help\html\7d3a4c54-4fd5-5b04-add3-5d691bfcbff7.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\7da170a2-a935-c09b-bb29-9098de2e7ce3.htm -&gt; F:\cecs491\docs\Help\html\7da170a2-a935-c09b-bb29-9098de2e7ce3.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\80003358-22c1-3f1f-b557-28ff5becec75.htm -&gt; F:\cecs491\docs\Help\html\80003358-22c1-3f1f-b557-28ff5becec75.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\807d9a38-cb16-d2bb-3ca0-35f6217be8d6.htm -&gt; F:\cecs491\docs\Help\html\807d9a38-cb16-d2bb-3ca0-35f6217be8d6.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\81077d8c-7f3b-b821-0658-64df42701cc1.htm -&gt; F:\cecs491\docs\Help\html\81077d8c-7f3b-b821-0658-64df42701cc1.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\85be1681-cbc3-de54-6bcf-2e2b608c9a73.htm -&gt; F:\cecs491\docs\Help\html\85be1681-cbc3-de54-6bcf-2e2b608c9a73.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\87ab173e-f838-c13b-46c6-5ce916220980.htm -&gt; F:\cecs491\docs\Help\html\87ab173e-f838-c13b-46c6-5ce916220980.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\88521c07-ac69-d841-b16c-b75f1e1428a2.htm -&gt; F:\cecs491\docs\Help\html\88521c07-ac69-d841-b16c-b75f1e1428a2.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\92390cb8-47e2-4274-c3b5-800373941f1f.htm -&gt; F:\cecs491\docs\Help\html\92390cb8-47e2-4274-c3b5-800373941f1f.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\9542adb5-a90f-14e0-8ed9-a11bcd4e591f.htm -&gt; F:\cecs491\docs\Help\html\9542adb5-a90f-14e0-8ed9-a11bcd4e591f.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\96e17908-5b5b-70ed-ee27-1425aa783bd3.htm -&gt; F:\cecs491\docs\Help\html\96e17908-5b5b-70ed-ee27-1425aa783bd3.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\9a97add8-4a99-7b0a-ca22-1b3b6e8e5537.htm -&gt; F:\cecs491\docs\Help\html\9a97add8-4a99-7b0a-ca22-1b3b6e8e5537.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\9be18cae-7a79-2cd2-1033-be880d8b92f9.htm -&gt; F:\cecs491\docs\Help\html\9be18cae-7a79-2cd2-1033-be880d8b92f9.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\9dffc7e5-c99b-3d03-6ef4-53bd379110d0.htm -&gt; F:\cecs491\docs\Help\html\9dffc7e5-c99b-3d03-6ef4-53bd379110d0.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\a2932d0a-fe31-cec8-96dc-3b495940b609.htm -&gt; F:\cecs491\docs\Help\html\a2932d0a-fe31-cec8-96dc-3b495940b609.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\a4b07f74-b774-5a58-e012-9bea0fb0dc05.htm -&gt; F:\cecs491\docs\Help\html\a4b07f74-b774-5a58-e012-9bea0fb0dc05.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\a51f9a06-2661-f28a-fb6e-bace708f6b2b.htm -&gt; F:\cecs491\docs\Help\html\a51f9a06-2661-f28a-fb6e-bace708f6b2b.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\a5282c5e-9391-4eaf-aea5-88ead50d1d4a.htm -&gt; F:\cecs491\docs\Help\html\a5282c5e-9391-4eaf-aea5-88ead50d1d4a.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\a5d1fdfb-d761-7d28-2a00-45f25e4ba61d.htm -&gt; F:\cecs491\docs\Help\html\a5d1fdfb-d761-7d28-2a00-45f25e4ba61d.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\a78855f1-bb2e-8542-ff0d-f16955e606ad.htm -&gt; F:\cecs491\docs\Help\html\a78855f1-bb2e-8542-ff0d-f16955e606ad.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\a9f6cfe3-6818-d8a9-0d3e-83f24d92a748.htm -&gt; F:\cecs491\docs\Help\html\a9f6cfe3-6818-d8a9-0d3e-83f24d92a748.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\ab98d068-6009-0019-a77e-929a93fcafb2.htm -&gt; F:\cecs491\docs\Help\html\ab98d068-6009-0019-a77e-929a93fcafb2.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\ab9dcafa-88c8-30da-0a53-c4ac8ce37884.htm -&gt; F:\cecs491\docs\Help\html\ab9dcafa-88c8-30da-0a53-c4ac8ce37884.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\ac12ad37-b6ba-0619-3839-8548c37a8f5f.htm -&gt; F:\cecs491\docs\Help\html\ac12ad37-b6ba-0619-3839-8548c37a8f5f.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\ac5f79a7-a357-9db5-7d2a-a2a1f71c85bc.htm -&gt; F:\cecs491\docs\Help\html\ac5f79a7-a357-9db5-7d2a-a2a1f71c85bc.htm
@@ -1091,19 +1125,32 @@ F:\cecs491\docs\Help\Working\Output\Website\html\ad6080f0-b9d4-ad86-9aa5-fea1835
 F:\cecs491\docs\Help\Working\Output\Website\html\ae468b2b-3b71-15bc-e285-ceb12f8906ee.htm -&gt; F:\cecs491\docs\Help\html\ae468b2b-3b71-15bc-e285-ceb12f8906ee.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\ae83c066-b23d-6ed2-0d92-1dc3a4c0853a.htm -&gt; F:\cecs491\docs\Help\html\ae83c066-b23d-6ed2-0d92-1dc3a4c0853a.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\b27984e7-ee1f-06ac-e027-0bebf4e409f5.htm -&gt; F:\cecs491\docs\Help\html\b27984e7-ee1f-06ac-e027-0bebf4e409f5.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\b2dd4a26-c793-1573-21d1-676df94d0ccf.htm -&gt; F:\cecs491\docs\Help\html\b2dd4a26-c793-1573-21d1-676df94d0ccf.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\b5577089-1a34-c454-53b7-80d4aed1611f.htm -&gt; F:\cecs491\docs\Help\html\b5577089-1a34-c454-53b7-80d4aed1611f.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\b5d960a5-7b46-0170-4189-f0fcf2074d31.htm -&gt; F:\cecs491\docs\Help\html\b5d960a5-7b46-0170-4189-f0fcf2074d31.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\bbd55b5e-c242-cb18-3a69-cca926fc7d48.htm -&gt; F:\cecs491\docs\Help\html\bbd55b5e-c242-cb18-3a69-cca926fc7d48.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\bd30e395-e66c-8ff5-57e5-7ed93e33bacd.htm -&gt; F:\cecs491\docs\Help\html\bd30e395-e66c-8ff5-57e5-7ed93e33bacd.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\bdbcfb38-8ef0-83f3-9ae9-0a93f22de7ac.htm -&gt; F:\cecs491\docs\Help\html\bdbcfb38-8ef0-83f3-9ae9-0a93f22de7ac.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\bf06f953-bc6d-a48b-0d1d-e997f995d81b.htm -&gt; F:\cecs491\docs\Help\html\bf06f953-bc6d-a48b-0d1d-e997f995d81b.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\bf40d255-34ea-cdfd-bd30-237a729a1cfd.htm -&gt; F:\cecs491\docs\Help\html\bf40d255-34ea-cdfd-bd30-237a729a1cfd.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\bfa86faf-0d01-61ed-454c-6e199f3dcbb1.htm -&gt; F:\cecs491\docs\Help\html\bfa86faf-0d01-61ed-454c-6e199f3dcbb1.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\bfd1985f-bbf0-745c-f15d-1a980156979b.htm -&gt; F:\cecs491\docs\Help\html\bfd1985f-bbf0-745c-f15d-1a980156979b.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\c3efe7da-6d22-0599-f3d2-fd1d70f27033.htm -&gt; F:\cecs491\docs\Help\html\c3efe7da-6d22-0599-f3d2-fd1d70f27033.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\c7f7da4f-2ae5-3c7f-f597-7dc96177da84.htm -&gt; F:\cecs491\docs\Help\html\c7f7da4f-2ae5-3c7f-f597-7dc96177da84.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\cb3faf63-61f5-9c14-8d56-35c5a2bdb949.htm -&gt; F:\cecs491\docs\Help\html\cb3faf63-61f5-9c14-8d56-35c5a2bdb949.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\cb503018-0f7a-bfe0-19d6-077c2351a674.htm -&gt; F:\cecs491\docs\Help\html\cb503018-0f7a-bfe0-19d6-077c2351a674.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\cbfad7d2-9d31-7df1-b3d9-dbbdd08f2103.htm -&gt; F:\cecs491\docs\Help\html\cbfad7d2-9d31-7df1-b3d9-dbbdd08f2103.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\cd5e9d6e-c349-7eef-43e5-f6bba2421245.htm -&gt; F:\cecs491\docs\Help\html\cd5e9d6e-c349-7eef-43e5-f6bba2421245.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\cd9f5350-a08e-dd12-2bc9-ea2a37118b11.htm -&gt; F:\cecs491\docs\Help\html\cd9f5350-a08e-dd12-2bc9-ea2a37118b11.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\cf52342e-1a7b-a75e-8ebb-2f9c30d90d47.htm -&gt; F:\cecs491\docs\Help\html\cf52342e-1a7b-a75e-8ebb-2f9c30d90d47.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\cfac33b4-3994-5804-986d-62f3ec5c5e9c.htm -&gt; F:\cecs491\docs\Help\html\cfac33b4-3994-5804-986d-62f3ec5c5e9c.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\d5ac2153-4f95-8780-0545-4eb61bd62804.htm -&gt; F:\cecs491\docs\Help\html\d5ac2153-4f95-8780-0545-4eb61bd62804.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\d721bbaf-8913-abcc-8543-6aef5f6b4e5b.htm -&gt; F:\cecs491\docs\Help\html\d721bbaf-8913-abcc-8543-6aef5f6b4e5b.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\d796f1b7-da87-24eb-1dd5-587b1eaa48b3.htm -&gt; F:\cecs491\docs\Help\html\d796f1b7-da87-24eb-1dd5-587b1eaa48b3.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\dc0854f3-41d4-4536-a040-4f5f8c2f5a27.htm -&gt; F:\cecs491\docs\Help\html\dc0854f3-41d4-4536-a040-4f5f8c2f5a27.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\dfdb2de3-4307-5ba9-af34-1953f8d8219a.htm -&gt; F:\cecs491\docs\Help\html\dfdb2de3-4307-5ba9-af34-1953f8d8219a.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\e72989d0-1481-06db-e6ae-9ff538d82b02.htm -&gt; F:\cecs491\docs\Help\html\e72989d0-1481-06db-e6ae-9ff538d82b02.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\e7b8743a-f400-76ba-dc2f-6f519c279175.htm -&gt; F:\cecs491\docs\Help\html\e7b8743a-f400-76ba-dc2f-6f519c279175.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\e7ff42ff-c512-564e-b4d5-d43619e1d70f.htm -&gt; F:\cecs491\docs\Help\html\e7ff42ff-c512-564e-b4d5-d43619e1d70f.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\e8857290-9094-0bb4-9960-46626f6fefde.htm -&gt; F:\cecs491\docs\Help\html\e8857290-9094-0bb4-9960-46626f6fefde.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\ec1d7ed4-9c32-847f-3943-c06af6dd7df6.htm -&gt; F:\cecs491\docs\Help\html\ec1d7ed4-9c32-847f-3943-c06af6dd7df6.htm
@@ -1111,7 +1158,10 @@ F:\cecs491\docs\Help\Working\Output\Website\html\eccd74c0-86d2-8476-5200-0d89903
 F:\cecs491\docs\Help\Working\Output\Website\html\ed9c8e50-45c4-1407-1959-0c767483bac7.htm -&gt; F:\cecs491\docs\Help\html\ed9c8e50-45c4-1407-1959-0c767483bac7.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\f0994948-940f-2f55-9e9e-e0b10c4e6bf0.htm -&gt; F:\cecs491\docs\Help\html\f0994948-940f-2f55-9e9e-e0b10c4e6bf0.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\f19c0f75-0b1a-fa48-ba87-bb02ed36cb5e.htm -&gt; F:\cecs491\docs\Help\html\f19c0f75-0b1a-fa48-ba87-bb02ed36cb5e.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\f1effdc8-a014-b9f3-0334-cce1d58b31d1.htm -&gt; F:\cecs491\docs\Help\html\f1effdc8-a014-b9f3-0334-cce1d58b31d1.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\f701503a-f73c-316f-339c-39d10cdfadd1.htm -&gt; F:\cecs491\docs\Help\html\f701503a-f73c-316f-339c-39d10cdfadd1.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\f7858f15-bbba-8aa2-eaf2-7d124ebc2594.htm -&gt; F:\cecs491\docs\Help\html\f7858f15-bbba-8aa2-eaf2-7d124ebc2594.htm
+F:\cecs491\docs\Help\Working\Output\Website\html\f9bde21c-6722-2aaf-92cf-de1c4b4cea57.htm -&gt; F:\cecs491\docs\Help\html\f9bde21c-6722-2aaf-92cf-de1c4b4cea57.htm
 F:\cecs491\docs\Help\Working\Output\Website\html\fec74ae1-f2a2-c22a-64dc-44d26246d986.htm -&gt; F:\cecs491\docs\Help\html\fec74ae1-f2a2-c22a-64dc-44d26246d986.htm
 F:\cecs491\docs\Help\Working\Output\Website\icons\1_404_bullet.gif -&gt; F:\cecs491\docs\Help\icons\1_404_bullet.gif
 F:\cecs491\docs\Help\Working\Output\Website\icons\2_404_bullet.gif -&gt; F:\cecs491\docs\Help\icons\2_404_bullet.gif
@@ -1185,15 +1235,15 @@ F:\cecs491\docs\Help\Working\Output\Website\styles\branding-tr-TR.css -&gt; F:\c
 F:\cecs491\docs\Help\Working\Output\Website\styles\branding-zh-CN.css -&gt; F:\cecs491\docs\Help\styles\branding-zh-CN.css
 F:\cecs491\docs\Help\Working\Output\Website\styles\branding-zh-TW.css -&gt; F:\cecs491\docs\Help\styles\branding-zh-TW.css
 F:\cecs491\docs\Help\Working\Output\Website\styles\branding.css -&gt; F:\cecs491\docs\Help\styles\branding.css
-    Last step completed in 00:00:02.9905
+    Last step completed in 00:00:02.8140
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.4354
+    Last step completed in 00:00:00.3705
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 10/31/2012 12:29 AM.  Total time: 00:02:49.1997
+Build completed successfully at 10/31/2012 05:28 PM.  Total time: 00:02:40.3005
 
 </buildStep>
 </shfbBuild>

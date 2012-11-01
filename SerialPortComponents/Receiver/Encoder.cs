@@ -14,13 +14,13 @@ namespace ReceiverSlice
     /// </summary>
     public class Encoder
     {
-        private String prefix; //Will be made to be *SSSSSS.P#CC,
+        private String prefix; //Will be made to be SSSSSS.P#CC,
         public dynamic encoderConfig { get; private set; }
 
         /// <summary>
         /// This constructor uses the command prefix and encoder.<see cref="RealTimeSlice.Receiver"/>
         /// </summary>
-        /// <param name="prefix"> *SSSSSS.P#CC where SSSSSS is the serial number of the receiver.</param>
+        /// <param name="prefix"> SSSSSS.P#CC where SSSSSS is the serial number of the receiver.</param>
         /// <param name="encoderConfig">Configuration containing 'encoder' entries.</param>
         public Encoder(string prefix, dynamic encoderConfig)
         {
@@ -33,7 +33,7 @@ namespace ReceiverSlice
         /// </summary>
         /// <param name="command">The name of the command as defined in the configuration.</param>
         /// <returns>String formatted as a VEMCO command to be sent to the VR2C hardware.</returns>
-        /// <remarks>This is a wrapper to the build(string,object[]) method.  The command prefix does
+        /// <remarks>This is a wrapper to the build(string,object) method.  The command prefix does
         /// not need to be passed to support</remarks>
         public String build(string command)
         {
@@ -45,10 +45,8 @@ namespace ReceiverSlice
         /// </summary>
         /// <param name="command">The name of the command as defined in the configuration.</param>
         /// <param name="arguments">The parameters required to complete the build.</param>
-        /// <returns>This is a wrapper to the build(string,object[]) method.</returns>
-        /// <remarks>
-        /// The
-        /// </remarks>
+        /// <returns>This is a wrapper to the build(string,object) method.</returns>
+
         public String build(string command, object[] arguments)
         {           
             try
