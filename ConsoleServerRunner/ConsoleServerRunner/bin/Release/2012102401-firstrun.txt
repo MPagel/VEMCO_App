@@ -1,0 +1,42 @@
+(event) Serial port servicer starting.
+(event) (COM3)(receiver note) command preamble: *450052.0#16,
+(event) (COM3)(receiver note) read: *450052.0#16[0014],INVALID,#07
+
+(event) Receiver on COM3
+(event) *450052.0#16[0014],0811,OK,#90 from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) *450052.0#16[0009],OK,#9A from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) *450052.0#16[0009],OK,#9A from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,000,2012-10-25 00:24:57,STS,DC=302,PC=2872,LV=0.0,BV=3.2,BU=4.5,I=2.7,T=21.1,DU=0.1,RU=0.2,XYZ=-0.03:-0.16:-0.97,#BF from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,001,2012-10-25 00:24:41,A69-1601,31620,#B8 from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,002,2012-10-25 00:24:56,A69-1601,31620,#BF from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,003,2012-10-25 00:25:11,A69-1601,31620,#B8 from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,004,2012-10-25 00:25:25,A69-1601,31620,#BE from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,005,2012-10-25 00:25:40,A69-1601,31620,#BC from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,006,2012-10-25 00:25:55,A69-1601,31620,#C3 from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,007,2012-10-25 00:25:57,STS,DC=306,PC=2904,LV=0.0,BV=3.2,BU=4.5,I=2.7,T=21.2,DU=0.1,RU=0.2,XYZ=-0.03:-0.16:-0.97,#C8 from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) 450052,008,2012-10-25 00:26:09,A69-1601,31620,#C5 from receiver on COM3
+(event) 
+ from receiver on COM3
+(event) Receiver on COM3 removed.

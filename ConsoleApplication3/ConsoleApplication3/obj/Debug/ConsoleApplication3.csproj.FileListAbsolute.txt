@@ -1,0 +1,6 @@
+\\VBOXSVR\src\cecs491\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+\\VBOXSVR\src\cecs491\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe
+\\VBOXSVR\src\cecs491\ConsoleApplication3\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
+\\VBOXSVR\src\cecs491\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+\\VBOXSVR\src\cecs491\ConsoleApplication3\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
