@@ -62,24 +62,25 @@
 		},
 		"sentences": {
 			"detection_event": {
-				"format":"{0},{1},{2} {3},{4},{5}{6}",
-				"word_order":["receivers_id","detection_counter","date","time","frequency_codespace","transmitter_id","sensor_value","hexsum"]
+				"format":"([0-9]{6}),([0-9]{3}),([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}),([A-Z0-9]{3}-[A-Z0-9]{4}),([0-9]+)",
+				"word_order":["receivers_id","detection_counter","date","time","frequency_codespace","transmitter_id","sensor_value"]
 			},
 			"generic_response": {
-				"format":"\\*{0}.{1}{2}{3},{4},{5}",
+				"format":"\\*([0-9]{6})\\.([0-9])#([0-9]{2})\\[([0-9]{4})\\],(OK|FAILURE|INVALID),#([A-F0-9]{2})",
 				"word_order":["receivers_id","p","decimal_sum","byte_count","status","hexsum"]
 			},
 			"rtm_info_response": {
-				"format":"{0},{1},{2},{3},{4},{5}",
+				"format":"(OFF|232|485),SI=(POLL|[0-9]+),BL=(U|[0-9]+),BI=(WFS|[0-9]+),MA=(U|[0-9]+),FMT=([A-Z_ ])*",
 				"word_order":["rtm_mode","si","bl","bi","ma","fmt"]
 			},
 			"info_response": {
-				"format":"{0}{1},{2},{3} {4},{5},{6}",
-				"word_order":["info_serial","receiver_serial","study_name","map","code_space","firmware_version","hardware_version"]
+				"format":"([0-9A-Z]+-[0-9A-Z]+):([0-9]{6}),'([0-9A-Z]*)',([A-Z0-9]+-[0-9]+)",
+				"word_order":["receiver_model","receivers_id","study_name","map","code_space","firmware_version","hardware_version"]
 			},
+			STS,DC=([0-9]+),PC=([0-9]+)
 			"status_response": {
-				"format":"{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
-				"word_order":["sts","dc","pc","lv","bc","bu","i","t","du","ru"]
+				"format":"STS,DC=([0-9]+),PC=([0-9]+)",
+				"word_order":["dc","pc","lv","bc","bu","i","t","du","ru","xyz"]
 			}	
 		}
    }
