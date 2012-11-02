@@ -108,11 +108,9 @@ namespace SerialPortSlice
                 }
 
                 //check for COM ports that have disappeared or have TTL = 0
-<<<<<<< HEAD
+
                 foreach (String r in receivers.Keys.ToList<String>())
-=======
-                foreach (String r in receivers.Keys.ToList()) //error: collection was modified enumeration something or other
->>>>>>> eaa8693c2cc7a5f76c4d1b53aebfb2bd79698caf
+
                 {
                     if (Array.IndexOf(SerialPort.GetPortNames(), r) == -1)
                     {
@@ -128,11 +126,9 @@ namespace SerialPortSlice
 
                 //if TTL = 0, it means that this port has been misbehaving consistently
                 //removing it now effectively restarts it during the next service loop
-<<<<<<< HEAD
+
                 foreach (Receiver r in receivers.Values.ToList<Receiver>())
-=======
-                foreach (Receiver r in receivers.Values.ToList())
->>>>>>> eaa8693c2cc7a5f76c4d1b53aebfb2bd79698caf
+
                 {
                     if (r.TTL <= 0)
                     {
@@ -143,11 +139,8 @@ namespace SerialPortSlice
                 Thread.Sleep(serviceTime);
             } while (serviceTime > 0);
 
-<<<<<<< HEAD
             foreach (Receiver r in receivers.Values.ToList<Receiver>())
-=======
-            foreach (Receiver r in receivers.Values.ToList())
->>>>>>> eaa8693c2cc7a5f76c4d1b53aebfb2bd79698caf
+
             {
                 r.shutdown();
                 receivers.Remove(r.portName);

@@ -18,7 +18,5 @@ C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver
 =======
 <<<<<<< .merge_file_IOnjn4
 \\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML
-=======
-C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.pdb
 >>>>>>> .merge_file_dE5PVX
 >>>>>>> service
