@@ -17,10 +17,5 @@
             must implement.
             </summary>
         </member>
-        <member name="T:EventSlice.Interfaces.ModuleException">
-            <summary>
-            ModuleException and its derived classes report faults in the <seealso cref="T:EventSlice.Interfaces.Module"/>
-            </summary>
-        </member>
     </members>
 </doc>

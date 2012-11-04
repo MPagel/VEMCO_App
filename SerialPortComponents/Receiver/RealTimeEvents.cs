@@ -7,18 +7,35 @@ using EventSlice.Interfaces;
 
 namespace ReceiverSlice.RealTimeEvents
 {
+    public class ReceiverEvent
+    /// <summary>
+    /// This event is generated when a VEMCO receiver is configured on a serial port.
+    /// As with all RealTime Events, the data is accessible dynamically.
+    /// </summary>
     public class NewReceiver : RealTimeEvent
     {
-        Receiver receiver;
-        public NewReceiver(Receiver receiver)
-            : base("Receiver on " + receiver.portName)
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        /// <param name="receiver">The Receiver object associated with the VEMCO hardware.</param>
+        /// <param name="portName">The name of the serial port it is connected to (i.e. COM1)</param>
+        /// <param name="serialNumber">The serial number of the receiver.</param>
+        /// <param name="model">The model of the receiver.</param>
+        public NewReceiver(Receiver receiver, string portName, string serialNumber, string model)
+            : base("Receiver on " + receiver.portName, null)
         {
-            this.receiver = receiver;
+            this["receiver"] = receiver;
+            this["portname"] = portName;
+            this["serialnumber"] = serialNumber;
+            this["model"] = model;
         }
 
 
     }
 
+    /// <summary>
+    /// This event is generated when a message is received from the VEMCO hardware.
+    /// </summary>
     public class UnparsedMessage : RealTimeEvent
     {
         private Receiver receiver;
