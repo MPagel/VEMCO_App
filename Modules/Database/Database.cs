@@ -7,6 +7,8 @@ using EventSlice.Interfaces;
 using EventSlice;
 using MySql.Data.MySqlClient;
 using System.Data;
+using ReceiverSlice.RealTimeEvents;
+using Decoder.RealTimeEvents;
 
 namespace Database
 {
@@ -17,33 +19,33 @@ namespace Database
         public Database(Dispatcher dispatcher, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
             :base(dispatcher)
         {
-            connectionString = "Server=" + host + ";Databse=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
+            connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
         }
 
         public override string getModuleName()
             { return "Database"; }
-
+        
         public override void onRealTimeEvent(RealTimeEvent realTimeEvent)
         {
-            
+            if(realTimeEvent.GetType() == typeof(Decoder.RealTimeEvents.RealTimeEventDecoded))
+            {
+                RealTimeEventDecoded rte = (RealTimeEventDecoded)realTimeEvent;
+                string eventType = rte.messageType;
+                if (eventType == "detection_event")
+                    detectionInsert(rte);
+            }
+            else if(realTimeEvent.GetType() == typeof(ReceiverSlice.RealTimeEvents.NewReceiver))
+                receiverInsert((NewReceiver)realTimeEvent);
         }
 
-        public override void onRealTimeEvent(RealTimeEventDecoded realTimeEvent)
-        {
-            string eventType = realTimeEvent.messageType;
-            string result;
-            if (eventType == "detection_event")
-                result = detectionInsert(realTimeEvent);
-            
-        }
-
-        private DatabaseResponse receiverInsert(NewReceiver newReceiver)
+        private void receiverInsert(NewReceiver newReceiver)
         {
             string statement = "INSERT INTO receivers (id) VALUES ('" + newReceiver.serialorsomething + "');");
-            return new DatabaseResponse(statement, response);
+            int response = doInsert(statement);
+            dispatcher.enqueueEvent(new DatabaseResponse(statement, response));
         }
 
-        private DatabseResponse detectionInsert(RealTimeEventDecoded detection)
+        private void detectionInsert(RealTimeEventDecoded detection)
         {
             string statement;
             if(detection.payload["sensor_value"] == null)
@@ -53,7 +55,7 @@ namespace Database
                 statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
                         detection.payload["date"] + "', '" + detection.payload["time"] + "', '" + detection.payload["frequency_codespace"] + "', " + detection.payload["transmitter_id"] + ", " + detection.payload["sensor_value"] + ", 'm', '" + detection.payload["receivers_id"] + "');";
             int response = doInsert(statement);
-            return new DatabseResponse(statement, response);
+            dispatcher.enqueueEvent(new DatabaseResponse(statement, response));
         }
 
         private int doInsert(string statement)
