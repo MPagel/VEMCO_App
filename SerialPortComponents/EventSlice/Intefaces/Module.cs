@@ -17,6 +17,9 @@ namespace EventSlice.Interfaces
 
         public abstract string getModuleName();
         public virtual void onRealTimeEvent(Interfaces.RealTimeEvent realTimeEvent) { }
+
+        public Module(Dispatcher dispatcher)
+            { this.dispatcher = dispatcher; }
     }
 
     

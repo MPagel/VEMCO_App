@@ -34,6 +34,9 @@
     <Reference Include="EventSlice">
       <HintPath>F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
     </Reference>
+    <Reference Include="FridayThe13th">
+      <HintPath>F:\FridayThe13th\FridayThe13th\obj\Debug\FridayThe13th.dll</HintPath>
+    </Reference>
     <Reference Include="Receiver">
       <HintPath>..\Receiver\obj\Release\Receiver.dll</HintPath>
     </Reference>

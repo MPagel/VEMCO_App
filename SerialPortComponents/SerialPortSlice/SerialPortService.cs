@@ -33,6 +33,10 @@ namespace SerialPortSlice
                
         }
     
+        /// <summary>
+        /// The Serial Port Service is a singleton.
+        /// </summary>
+        /// <returns>A static reference to the singleton SerialPortService</returns>
         public static SerialPortService getServicer() 
         {
             if (iam == null)
@@ -43,6 +47,9 @@ namespace SerialPortSlice
             return iam;
         }
 
+        /// <summary>
+        /// Instructs the service to begin listening for VEMCO receivers attached to serial ports.
+        /// </summary>
         public void run()
         {
             if (serviceThread == null)
@@ -55,9 +62,23 @@ namespace SerialPortSlice
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStartUp());
         }
 
+        /// <summary>
+        /// Instructs the service to stop listening for receivers and to unmount any receivers running. 
+        /// </summary>
+        /// <remarks>
+        /// This method allows each receiver several seconds (2.5 at the time of writing) to shutdown before
+        /// simply being forced off.  In the intervening period, data may be received from the serial port
+        /// and events subsequently dispatched.
+        /// </remarks>
         public void stop()
         {
+            
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStop());
+
+            foreach (Receiver r in receivers.Values.ToList<Receiver>())
+            {
+                r.shutdown();
+            }
             if (serviceThread != null && serviceThread.IsAlive)
             {
                 int waitTimeForShutdown = receivers.Count;
@@ -75,10 +96,16 @@ namespace SerialPortSlice
                 serviceThread.Abort();
                 serviceThread = null;
             }
+            
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStopped());
             dispatcher.stop();
         }
 
+
+        /// <summary>
+        /// This is the primary service loop which executes in its own thread.  It is started by run()
+        /// and is destroyed by shutdown().
+        /// </summary>
         private void serialPortsService()
         {
             serviceTime = 1000;
@@ -95,13 +122,10 @@ namespace SerialPortSlice
                             Receiver r = new Receiver(availableCOMPort, c, dispatcher);
                             receivers.Add(c, r);
                         }
-                        catch (ReceiverExceptions re)
-                        {
-                            //!!!TODO
-                        }
+                        
                         catch (Exception e)
                         {
-
+                            dispatcher.enqueueEvent(new RealTimeEvents.ServerException(e, false));
                         }
 
                     }
@@ -118,7 +142,8 @@ namespace SerialPortSlice
                         Receiver tbr;
                         if (receivers.TryGetValue(r, out tbr))
                         {
-                            dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(tbr));
+                            dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(
+                                tbr, tbr.portName, null, null, null));
                         }
                         receivers.Remove(r);
                     }
@@ -133,7 +158,8 @@ namespace SerialPortSlice
                     if (r.TTL <= 0)
                     {
                         receivers.Remove(r.portName);
-                        dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(r));
+                        dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(
+                                r, r.portName, null, null, null));
                     }
                 }
                 Thread.Sleep(serviceTime);

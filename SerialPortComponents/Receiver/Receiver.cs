@@ -47,7 +47,8 @@ namespace ReceiverSlice
         private TextReader textReader { get; set; }
         private int goState = 1;
         private int write_wait = 100;
-
+        private String VEMCO_SerialNumber { get; set; }
+        private String VEMCO_Model { get; set; }
         /// <summary>
         /// Public constructor for the Receiver class.
         /// </summary>
@@ -69,6 +70,8 @@ namespace ReceiverSlice
             this.portName = portName;
             this.dispatcher = dispatcher;
 
+            
+            
             serialPort.Open();
             encoder = null;
             init();
@@ -82,15 +85,17 @@ namespace ReceiverSlice
                 Thread.Sleep(500);
                 while (serialPort.BytesToRead > 0)
                 {
-                    dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) Read: " + serialPort.ReadExisting()));
+                    dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver("Read: " + serialPort.ReadExisting(),
+                        this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
                 }
                 run();
-                dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this));
+                dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
             }
             else
             {
-                ReceiverExceptions re = new ReceiverExceptions(this, "(receiver fatal) Failed to configure encoder during init().", true);
-                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
+                ReceiverExceptions re = new ReceiverExceptions(this, "(FATAL) Failed to configure encoder during init().", true);
+                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re,re.fatal, 
+                    this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
                 serialPort.Close();
                 throw re;
             }
@@ -126,13 +131,10 @@ namespace ReceiverSlice
             Dictionary<Int32, String> infoMethods = new Dictionary<Int32, String>();
             String discoveryReturns = "";
             
-
             var jsonParser = new JsonParser() { CamelizeProperties = false };
 
             foreach (string filename in System.IO.Directory.GetFiles(VR2C_COMMAND_FOLDER))
             {
-
-                
                 dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
                 var dc = config.discovery_commands;
                 var fwver = config.firmware_version;
@@ -142,6 +144,12 @@ namespace ReceiverSlice
                 }
                 catch(Exception e)
                 {
+                    ReceiverExceptions re = new ReceiverExceptions(this, "INFO command not found in " + 
+                        "configuration file: " + filename + ". This is normally not fatal on its own but " +
+                        "indicates a serious problem with the format/content of the config file.",
+                        false,e);
+                    dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re.fatal, re.ToString(),
+                        this, this.portName, null, null, null));
                 }
 
                 try
@@ -150,7 +158,12 @@ namespace ReceiverSlice
                 }
                 catch (Exception e)
                 {
-
+                    ReceiverExceptions re = new ReceiverExceptions(this, "Discovery commands not found in " +
+                        "configuration file: " + filename + ". This is normally not fatal on its own but " +
+                        "indicates a serious problem with the format/content of the config file.",
+                        false, e);
+                    dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re.fatal, re.text,
+                        this, this.portName, null, null, null));
                 }
                 
 
@@ -179,8 +192,9 @@ namespace ReceiverSlice
             }
             if (discovery_attempts >= 5)
             {
-                ReceiverExceptions re = new ReceiverExceptions(this, "(receiver note) Not able to discover VEMCO receiver attached on this port.", true);
-                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
+                ReceiverExceptions re = new ReceiverExceptions(this, "Not able to discover VEMCO receiver attached on this port.", true);
+                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re,re.fatal, 
+                    this, this.portName, null,null, null));
                 serialPort.Close();
                 throw re;
             }
@@ -192,8 +206,11 @@ namespace ReceiverSlice
             
 
             string commandPreamble = discoveryReturns.Substring(0, 12) + ",";
-            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) command preamble: " + discoveryReturns.Substring(0,12) + ","));
-            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) read: " + discoveryReturns));
+            this.VEMCO_SerialNumber = discoveryReturns.Substring(1,6);
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver("command preamble: " + discoveryReturns.Substring(0,12) + ",",
+                this, this.portName, this.VEMCO_SerialNumber, null, null));
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver("read: " + discoveryReturns,
+                this, this.portName, this.VEMCO_SerialNumber, null, null));
 
             infoMethods.Add(-1, commandPreamble + "INFO");
             int info_attempts = 0;
@@ -210,7 +227,8 @@ namespace ReceiverSlice
                 {
                     foreach (String infoc in infoMethods.Values)
                     {
-                        dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) attempting INFO command with " + infoc));
+                        dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver("(receiver note) attempting INFO command with " + infoc,
+                            this, this.portName, this.VEMCO_SerialNumber, null, null));
                         _write(infoc);
                         Thread.Sleep(500);
                     }
@@ -240,8 +258,9 @@ namespace ReceiverSlice
             }
             if (read_attempts >= 5)
             {
-                ReceiverExceptions re = new ReceiverExceptions(this, "(receiver fatal) Not able to get INFO from the VEMCO receiver attached on this port.", true);
-                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
+                ReceiverExceptions re = new ReceiverExceptions(this, "(FATAL) Not able to get INFO from the VEMCO receiver attached on this port.", true);
+                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re, re.fatal,
+                    this, this.portName, this.VEMCO_SerialNumber, null, null));
                 serialPort.Close();
                 throw re;
             }
@@ -249,7 +268,8 @@ namespace ReceiverSlice
             int RECEIVER_FW_VERSION = -1;
             if (infoReturns != "")
             {
-
+                //!!! Need a method to read the model.
+                this.VEMCO_Model = null;
                 int fw_start = infoReturns.IndexOf("FW=");
                 int fw_end = infoReturns.IndexOf(",", fw_start);
                 string fw_ver = infoReturns.Substring((fw_start + 3), (fw_end - fw_start - 3));
@@ -260,7 +280,8 @@ namespace ReceiverSlice
                 string release = fw_ver.Substring(fw_ver_secondperiod + 1, (fw_ver.Length - fw_ver_secondperiod - 1));
                 RECEIVER_FW_VERSION = (Int32.Parse(major) * 10000) + (Int32.Parse(minor) * 100) + (Int32.Parse(release));
             }
-            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this,"(receiver note) detected firmware version: " + RECEIVER_FW_VERSION));
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver("Detected firmware version: " + RECEIVER_FW_VERSION,
+                this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, null));
             if (RECEIVER_FW_VERSION >= 0)
             {
                 int fw_use = -1;
@@ -280,20 +301,23 @@ namespace ReceiverSlice
                 }
                 if (fw_use < 0 || encoder == null)
                 {
-                    ReceiverExceptions re = new ReceiverExceptions(this, "(receiver fatal) Unable to parse out FW version from return from INFO command.", true);
-                    dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
+                    ReceiverExceptions re = new ReceiverExceptions(this, "(FATAL) Unable to parse out FW version from return from INFO command.", true);
+                    dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re, re.fatal,
+                        this, this.portName, this.VEMCO_SerialNumber, null, null));
                     serialPort.Close();
                     throw re;
                 }
             }
             else
             {
-                ReceiverExceptions re = new ReceiverExceptions(this, "(receiver fatal) Unable to parse out FW version from return from INFO command.", true);
-                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
+                ReceiverExceptions re = new ReceiverExceptions(this, "(FATAL) Unable to parse out FW version from return from INFO command.", true);
+                dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re,re.fatal,
+                    this, this.portName, this.VEMCO_SerialNumber, null, null));
                 serialPort.Close();
                 throw re;
             }
-            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver(this, "(receiver note) Successfully configured encoder with fw version = " + encoder.encoderConfig.firmware_version));
+            dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver("(receiver note) Successfully configured encoder with fw version = " + encoder.encoderConfig.firmware_version,
+                this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
         }
 
         /// <summary>
@@ -351,13 +375,13 @@ namespace ReceiverSlice
 
                 if (goState == -1)
                 {
-                    dispatcher.enqueueEvent(new RealTimeEvents.DelReceiver(this));
+                    dispatcher.enqueueEvent(new RealTimeEvents.DelReceiver(this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
                     serialPort.Close();
                     return;
                 }
                 Thread.Sleep(500);
             }
-            dispatcher.enqueueEvent(new RealTimeEvents.DelReceiver(this));
+            dispatcher.enqueueEvent(new RealTimeEvents.DelReceiver(this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
             serialPort.Close();
         }
 
@@ -383,7 +407,8 @@ namespace ReceiverSlice
                     {
                         EndOfStreamException eose = new EndOfStreamException();
                         ReceiverExceptions re = new ReceiverExceptions(this,"End of stream reached on serial port.",true,eose);
-                        dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re));
+                        dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re, re.fatal,
+                            this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
                         throw re;
                     }
                     ret += buffer[0];
@@ -391,7 +416,8 @@ namespace ReceiverSlice
 
                 if (ret.Length > 1)
                 {
-                    dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(this, ret, encoder.encoderConfig));
+                    dispatcher.enqueueEvent(new RealTimeEvents.UnparsedMessage(ret,
+                        this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
                 }
             }
             goState = -1;

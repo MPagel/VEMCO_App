@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Decoder.RealTimeEvents
 {
-    class DatabaseResponse: RealTimeEvent
+    public class DatabaseResponse: RealTimeEvent
     {
-        string sql { get; private set; }
-        int response { get; private set; }
+        public string sql { get; private set; }
+        public int response { get; private set; }
 
         public DatabaseResponse(string message, int response)
             :base(message)

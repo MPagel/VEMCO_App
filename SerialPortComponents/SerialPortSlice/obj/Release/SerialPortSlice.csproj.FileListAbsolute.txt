@@ -13,10 +13,7 @@ C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.csprojResolveAssemblyReference.cache
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.pdb
-<<<<<<< HEAD
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.pdb
-=======
-<<<<<<< .merge_file_IOnjn4
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\FridayThe13th.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\FridayThe13th.pdb
 \\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML
->>>>>>> .merge_file_dE5PVX
->>>>>>> service

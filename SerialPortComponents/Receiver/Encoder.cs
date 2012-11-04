@@ -15,10 +15,13 @@ namespace ReceiverSlice
     public class Encoder
     {
         private String prefix; //Will be made to be SSSSSS.P#CC,
+        /// <summary>
+        /// The json configuration object.
+        /// </summary>
         public dynamic encoderConfig { get; private set; }
 
         /// <summary>
-        /// This constructor uses the command prefix and encoder.<see cref="RealTimeSlice.Receiver"/>
+        /// This constructor uses the command prefix and encoder.
         /// </summary>
         /// <param name="prefix"> SSSSSS.P#CC where SSSSSS is the serial number of the receiver.</param>
         /// <param name="encoderConfig">Configuration containing 'encoder' entries.</param>
@@ -72,7 +75,11 @@ namespace ReceiverSlice
             }
         }
 
-
+        /// <summary>
+        /// Determines whether the processed command is valid for the current json configuration (by firmware version)
+        /// </summary>
+        /// <param name="processed_commmand">The command that is being validated</param>
+        /// <returns>True if the processed command is valid for the current json configuration</returns>
         public Boolean valid(String processed_commmand)
         {
             //regexp magic

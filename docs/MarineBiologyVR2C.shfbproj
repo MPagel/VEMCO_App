@@ -19,8 +19,12 @@
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\SerialPortComponents\Receiver\bin\Release\Receiver.dll" xmlns="" />
-<DocumentationSource sourceFile="..\SerialPortComponents\Receiver\bin\Release\Receiver.XML" xmlns="" /></DocumentationSources>
+      <DocumentationSource sourceFile="..\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll" />
+<DocumentationSource sourceFile="..\SerialPortComponents\EventSlice\bin\Release\EventSlice.XML" />
+<DocumentationSource sourceFile="..\SerialPortComponents\Receiver\bin\Release\Receiver.dll" />
+<DocumentationSource sourceFile="..\SerialPortComponents\Receiver\bin\Release\Receiver.XML" />
+<DocumentationSource sourceFile="..\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll" />
+<DocumentationSource sourceFile="..\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML" /></DocumentationSources>
     <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
     <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
     <HelpTitle>Marine Biology VR2C Real Time Project</HelpTitle>

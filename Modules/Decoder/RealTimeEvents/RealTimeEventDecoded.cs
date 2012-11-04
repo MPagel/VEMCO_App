@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Decoder.RealTimeEvents
 {
-    class RealTimeEventDecoded: RealTimeEvent
+    public class RealTimeEventDecoded: RealTimeEvent
     {
         public String undecoded {get; private set;}
         public dynamic config  {get; private set;}
