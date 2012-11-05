@@ -48,26 +48,7 @@ namespace EventSlice
             {
                 m.dispatcher = this;
             }
-            //if (File.Exists(MODULES_PATH))
-            //{
-            //    // Execute the method from the requested .dll using reflection (System.Reflection).
-            //    Assembly DLL = Assembly.LoadFrom(MODULES_PATH);
-            //    Type classType = DLL.GetType(String.Format("{0}.{1}", strNmSpaceNm, strClassNm));
-            //    if (classType != null)
-            //    {
-            //        // Create class instance.
-            //        classInst = Activator.CreateInstance(classType);
-
-            //        // Invoke required method.
-            //        MethodInfo methodInfo = classType.GetMethod(strMethodName);
-            //        if (methodInfo != null)
-            //        {
-            //            object result = null;
-            //            result = methodInfo.Invoke(classInst, new object[] { dllParams });
-            //            return result.ToString();
-            //        }
-            //    }
-            //}
+            
         }
 
         public void addModule(Interfaces.Module module)

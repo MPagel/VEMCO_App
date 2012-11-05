@@ -43,7 +43,7 @@ namespace SerialPortSlice.RealTimeEvents
 
     /// <summary>
     /// ServerStop fires when the server is no longer looking for receivers but may still have configured
-    /// receivers that have not been removed (and may still be reading data).
+    /// receivers that have not been removed and may still be reading data.
     /// </summary>
     public class ServerStop : ServerRealTimeEvents
     {

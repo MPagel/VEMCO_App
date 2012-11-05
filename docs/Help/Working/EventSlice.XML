@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>EventSlice</name>
+  </assembly>
+  <members>
+    <member name="T:EventSlice.Dispatcher">
+      <summary>
+            The dispatcher maintains a thread-safe queue of events.  When a new event arrives, the event is dispatched to
+            any registered Modules.  Any registered module may also enqueue a RealTimeEvent
+            for distribution.
+            </summary>
+    </member>
+    <member name="T:EventSlice.Interfaces.Module">
+      <summary>
+            This class contains the specification all classes wishing to participate in the event system
+            must implement.
+            </summary>
+    </member>
+    <member name="N:EventSlice">
+      <summary />
+    </member>
+    <member name="N:EventSlice.Interfaces">
+      <summary />
+    </member>
+    <member name="N:ReceiverSlice">
+      <summary />
+    </member>
+    <member name="N:ReceiverSlice.RealTimeEvents">
+      <summary />
+    </member>
+    <member name="N:SerialPortSlice">
+      <summary />
+    </member>
+    <member name="N:SerialPortSlice.RealTimeEvents">
+      <summary />
+    </member>
+  </members>
+</doc>

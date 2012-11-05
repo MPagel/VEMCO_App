@@ -1,0 +1,6 @@
+/config:MRefBuilder.config
+/out:reflection.org
+/dep:C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll
+F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll
+F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.dll
+F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll

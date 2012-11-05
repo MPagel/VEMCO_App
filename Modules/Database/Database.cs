@@ -7,8 +7,7 @@ using EventSlice.Interfaces;
 using EventSlice;
 using MySql.Data.MySqlClient;
 using System.Data;
-using ReceiverSlice.RealTimeEvents;
-using Decoder.RealTimeEvents;
+
 
 namespace Database
 {
@@ -27,25 +26,25 @@ namespace Database
         
         public override void onRealTimeEvent(RealTimeEvent realTimeEvent)
         {
-            if(realTimeEvent.GetType() == typeof(Decoder.RealTimeEvents.RealTimeEventDecoded))
+            if(realTimeEvent.GetType() == typeof(Decoder.RealTimeEvents.Decoded))
             {
-                RealTimeEventDecoded rte = (RealTimeEventDecoded)realTimeEvent;
-                string eventType = rte.messageType;
+                Decoder.RealTimeEvents.Decoded rte = (Decoder.RealTimeEvents.Decoded)realTimeEvent;
+                string eventType = rte["messagetype"];
                 if (eventType == "detection_event")
                     detectionInsert(rte);
             }
             else if(realTimeEvent.GetType() == typeof(ReceiverSlice.RealTimeEvents.NewReceiver))
-                receiverInsert((NewReceiver)realTimeEvent);
+                receiverInsert((ReceiverSlice.RealTimeEvents.NewReceiver)realTimeEvent);
         }
 
-        private void receiverInsert(NewReceiver newReceiver)
+        private void receiverInsert(ReceiverSlice.RealTimeEvents.NewReceiver newReceiver)
         {
-            string statement = "INSERT INTO receivers (id) VALUES ('" + newReceiver.serialorsomething + "');");
+            string statement = "INSERT INTO receivers (id) VALUES ('" + newReceiver["serialnumber"] + "');");
             int response = doInsert(statement);
             dispatcher.enqueueEvent(new DatabaseResponse(statement, response));
         }
 
-        private void detectionInsert(RealTimeEventDecoded detection)
+        private void detectionInsert(Decoder.RealTimeEvents.Decoded detection)
         {
             string statement;
             if(detection.payload["sensor_value"] == null)
