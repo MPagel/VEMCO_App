@@ -9,14 +9,13 @@ using MySql.Data.MySqlClient;
 using System.Data;
 
 
-namespace Database
+namespace Databases
 {
     public class Database : Module
     {
-        string connectionString {private get; private set;}
+        private string connectionString {get; set;}
 
         public Database(Dispatcher dispatcher, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
-            :base(dispatcher)
         {
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
         }
@@ -39,22 +38,22 @@ namespace Database
 
         private void receiverInsert(ReceiverSlice.RealTimeEvents.NewReceiver newReceiver)
         {
-            string statement = "INSERT INTO receivers (id) VALUES ('" + newReceiver["serialnumber"] + "');");
+            string statement = "INSERT INTO receivers (id) VALUES ('" + newReceiver["serialnumber"] + "');";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new DatabaseResponse(statement, response));
+            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, newReceiver));
         }
 
         private void detectionInsert(Decoder.RealTimeEvents.Decoded detection)
         {
             string statement;
-            if(detection.payload["sensor_value"] == null)
+            if(detection["decodedmessage"]["sensor_value"] == null)
                 statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, receivers_id) VALUES ('" +
-                        detection.payload["date"] + "', '" + detection.payload["time"] + "', '" + detection.payload["frequency_codespace"] + "', " + detection.payload["transmitter_id"] + ", '" + detection.payload["receivers_id"] + "');";
+                        detection["decodedmessage"]["date"] + "', '" + detection["decodedmessage"]["time"] + "', '" + detection["decodedmessage"]["frequency_codespace"] + "', " + detection["decodedmessage"]["transmitter_id"] + ", '" + detection["decodedmessage"]["receivers_id"] + "');";
             else
                 statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
-                        detection.payload["date"] + "', '" + detection.payload["time"] + "', '" + detection.payload["frequency_codespace"] + "', " + detection.payload["transmitter_id"] + ", " + detection.payload["sensor_value"] + ", 'm', '" + detection.payload["receivers_id"] + "');";
+                        detection["decodedmessage"]["date"] + "', '" + detection["decodedmessage"]["time"] + "', '" + detection["decodedmessage"]["frequency_codespace"] + "', " + detection["decodedmessage"]["transmitter_id"] + ", " + detection["decodedmessage"]["sensor_value"] + ", 'm', '" + detection["decodedmessage"]["receivers_id"] + "');";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new DatabaseResponse(statement, response));
+            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, detection));
         }
 
         private int doInsert(string statement)

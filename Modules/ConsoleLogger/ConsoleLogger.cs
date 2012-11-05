@@ -15,7 +15,7 @@ namespace ConsoleLogger
 
         public override void onRealTimeEvent(RealTimeEvent rte)
         {
-            System.Console.WriteLine("(event) " + rte);
+            System.Console.WriteLine(rte);
         }
         
         public override string getModuleName()
