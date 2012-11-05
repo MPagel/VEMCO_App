@@ -8,7 +8,6 @@ using EventSlice;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-
 namespace Databases
 {
     public class Database : Module
