@@ -1,3 +1,5 @@
+*.dll
+*.exe
 *.~*
 [Oo]bj
 [Bb]in
