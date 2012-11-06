@@ -671,7 +671,7 @@
             <type api="T:System.Object" ref="true" />
           </containers>
         </element>
-        <element api="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)" />
+        <element api="M:EventSlice.Interfaces.Module.#ctor" />
         <element api="P:EventSlice.Interfaces.Module.dispatcher" />
         <element api="M:EventSlice.Interfaces.Module.getModuleName" />
         <element api="M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)" />
@@ -795,15 +795,10 @@
       </containers>
       <file name="9be18cae-7a79-2cd2-1033-be880d8b92f9" />
     </api>
-    <api id="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)">
+    <api id="M:EventSlice.Interfaces.Module.#ctor">
       <topicdata group="api" />
       <apidata name=".ctor" group="member" subgroup="constructor" />
       <memberdata visibility="public" special="true" />
-      <parameters>
-        <parameter name="dispatcher">
-          <type api="T:EventSlice.Dispatcher" ref="true" />
-        </parameter>
-      </parameters>
       <containers>
         <library assembly="EventSlice" module="EventSlice" kind="DynamicallyLinkedLibrary">
           <assemblydata version="1.0.0.0" />
@@ -812,7 +807,7 @@
         <namespace api="N:EventSlice.Interfaces" />
         <type api="T:EventSlice.Interfaces.Module" ref="true" />
       </containers>
-      <file name="2368f824-8ee6-7836-ccc6-635cee12fc01" />
+      <file name="64218f43-ed81-2fa2-a98b-74dd6f15a790" />
     </api>
     <api id="P:EventSlice.Interfaces.Module.dispatcher">
       <topicdata group="api" />

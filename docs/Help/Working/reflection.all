@@ -431,7 +431,7 @@
       <elements>
         <element api="M:EventSlice.Interfaces.Module.getModuleName" />
         <element api="M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)" />
-        <element api="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)" />
+        <element api="M:EventSlice.Interfaces.Module.#ctor" />
         <element api="P:EventSlice.Interfaces.Module.dispatcher" />
         <element api="M:System.Object.ToString">
           <apidata name="ToString" group="member" subgroup="method" />
@@ -519,14 +519,9 @@
         <namespace api="N:EventSlice.Interfaces" />
       </containers>
     </api>
-    <api id="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)">
+    <api id="M:EventSlice.Interfaces.Module.#ctor">
       <apidata name=".ctor" group="member" subgroup="constructor" />
       <memberdata visibility="public" special="true" />
-      <parameters>
-        <parameter name="dispatcher">
-          <type api="T:EventSlice.Dispatcher" ref="true" />
-        </parameter>
-      </parameters>
       <containers>
         <library assembly="EventSlice" module="EventSlice" kind="DynamicallyLinkedLibrary" />
         <namespace api="N:EventSlice.Interfaces" />

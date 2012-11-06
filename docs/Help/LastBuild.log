@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="1.9.5.0" projectFile="F:\cecs491\docs\MarineBiologyVR2C.shfbproj" started="11/4/2012 7:40:45 PM">
+<shfbBuild product="Sandcastle Help File Builder" version="1.9.5.0" projectFile="F:\cecs491\docs\MarineBiologyVR2C.shfbproj" started="11/5/2012 12:15:28 AM">
 <buildStep step="Initializing">
+</buildStep>
+<buildStep step="ClearWorkFolder">
+Clearing working folder...
 </buildStep>
 <buildStep step="FindingTools">
 Finding tools...
@@ -27,11 +30,11 @@ Copying XML comments files
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.0901
+    Last step completed in 00:00:00.0701
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0901
+    Last step completed in 00:00:00.0300
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
@@ -43,11 +46,11 @@ Generating reflection information...
   XslTransform (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\MergeDuplicates.xsl&#39;.
-    Last step completed in 00:00:02.6638
+    Last step completed in 00:00:01.1116
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0401
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="ApplyVisibilityProperties">
 Applying visibility properties to reflection information file
@@ -66,12 +69,12 @@ Transforming reflection output...
   XslTransform (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl&#39;.
-    Last step completed in 00:00:01.5723
+    Last step completed in 00:00:01.3720
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
     No changes required
-    Last step completed in 00:00:00.0501
+    Last step completed in 00:00:00.0901
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
@@ -463,7 +466,7 @@ C:\Program Files\Sandcastle\Presentation\vs2010\branding -&gt; F:\cecs491\docs\H
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-instrumentedLink.xslt -> F:\cecs491\docs\Help\Working\branding\ps-instrumentedLink.xslt
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-languageSpecificText.xslt -> F:\cecs491\docs\Help\Working\branding\ps-languageSpecificText.xslt
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-codesnippet.xslt -> F:\cecs491\docs\Help\Working\branding\ps-codesnippet.xslt
-    Last step completed in 00:00:02.7439
+    Last step completed in 00:00:02.1331
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -481,17 +484,17 @@ Generating intermediate table of contents file...
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\CreateVSToc.xsl&#39;.
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.3805
+    Last step completed in 00:00:00.5608
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.0300
+    Last step completed in 00:00:00.0501
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 F:\cecs491\docs\Help\Working\sandcastle.config
-    Last step completed in 00:00:00.0501
+    Last step completed in 00:00:00.0401
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
@@ -693,7 +696,6 @@ Building reference help topics...
   Info: BrandingComponent: Branding Transform &quot;F:\cecs491\docs\Help\Working\branding\branding-en-us.xslt&quot; catalogProductFamily=VS catalogProductVersion=100 catalogLocale=en-us
   Info: SaveComponent: Instantiating component.
   Info: BuildAssembler: Building topic N:EventSlice
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:EventSlice
   Info: BuildAssembler: Building topic T:EventSlice.Dispatcher
   Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Dispatcher
   Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Dispatcher.#ctor
@@ -715,15 +717,13 @@ Building reference help topics...
   Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.stop
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.stop
   Info: BuildAssembler: Building topic N:EventSlice.Interfaces
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:EventSlice.Interfaces
   Info: BuildAssembler: Building topic T:EventSlice.Interfaces.Module
   Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Interfaces.Module
   Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.Module.#ctor
   Info: BuildAssembler: Building topic Methods.T:EventSlice.Interfaces.Module
   Info: BuildAssembler: Building topic Properties.T:EventSlice.Interfaces.Module
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;dispatcher&quot;/&gt; documentation for M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)
+  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.#ctor
+  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.Module.#ctor
   Info: BuildAssembler: Building topic P:EventSlice.Interfaces.Module.dispatcher
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.Module.dispatcher
   Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.getModuleName
@@ -809,7 +809,6 @@ Building reference help topics...
   Info: BuildAssembler: Building topic P:EventSlice.Interfaces.RealTimeEvent.Values
   Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.RealTimeEvent.Values
   Info: BuildAssembler: Building topic N:ReceiverSlice
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:ReceiverSlice
   Info: BuildAssembler: Building topic T:ReceiverSlice.Encoder
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.Encoder
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.Encoder
@@ -859,7 +858,6 @@ Building reference help topics...
   Info: BuildAssembler: Building topic P:ReceiverSlice.ReceiverExceptions.text
   Info: BuildAssembler: Building topic M:ReceiverSlice.ReceiverExceptions.ToString
   Info: BuildAssembler: Building topic N:ReceiverSlice.RealTimeEvents
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:ReceiverSlice.RealTimeEvents
   Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.DelReceiver
   Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.DelReceiver
   Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.DelReceiver
@@ -965,7 +963,6 @@ Building reference help topics...
   Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
   Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
   Info: BuildAssembler: Building topic N:SerialPortSlice
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:SerialPortSlice
   Info: BuildAssembler: Building topic T:SerialPortSlice.SerialPortService
   Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.SerialPortService
   Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.SerialPortService
@@ -973,7 +970,6 @@ Building reference help topics...
   Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.run
   Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.stop
   Info: BuildAssembler: Building topic N:SerialPortSlice.RealTimeEvents
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:SerialPortSlice.RealTimeEvents
   Info: BuildAssembler: Building topic T:SerialPortSlice.RealTimeEvents.ServerException
   Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.RealTimeEvents.ServerException
   Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.RealTimeEvents.ServerException
@@ -1012,13 +1008,13 @@ Building reference help topics...
   Info: BuildAssembler: Building topic Fields.T:SerialPortSlice.RealTimeEvents.ServerStopped
   Info: BuildAssembler: Building topic M:SerialPortSlice.RealTimeEvents.ServerStopped.#ctor
   Info: Processed 188 topics
-    Last step completed in 00:02:09.2959
+    Last step completed in 00:02:05.1700
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.1702
+    Last step completed in 00:00:00.5708
 </buildStep>
 <buildStep step="Failed">
 

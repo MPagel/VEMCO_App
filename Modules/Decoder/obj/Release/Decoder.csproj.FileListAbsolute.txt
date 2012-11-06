@@ -14,3 +14,5 @@ C:\Users\Derek\cecs491\Modules\Decoder\obj\Release\Decoder.csprojResolveAssembly
 C:\Users\Derek\cecs491\Modules\Decoder\obj\Release\Decoder.dll
 C:\Users\Derek\cecs491\Modules\Decoder\obj\Release\Decoder.pdb
 C:\Users\Derek\cecs491\Modules\Decoder\bin\Release\EventSlice.dll
+F:\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\modules\Decoder.dll
+F:\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\modules\Decoder.pdb

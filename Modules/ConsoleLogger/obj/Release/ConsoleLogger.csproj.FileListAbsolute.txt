@@ -12,3 +12,5 @@ C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Release\ConsoleLogger.pdb
 C:\Users\Derek\cecs491\Modules\ConsoleLogger\bin\Release\EventSlice.dll
 C:\Users\Derek\cecs491\Modules\ConsoleLogger\bin\Release\EventSlice.pdb
 C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Release\ConsoleLogger.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\modules\ConsoleLogger.dll
+\\VBOXSVR\src\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\modules\ConsoleLogger.pdb

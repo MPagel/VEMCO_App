@@ -45,6 +45,7 @@ namespace Databases
 
         private void detectionInsert(Decoder.RealTimeEvents.Decoded detection)
         {
+            //string fullserialmodel = detection["model"] + ":" + detection["serialnumber"]
             string statement;
             if(detection["decodedmessage"]["sensor_value"] == null)
                 statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, receivers_id) VALUES ('" +
