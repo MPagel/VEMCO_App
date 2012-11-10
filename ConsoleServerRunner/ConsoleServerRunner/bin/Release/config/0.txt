@@ -77,10 +77,9 @@
 				"format":"([0-9A-Z]+-[0-9A-Z]+):([0-9]{6}),'([0-9A-Z]*)',([A-Z0-9]+-[0-9]+)",
 				"word_order":["receiver_model","receivers_id","study_name","map","code_space","firmware_version","hardware_version"]
 			},
-			STS,DC=([0-9]+),PC=([0-9]+)
 			"status_response": {
 				"format":"STS,DC=([0-9]+),PC=([0-9]+)",
-				"word_order":["dc","pc","lv","bc","bu","i","t","du","ru","xyz"]
+				"word_order":["date","time","dc","pc","lv","bc","bu","i","t","du","ru","xyz"]
 			}	
 		}
    }
