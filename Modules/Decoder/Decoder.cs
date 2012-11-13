@@ -25,8 +25,8 @@ namespace Decoder
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public Decoder()
-            :base() {}
+        public Decoder(Dispatcher dispatcher)
+            : base(dispatcher) { }
 
         /// <summary>
         /// Parses a mesage sent by the Receiver -- for example, a detection or status message. Enqueues the decoded message.

@@ -28,6 +28,7 @@ namespace Databases
         /// <param name="user">The username of the database to connect to.</param>
         /// <param name="pass">The password for the user.</param>
         public Database(Dispatcher dispatcher, dynamic transmitters, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
+            :base(dispatcher)
         {
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
             updateSensorCalibrations(transmitters);
