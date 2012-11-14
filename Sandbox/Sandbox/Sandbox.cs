@@ -13,12 +13,12 @@ namespace Sandbox
 
         static void Main(string[] args)
         {
-            Dispatcher dispatcher = new Dispatcher();
-            Database database = new Database(dispatcher, null);
-            Decoder decoder = new Decoder(dispatcher);
-            //Receiver receiver = new Receiver(null, null, dispatcher);
             var jsonParser = new JsonParser() { CamelizeProperties = false };
             dynamic config = jsonParser.Parse(System.IO.File.ReadAllText("config.txt"));
+            Dispatcher dispatcher = new Dispatcher();
+            Database database = new Database(dispatcher, config);
+            Decoder decoder = new Decoder(dispatcher);
+            //Receiver receiver = new Receiver(null, null, dispatcher);
             Encoder encoder = new Encoder("*450052.0#16,", config);
             ConsoleLogger consoleLogger = new ConsoleLogger(dispatcher);
 

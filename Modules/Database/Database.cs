@@ -16,7 +16,8 @@ namespace Databases
     public class Database : Module
     {
         private Dictionary<string, List<string>> sensor_calibrations { get; set; }
-        private string connectionString {get; set;}
+        private string connectionString { get; set; }
+        private System.IO.StreamWriter logWriter { get; set; }
 
         /// <summary>
         /// The constructor for the Database module.
@@ -27,11 +28,12 @@ namespace Databases
         /// <param name="db">The name of the database to connect to.</param>
         /// <param name="user">The username of the database to connect to.</param>
         /// <param name="pass">The password for the user.</param>
-        public Database(Dispatcher dispatcher, dynamic transmitters, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
+        public Database(Dispatcher dispatcher, dynamic config, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
             :base(dispatcher)
         {
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
-            updateSensorCalibrations(transmitters);
+            updateSensorCalibrations(config);
+            logWriter = new System.IO.StreamWriter(config.log_file, true);
         }
 
         /// <summary>
@@ -45,10 +47,10 @@ namespace Databases
         /// Updates the list of of sensor tag calibrations from the JSON file. This should be called when the JSON file is updated.
         /// </summary>
         /// <param name="calibrations">The JSON file containing the calibration values.</param>
-        public void updateSensorCalibrations(dynamic calibrations)
+        public void updateSensorCalibrations(dynamic config)
         {
             this.sensor_calibrations = new Dictionary<string,List<string>>();
-            foreach (dynamic transmitter in calibrations.transmitters)
+            foreach (dynamic transmitter in config.transmitters)
             {
 
             }
@@ -186,12 +188,22 @@ namespace Databases
                 response = command.ExecuteNonQuery();
             }
             catch (Exception e)
-            {}
+                { response = -2; }
             finally
             {
                 if(connection.State == ConnectionState.Open)
                 {
                     connection.Close();
+                }
+                if (response == -1)
+                {
+                    logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
+                    logWriter.WriteLine(statement);
+                }
+                else if (response == -2)
+                {
+                    logWriter.WriteLine("Database connection error at " + DateTime.Now + ':');
+                    logWriter.WriteLine(statement);
                 }
             }
             return response;

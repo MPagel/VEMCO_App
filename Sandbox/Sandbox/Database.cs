@@ -14,7 +14,8 @@ namespace Sandbox
     public class Database : Module
     {
         private Dictionary<string, List<string>> sensor_calibrations { get; set; }
-        private string connectionString {get; set;}
+        private string connectionString { get; set; }
+        private System.IO.StreamWriter logWriter { get; set; }
 
         /// <summary>
         /// The constructor for the Database module.
@@ -25,11 +26,12 @@ namespace Sandbox
         /// <param name="db">The name of the database to connect to.</param>
         /// <param name="user">The username of the database to connect to.</param>
         /// <param name="pass">The password for the user.</param>
-        public Database(Dispatcher dispatcher, dynamic transmitters, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
-            :base(dispatcher)
+        public Database(Dispatcher dispatcher, dynamic config, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
+            : base(dispatcher)
         {
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
-            updateSensorCalibrations(transmitters);
+            updateSensorCalibrations(config);
+            logWriter = new System.IO.StreamWriter(config.log_file, true);
         }
 
         /// <summary>
@@ -37,21 +39,23 @@ namespace Sandbox
         /// </summary>
         /// <returns>The name of this module.</returns>
         public override string getModuleName()
-            { return "Database"; }
+        { return "Database"; }
 
         /// <summary>
         /// Updates the list of of sensor tag calibrations from the JSON file. This should be called when the JSON file is updated.
         /// </summary>
         /// <param name="calibrations">The JSON file containing the calibration values.</param>
-        public void updateSensorCalibrations(dynamic calibrations)
+        public void updateSensorCalibrations(dynamic config)
         {
-            this.sensor_calibrations = new Dictionary<string,List<string>>();
-            //foreach (dynamic transmitter in calibrations.transmitters)
+            this.sensor_calibrations = new Dictionary<string, List<string>>();
+            foreach (string transmitter in config.transmitters)
             {
-
+                List<string> temp = new List<string>(((string)config.transmitters[transmitter]).Split(','));
+                if (temp.Count == 3)
+                    sensor_calibrations.Add((string)transmitter, temp);
             }
         }
-        
+
         /// <summary>
         /// The hook for the event dispatcher. Determines the type of message, and if applicable, makes a database insertion.
         /// </summary>
@@ -59,7 +63,7 @@ namespace Sandbox
         public override void onRealTimeEvent(RealTimeEvent realTimeEvent)
         {
             int response = 0;
-            if(realTimeEvent.GetType() == typeof(Decoded))
+            if (realTimeEvent.GetType() == typeof(Decoded))
             {
                 Decoded rte = (Decoded)realTimeEvent;
                 string eventType = rte["messagetype"];
@@ -111,7 +115,7 @@ namespace Sandbox
                         date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", '" + sensor_type + "', '" + receiver_model_id + "');";
             }
             int response = doInsert(statement);
-            //dispatcher.enqueueEvent(new DatabaseResponse(statement, response, detection));
+            //dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, detection));
             return response;
         }
 
@@ -155,14 +159,14 @@ namespace Sandbox
             string ru = status["decodedmessage"]["ru"];
             string xyz = status["decodedmessage"]["xyz"];
             string statement;
-            if(xyz == null)
+            if (xyz == null)
                 statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_used, current, temperature, detection_memory, raw_memory) VALUES ('" +
                         receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bc + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ");";
             else
                 statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
                         receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bc + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ", '" + xyz + "');";
             int response = doInsert(statement);
-            //dispatcher.enqueueEvent(new DatabaseResponse(statement, response, status));
+            //dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, status));
             return response;
         }
 
@@ -173,8 +177,8 @@ namespace Sandbox
         /// <returns>The number of rows affected by the insertion.</returns>
         private int doInsert(string statement)
         {
-            Console.WriteLine(statement);
             int response = -1;
+            Console.WriteLine("Attempting insert: " + statement);
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand command;
             connection.Open();
@@ -185,12 +189,22 @@ namespace Sandbox
                 response = command.ExecuteNonQuery();
             }
             catch (Exception e)
-            {}
+            { response = -2; }
             finally
             {
-                if(connection.State == ConnectionState.Open)
+                if (connection.State == ConnectionState.Open)
                 {
                     connection.Close();
+                }
+                if (response == -1)
+                {
+                    logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
+                    logWriter.WriteLine(statement);
+                }
+                else if (response == -2)
+                {
+                    logWriter.WriteLine("Database connection error at " + DateTime.Now + ':');
+                    logWriter.WriteLine(statement);
                 }
             }
             return response;

@@ -1,5 +1,10 @@
 {
+   "log_file":"C:\\databaseErrorLog.txt",
    "firmware_version":0,
+   "transmitters":{
+      "A69-9001-50":{"m", "3.55", "2.52"},
+      "A69-9023-623":{"p", "74.2", "130"},
+   },
    "discovery_commands":[
       "*BROADC.A#ST,QUIT",
       "*BROADC.A#ST,DISCOVERY",
