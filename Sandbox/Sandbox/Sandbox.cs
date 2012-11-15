@@ -24,7 +24,7 @@ namespace Sandbox
 
             //testEncoder(encoder);
             testDecoder(decoder);
-            testDatabase(database);
+            //testDatabase(database);
             return;
         }
 
@@ -71,9 +71,12 @@ namespace Sandbox
             static void printDecodedMessage(Decoded message)
             {
                 insertions.Add(message);
-                foreach (string key in message.Keys)
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine(message["unparsedmessage"]);
+                Console.WriteLine("\tType is " + message["messagetype"]);
+                foreach (string key in message["decodedmessage"].Keys)
                 {
-                    Console.WriteLine(key + " -> " + message[key]);
+                    Console.WriteLine('\t' + key + " -> " + message["decodedmessage"][key]);
                 }
             }
 

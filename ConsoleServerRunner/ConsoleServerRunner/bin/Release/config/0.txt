@@ -2,8 +2,8 @@
    "log_file":"C:\\databaseErrorLog.txt",
    "firmware_version":0,
    "transmitters":{
-      "A69-9001-50":{"m", "3.55", "2.52"},
-      "A69-9023-623":{"p", "74.2", "130"},
+      "A69-9001-50":"m,3.55,2.52",
+      "A69-9023-623":"p,74.2,130",
    },
    "discovery_commands":[
       "*BROADC.A#ST,QUIT",
@@ -53,11 +53,12 @@
 			"bv":"BV=([0-9]+\\.[0-9]+)",
 			"bu":"BU=([0-9]+\\.[0-9]+)",
 			"i":"I=([0-9]+\\.[0-9]+)",
+			"t":"T=([0-9]+\\.[0-9]+)",
 			"du":"DU=([0-9]+\\.[0-9]+)",
 			"ru":"RU=([0-9]+\\.[0-9]+)",
 			"xyz":"XYZ=(-?[0-9]+\\.[0-9]+:-?[0-9]+\\.[0-9]+:-?[0-9]+\\.[0-9]+)",
 			"state":":-?[0-9]+\\.[0-9]+,([A-Z]+)",
-			"rtm_mode":"(OFF|232|485)",
+			"rtm_mode":",(OFF|232|485),",
 			"si":"SI=(POLL|[0-9]+)",
 			"bl":"BL=(U|[0-9]+)",
 			"bi":"BI=(WFS|[0-9]+)",
@@ -76,7 +77,7 @@
 			},
 			"rtm_info_response": {
 				"format":"(OFF|232|485),SI=(POLL|[0-9]+),BL=(U|[0-9]+),BI=(WFS|[0-9]+),MA=(U|[0-9]+),FMT=([A-Z_ ])*",
-				"word_order":["rtm_mode","si","bl","bi","ma","fmt"]
+				"word_order":["receivers_id","p","decimal_sum","byte_count","rtm_mode","si","bl","bi","ma","fmt"]
 			},
 			"info_response": {
 				"format":"([0-9A-Z]+-[0-9A-Z]+):([0-9]{6}),'([0-9A-Z]*)',([A-Z0-9]+-[0-9]+)",
@@ -84,7 +85,7 @@
 			},
 			"status_response": {
 				"format":"STS,DC=([0-9]+),PC=([0-9]+)",
-				"word_order":["date","time","dc","pc","lv","bc","bu","i","t","du","ru","xyz"]
+				"word_order":["receivers_id","date","time","dc","pc","lv","bv","bu","i","t","du","ru","xyz"]
 			}	
 		}
    }

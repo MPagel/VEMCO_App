@@ -37,14 +37,14 @@ namespace Sandbox
             dynamic config = unparsedMessage["configuration"];
             string messageType  = getMessageType(message, config);
             Match matches;
-            foreach(string word in config.decoder[messageType].word_order)
+            foreach(string word in config.decoder.sentences[messageType].word_order)
             {
                 String wordRegex = ((String)config.decoder.words[word]);
                 matches = Regex.Match(message, wordRegex);
                 if (matches.Success)
                     payload.Add(word, matches.Groups[1].ToString());
                 else
-                    payload.Add(word, null);
+                    payload.Add(word, "NULL");
             }
             return new Decoded(payload, unparsedMessage, message, messageType);
         }
@@ -58,16 +58,16 @@ namespace Sandbox
         /// <returns>type of message</returns>
         private string getMessageType(string unparsedMessage, dynamic config) 
         {     
-            foreach (dynamic sentence in config.decoder.sentences)
+            foreach (string sentence in config.decoder.sentences.Keys)
             {
                 try
                 {
-                    List<String> wordExpansions = new List<String>();
-                    foreach(Object o in sentence.word_orders) 
-                    {
-                        wordExpansions.Add(config.decoder.words[((String)o)]);
-                    }
-                    if(Regex.IsMatch(unparsedMessage, String.Format(sentence.format, wordExpansions)))
+                    //List<String> wordExpansions = new List<String>();
+                    //foreach(Object o in config.decoder.sentences[sentence].word_order) 
+                    //{
+                    //    wordExpansions.Add(config.decoder.words[((String)o)]);
+                    //}
+                    if(Regex.IsMatch(unparsedMessage, config.decoder.sentences[sentence].format))
                     {
                         return sentence;
                     }

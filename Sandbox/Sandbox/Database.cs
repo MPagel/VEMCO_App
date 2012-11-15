@@ -48,11 +48,15 @@ namespace Sandbox
         public void updateSensorCalibrations(dynamic config)
         {
             this.sensor_calibrations = new Dictionary<string, List<string>>();
-            foreach (string transmitter in config.transmitters)
+            foreach (string transmitter in config.transmitters.Keys)
             {
                 List<string> temp = new List<string>(((string)config.transmitters[transmitter]).Split(','));
                 if (temp.Count == 3)
-                    sensor_calibrations.Add((string)transmitter, temp);
+                {
+                    double test;
+                    if(double.TryParse(temp[1], out test) && double.TryParse(temp[2], out test))
+                        sensor_calibrations.Add((string)transmitter, temp);
+                }
             }
         }
 
@@ -99,21 +103,14 @@ namespace Sandbox
             string receiver_model_id = detection["model"] + '-' + detection["serialnumber"];
             string sensor_value = detection["decodedmessage"]["sensor_value"];
             string sensor_type = "A2D";
-            string statement;
-            if (sensor_value == null)
-                statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, receivers_id) VALUES ('" +
-                        date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", '" + receiver_model_id + "');";
-            else
+            string transmitter_codespace_id = frequency_codespace + '-' + transmitter_id;
+            if (sensor_value != "NULL" && sensor_calibrations.ContainsKey(transmitter_codespace_id))
             {
-                string transmitter_codespace_id = frequency_codespace + '-' + transmitter_id;
-                if (sensor_calibrations.ContainsKey(transmitter_codespace_id))
-                {
-                    sensor_type = sensor_calibrations[transmitter_codespace_id][0];
-                    sensor_value = getCalibratedSensorValue(sensor_type, double.Parse(sensor_value), double.Parse(sensor_calibrations[transmitter_codespace_id][1]), double.Parse(sensor_calibrations[transmitter_codespace_id][2])).ToString();
-                }
-                statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
-                        date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", '" + sensor_type + "', '" + receiver_model_id + "');";
+                sensor_type = sensor_calibrations[transmitter_codespace_id][0];
+                sensor_value = getCalibratedSensorValue(sensor_type, double.Parse(sensor_value), double.Parse(sensor_calibrations[transmitter_codespace_id][1]), double.Parse(sensor_calibrations[transmitter_codespace_id][2])).ToString();
             }
+            string statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
+                    date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", '" + sensor_type + "', '" + receiver_model_id + "');";
             int response = doInsert(statement);
             //dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, detection));
             return response;
@@ -158,12 +155,7 @@ namespace Sandbox
             string du = status["decodedmessage"]["du"];
             string ru = status["decodedmessage"]["ru"];
             string xyz = status["decodedmessage"]["xyz"];
-            string statement;
-            if (xyz == null)
-                statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_used, current, temperature, detection_memory, raw_memory) VALUES ('" +
-                        receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bc + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ");";
-            else
-                statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
+            string statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
                         receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bc + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ", '" + xyz + "');";
             int response = doInsert(statement);
             //dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, status));
