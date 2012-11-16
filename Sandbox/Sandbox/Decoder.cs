@@ -46,7 +46,9 @@ namespace Sandbox
                 else
                     payload.Add(word, "NULL");
             }
-            return new Decoded(payload, unparsedMessage, message, messageType);
+            Decoded d = new Decoded(payload, unparsedMessage, message, messageType);
+            dispatcher.enqueueEvent(d);
+            return d;
         }
 
         /// <summary>

@@ -104,17 +104,22 @@ namespace Databases
             string transmitter_id = detection["decodedmessage"]["transmitter_id"];
             string receiver_model_id = detection["model"] + '-' + detection["serialnumber"];
             string sensor_value = detection["decodedmessage"]["sensor_value"];
-            string sensor_type = "A2D";
+            string sensor_type = "NULL";
             string transmitter_codespace_id = frequency_codespace + '-' + transmitter_id;
-            if (sensor_value != "NULL" && sensor_calibrations.ContainsKey(transmitter_codespace_id))
+            if (sensor_value != "NULL")
             {
-                sensor_type = sensor_calibrations[transmitter_codespace_id][0];
-                sensor_value = getCalibratedSensorValue(sensor_type, double.Parse(sensor_value), double.Parse(sensor_calibrations[transmitter_codespace_id][1]), double.Parse(sensor_calibrations[transmitter_codespace_id][2])).ToString();
+                if (sensor_calibrations.ContainsKey(transmitter_codespace_id))
+                {
+                    sensor_type = '\'' + sensor_calibrations[transmitter_codespace_id][0] + '\'';
+                    sensor_value = getCalibratedSensorValue(sensor_type, double.Parse(sensor_value), double.Parse(sensor_calibrations[transmitter_codespace_id][1]), double.Parse(sensor_calibrations[transmitter_codespace_id][2])).ToString();
+                }
+                else
+                    sensor_type = "'A2D'";
             }
             string statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
-                    date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", '" + sensor_type + "', '" + receiver_model_id + "');";
+                    date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", " + sensor_type + ", '" + receiver_model_id + "');";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, detection));
+            dispatcher.enqueueEvent(new DatabaseResponse(statement, response, detection));
             return response;
         }
 
@@ -150,17 +155,19 @@ namespace Databases
             string dc = status["decodedmessage"]["dc"];
             string pc = status["decodedmessage"]["pc"];
             string lv = status["decodedmessage"]["lv"];
-            string bc = status["decodedmessage"]["bc"];
+            string bv = status["decodedmessage"]["bv"];
             string bu = status["decodedmessage"]["bu"];
             string i = status["decodedmessage"]["i"];
             string t = status["decodedmessage"]["t"];
             string du = status["decodedmessage"]["du"];
             string ru = status["decodedmessage"]["ru"];
             string xyz = status["decodedmessage"]["xyz"];
-            string statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
-                        receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bc + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ", '" + xyz + "');";
+            if (xyz != "NULL")
+                xyz = '\'' + xyz + '\'';
+            string statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
+                        receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bv + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ", " + xyz + ");";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, status));
+            dispatcher.enqueueEvent(new DatabaseResponse(statement, response, status));
             return response;
         }
 
@@ -182,22 +189,18 @@ namespace Databases
                 response = command.ExecuteNonQuery();
             }
             catch (Exception e)
-                { response = -2; }
+            {
+                logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
+                logWriter.WriteLine("Statement: " + statement);
+                logWriter.WriteLine("Error: " + e.Message);
+                logWriter.WriteLine();
+                logWriter.Flush();
+            }
             finally
             {
-                if(connection.State == ConnectionState.Open)
+                if (connection.State == ConnectionState.Open)
                 {
                     connection.Close();
-                }
-                if (response == -1)
-                {
-                    logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
-                    logWriter.WriteLine(statement);
-                }
-                else if (response == -2)
-                {
-                    logWriter.WriteLine("Database connection error at " + DateTime.Now + ':');
-                    logWriter.WriteLine(statement);
                 }
             }
             return response;

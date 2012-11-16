@@ -116,8 +116,8 @@ namespace Sandbox
                         SerialPort availableCOMPort = new SerialPort(c, 9600);
                         try
                         {
-                            Receiver r = new Receiver(availableCOMPort, c, dispatcher);
-                            receivers.Add(c, r);
+                            //Receiver r = new Receiver(availableCOMPort, c, dispatcher);
+                            //receivers.Add(c, r);
                         }
                         
                         catch (Exception e)

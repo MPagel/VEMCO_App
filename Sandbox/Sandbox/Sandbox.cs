@@ -18,14 +18,32 @@ namespace Sandbox
             Dispatcher dispatcher = new Dispatcher();
             Database database = new Database(dispatcher, config);
             Decoder decoder = new Decoder(dispatcher);
-            //Receiver receiver = new Receiver(null, null, dispatcher);
+            Receiver receiver = new Receiver("450052", "VR2C-69", dispatcher);
             Encoder encoder = new Encoder("*450052.0#16,", config);
             ConsoleLogger consoleLogger = new ConsoleLogger(dispatcher);
+            dispatcher.addModule(database);
+            dispatcher.addModule(decoder);
+            dispatcher.addModule(consoleLogger);
+            dispatcher.run();
 
+            testUnparsedMessages(dispatcher, receiver, config);
             //testEncoder(encoder);
-            testDecoder(decoder);
+            //testDecoder(decoder);
             //testDatabase(database);
-            return;
+        }
+
+        static void testUnparsedMessages(Dispatcher dispatcher, Receiver receiver, dynamic config)
+        {
+            dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0099],2012-10-02 21:14:45,STS,DC=0,PC=0,LV=0.0,BV=3.2,BU=3.6,I=5.3,T=23.9,DU=0.0,RU=0.0,STORAGE,OK,#E3", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0014],INVALID,#07", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0009],OK,#9A", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("450052,000,2012-10-02 21:19:19,STS,DC=0,PC=0,LV=0.0,BV=3.2,BU=3.6,I=2.7,T=23.7,DU=0.0,RU=0.0,XYZ=-0.06:-0.22:0.94,#8C", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("450052,001,2012-10-02 21:20:01,A69-9001,30444,#B3", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("450052,032,2012-10-02 21:40:42,A69-1303,48823,#C5", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("450052,039,2012-10-02 21:42:17,A69-9001,30,444,#CA", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0099],VR2C-69:450052,'VEMCO',MAP-113 [ 1105 1303 9001/9002 1420 1430 1601 1602 ],FW=0.0.25,HW=3,OK,#57", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0125],2012-10-02 21:47:06,STS,DC=108,PC=1199,LV=0.0,BV=3.2,BU=3.6,I=5.3,T=23.1,DU=0.0,RU=0.1,XYZ=-0.06:-0.22:0.94,STOPPED,OK,#89", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0053],232,SI=60,BL=U,BI=1,MA=U,FMT=SER SEQ UTC CS,OK,#8A", receiver, null, "450052", "VR2C-69", config));
         }
 
         static void testEncoder(Encoder encoder)
