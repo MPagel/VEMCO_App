@@ -38,6 +38,8 @@ namespace Decoder
             string message = unparsedMessage["unparsedmessage"];
             dynamic config = unparsedMessage["configuration"];
             string messageType  = getMessageType(message, config);
+            if (messageType == "unknown")
+                return;
             Match matches;
             foreach(string word in config.decoder.sentences[messageType].word_order)
             {
@@ -60,20 +62,21 @@ namespace Decoder
         /// <returns>type of message</returns>
         private string getMessageType(string unparsedMessage, dynamic config)
         {
-            foreach (string sentence in config.decoder.sentences.Keys)
+            try
             {
-                try
+                foreach (string sentence in config.decoder.sentences.Keys)
                 {
                     if (Regex.IsMatch(unparsedMessage, config.decoder.sentences[sentence].format))
                         return sentence;
                 }
-                finally
-                    { }
+                ModuleException me = new ModuleException(this, "Unparsed message (" + unparsedMessage + ") does not match a definition in the configuration file.");
+                throw me;
             }
-            ModuleException me = new ModuleException(this,
-                "Unparsed message (" + unparsedMessage + ") does not match definition in this config.");
-            dispatcher.enqueueEvent(new RealTimeEvents.RealTimeEventUnknown(me.exceptionText,config));
-            throw me;
+            catch (ModuleException me)
+            {
+                Console.WriteLine(me.exceptionText);
+            }
+            return "unknown";
         }
    
         /// <summary>

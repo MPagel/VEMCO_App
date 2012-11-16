@@ -179,9 +179,9 @@ namespace Sandbox
             int response = -1;
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand command;
-            connection.Open();
             try
             {
+                connection.Open();
                 command = connection.CreateCommand();
                 command.CommandText = statement;
                 response = command.ExecuteNonQuery();

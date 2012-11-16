@@ -44,6 +44,7 @@ namespace Sandbox
             dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0099],VR2C-69:450052,'VEMCO',MAP-113 [ 1105 1303 9001/9002 1420 1430 1601 1602 ],FW=0.0.25,HW=3,OK,#57", receiver, null, "450052", "VR2C-69", config));
             dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0125],2012-10-02 21:47:06,STS,DC=108,PC=1199,LV=0.0,BV=3.2,BU=3.6,I=5.3,T=23.1,DU=0.0,RU=0.1,XYZ=-0.06:-0.22:0.94,STOPPED,OK,#89", receiver, null, "450052", "VR2C-69", config));
             dispatcher.enqueueEvent(new UnparsedMessage("*450052.0#16[0053],232,SI=60,BL=U,BI=1,MA=U,FMT=SER SEQ UTC CS,OK,#8A", receiver, null, "450052", "VR2C-69", config));
+            dispatcher.enqueueEvent(new UnparsedMessage("this is some garbage", receiver, null, "450052", "VR2C-69", config));
         }
 
         static void testEncoder(Encoder encoder)
@@ -75,16 +76,16 @@ namespace Sandbox
             var jsonParser = new JsonParser() { CamelizeProperties = false };
             dynamic config = jsonParser.Parse(System.IO.File.ReadAllText("config.txt"));
             Console.WriteLine("-----------------Decoder Test-----------------");
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0099],2012-10-02 21:14:45,STS,DC=0,PC=0,LV=0.0,BV=3.2,BU=3.6,I=5.3,T=23.9,DU=0.0,RU=0.0,STORAGE,OK,#E3", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0014],INVALID,#07", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0009],OK,#9A", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,000,2012-10-02 21:19:19,STS,DC=0,PC=0,LV=0.0,BV=3.2,BU=3.6,I=2.7,T=23.7,DU=0.0,RU=0.0,XYZ=-0.06:-0.22:0.94,#8C", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,001,2012-10-02 21:20:01,A69-9001,30444,#B3", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,032,2012-10-02 21:40:42,A69-1303,48823,#C5", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,039,2012-10-02 21:42:17,A69-9001,30,444,#CA", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0099],VR2C-69:450052,'VEMCO',MAP-113 [ 1105 1303 9001/9002 1420 1430 1601 1602 ],FW=0.0.25,HW=3,OK,#57", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0125],2012-10-02 21:47:06,STS,DC=108,PC=1199,LV=0.0,BV=3.2,BU=3.6,I=5.3,T=23.1,DU=0.0,RU=0.1,XYZ=-0.06:-0.22:0.94,STOPPED,OK,#89", null, null, null, null, config)));
-            printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0053],232,SI=60,BL=U,BI=1,MA=U,FMT=SER SEQ UTC CS,OK,#8A", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0099],2012-10-02 21:14:45,STS,DC=0,PC=0,LV=0.0,BV=3.2,BU=3.6,I=5.3,T=23.9,DU=0.0,RU=0.0,STORAGE,OK,#E3", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0014],INVALID,#07", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0009],OK,#9A", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,000,2012-10-02 21:19:19,STS,DC=0,PC=0,LV=0.0,BV=3.2,BU=3.6,I=2.7,T=23.7,DU=0.0,RU=0.0,XYZ=-0.06:-0.22:0.94,#8C", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,001,2012-10-02 21:20:01,A69-9001,30444,#B3", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,032,2012-10-02 21:40:42,A69-1303,48823,#C5", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("450052,039,2012-10-02 21:42:17,A69-9001,30,444,#CA", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0099],VR2C-69:450052,'VEMCO',MAP-113 [ 1105 1303 9001/9002 1420 1430 1601 1602 ],FW=0.0.25,HW=3,OK,#57", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0125],2012-10-02 21:47:06,STS,DC=108,PC=1199,LV=0.0,BV=3.2,BU=3.6,I=5.3,T=23.1,DU=0.0,RU=0.1,XYZ=-0.06:-0.22:0.94,STOPPED,OK,#89", null, null, null, null, config)));
+            //printDecodedMessage(decoder.Decode(new UnparsedMessage("*450052.0#16[0053],232,SI=60,BL=U,BI=1,MA=U,FMT=SER SEQ UTC CS,OK,#8A", null, null, null, null, config)));
         }
             static void printDecodedMessage(Decoded message)
             {
