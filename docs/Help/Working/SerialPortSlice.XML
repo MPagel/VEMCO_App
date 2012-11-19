@@ -34,7 +34,7 @@
         <member name="T:SerialPortSlice.RealTimeEvents.ServerStop">
             <summary>
             ServerStop fires when the server is no longer looking for receivers but may still have configured
-            receivers that have not been removed (and may still be reading data).
+            receivers that have not been removed and may still be reading data.
             </summary>
         </member>
         <member name="M:SerialPortSlice.RealTimeEvents.ServerStop.#ctor">
@@ -45,7 +45,7 @@
         <member name="T:SerialPortSlice.RealTimeEvents.ServerStopped">
             <summary>
             This event fires when the server has stopped listening for new receivers and has
-            also removed all configured receivers from the service (no more data is being read from the hardware)
+            also removed all configured receivers from the service so no more data is being read from the hardware.
             </summary>
             <remarks>
             At the time of writing, we anticipate that this should be the last event that the system sends before 

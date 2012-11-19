@@ -16,7 +16,7 @@
   <topic id="N:EventSlice.Interfaces" project="_Namespaces" file="807d9a38-cb16-d2bb-3ca0-35f6217be8d6">
     <topic id="T:EventSlice.Interfaces.Module" project="EventSlice" file="6a443fac-886c-c0f2-ed9e-1b31ced2b2dc">
       <topic id="AllMembers.T:EventSlice.Interfaces.Module" project="EventSlice" file="171a2441-77cb-5416-56f8-396b4ebecadb" />
-      <topic id="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)" project="EventSlice" file="2368f824-8ee6-7836-ccc6-635cee12fc01" />
+      <topic id="M:EventSlice.Interfaces.Module.#ctor" project="EventSlice" file="64218f43-ed81-2fa2-a98b-74dd6f15a790" />
       <topic id="Methods.T:EventSlice.Interfaces.Module" project="EventSlice" file="bfd1985f-bbf0-745c-f15d-1a980156979b">
         <topic id="M:EventSlice.Interfaces.Module.getModuleName" project="EventSlice" file="bf06f953-bc6d-a48b-0d1d-e997f995d81b" />
         <topic id="M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)" project="EventSlice" file="a5282c5e-9391-4eaf-aea5-88ead50d1d4a" />

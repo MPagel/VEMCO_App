@@ -58,7 +58,7 @@ namespace SerialPortSlice.RealTimeEvents
 
     /// <summary>
     /// This event fires when the server has stopped listening for new receivers and has
-    /// also removed all configured receivers from the service (no more data is being read from the hardware)
+    /// also removed all configured receivers from the service so no more data is being read from the hardware.
     /// </summary>
     /// <remarks>
     /// At the time of writing, we anticipate that this should be the last event that the system sends before 

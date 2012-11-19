@@ -15,7 +15,7 @@
   <topic id="AllMembers.T:EventSlice.Interfaces.Module" />
   <topic id="Methods.T:EventSlice.Interfaces.Module" />
   <topic id="Properties.T:EventSlice.Interfaces.Module" />
-  <topic id="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)" />
+  <topic id="M:EventSlice.Interfaces.Module.#ctor" />
   <topic id="P:EventSlice.Interfaces.Module.dispatcher" />
   <topic id="M:EventSlice.Interfaces.Module.getModuleName" />
   <topic id="M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)" />
