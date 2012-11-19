@@ -119,7 +119,7 @@ namespace Databases
             string statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
                     date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", " + sensor_type + ", '" + receiver_model_id + "');";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new DatabaseResponse(statement, response, detection));
+            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, detection));
             return response;
         }
 
@@ -167,7 +167,7 @@ namespace Databases
             string statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
                         receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bv + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ", " + xyz + ");";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new DatabaseResponse(statement, response, status));
+            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, status));
             return response;
         }
 

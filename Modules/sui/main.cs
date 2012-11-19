@@ -38,10 +38,7 @@ namespace serveruserinterface
         public override string getModuleName()
         { return "Database"; }
 
-        public sui()
-        {
-           
-        }
+
         
     }
 }

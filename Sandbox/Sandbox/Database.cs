@@ -31,7 +31,7 @@ namespace Sandbox
         {
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
             updateSensorCalibrations(config);
-            logWriter = new System.IO.StreamWriter(config.log_file, true);
+            // logWriter = new System.IO.StreamWriter(config.log_file, true);
         }
 
         /// <summary>
@@ -188,11 +188,11 @@ namespace Sandbox
             }
             catch (Exception e)
             {
-                logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
-                logWriter.WriteLine("Statement: " + statement);
-                logWriter.WriteLine("Error: " + e.Message);
-                logWriter.WriteLine();
-                logWriter.Flush();
+                //logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
+                //logWriter.WriteLine("Statement: " + statement);
+                //logWriter.WriteLine("Error: " + e.Message);
+                //logWriter.WriteLine();
+                //logWriter.Flush();
             }
             finally
             {
