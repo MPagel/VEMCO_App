@@ -22,15 +22,19 @@ namespace SerialPortSlice
     public class SerialPortService
     {
         private static SerialPortService iam = null;
+        public Dispatcher dispatcher { get; private set; }
+
         private Thread serviceThread = null;
         private Dictionary<String, Receiver> receivers = new Dictionary<String, Receiver>();
-        private Dispatcher dispatcher = new Dispatcher();
-
+        
         private int serviceTime = 0;
 
         private SerialPortService()
         {
-               
+            if (dispatcher == null)
+            {
+                dispatcher = new Dispatcher();
+            }
         }
     
         /// <summary>
@@ -173,7 +177,11 @@ namespace SerialPortSlice
             }
             serviceTime = -1;
         }
+    
+    
+        
     }
 
+    
     
 }

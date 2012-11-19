@@ -33,14 +33,14 @@ namespace EventSlice
                     Assembly DLL = Assembly.LoadFrom(filename);
                     string className = filename.Substring(filename.IndexOf('\\')+1, filename.IndexOf('.')-filename.IndexOf('\\')-1);
                     Type classType = DLL.GetType(String.Format("{0}.{0}",className));
-                    
+                    Object[] p = {this};
                     try
                     {
-                        modules.Add(((Interfaces.Module)Activator.CreateInstance(classType)));
+                        modules.Add(((Interfaces.Module)Activator.CreateInstance(classType,p)));
                     }
                     catch(Exception e)
                     {
-                        
+                        Console.Write(e);
                     }
                 }
                 

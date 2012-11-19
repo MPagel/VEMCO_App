@@ -50,7 +50,7 @@ namespace Decoder
                 else
                     payload.Add(word, "NULL");
             }
-            dispatcher.enqueueEvent(new Decoded(payload, unparsedMessage, message, messageType));
+            dispatcher.enqueueEvent(new RealTimeEvents.Decoded(payload, unparsedMessage, message, messageType));
         }
 
         /// <summary>
