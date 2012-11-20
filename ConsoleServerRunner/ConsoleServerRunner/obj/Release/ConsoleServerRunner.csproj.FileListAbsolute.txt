@@ -20,7 +20,7 @@ C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Conso
 C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\EventSlice.pdb
 C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\SerialPortSlice.pdb
 C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\obj\Release\ConsoleServerRunner.csprojResolveAssemblyReference.cache
+C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Receiver.pdb
 C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\EventSlice.dll
 C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Receiver.dll
 C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\SerialPortSlice.dll
-C:\Users\Derek\cecs491\ConsoleServerRunner\ConsoleServerRunner\bin\Release\Receiver.pdb

@@ -1,0 +1,78 @@
+Serial port servicer starting.
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] command preamble: *450052.0#16,
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] read: *450052.0#16[0014],0811,OK,#
+90
+
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) attempting INFO co
+mmand with {0}INFO
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) attempting INFO co
+mmand with *450052.0#16,INFO
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] Detected firmware version: 25
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) Successfully confi
+gured encoder with fw version = 0
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] Read: *450052.0#16[0009],OK,#9A
+*450052.0#16[0009],OK,#9A
+
+Receiver mounted on COM1
+450052,000,2012-11-20 02:26:10,STS,DC=711,PC=6182,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=2
+ from receiver on COM1-0.06:-0.16:0.94,#95
+Decoded message type: status_response from raw message: 450052,000,2012-11-20 02
+:26:10,STS,DC=711,PC=6182,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=22.3,DU=0.2,RU=0.5,XYZ=-0
+.06:-0.16:0.94,#95
+450052,001,2012-11-20 02:27:09,STS,DC=711,PC=6183,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=2
+ from receiver on COM1-0.06:-0.16:0.94,#A0
+Decoded message type: status_response from raw message: 450052,001,2012-11-20 02
+:27:09,STS,DC=711,PC=6183,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=22.3,DU=0.2,RU=0.5,XYZ=-0
+.06:-0.16:0.94,#A0
+450052,002,2012-11-20 02:28:09,STS,DC=711,PC=6185,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=2
+ from receiver on COM1-0.06:-0.13:0.94,#A1
+Decoded message type: status_response from raw message: 450052,002,2012-11-20 02
+:28:09,STS,DC=711,PC=6185,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=22.3,DU=0.2,RU=0.5,XYZ=-0
+.06:-0.13:0.94,#A1
+450052,003,2012-11-20 02:29:09,STS,DC=711,PC=6185,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=2
+ from receiver on COM1-0.06:-0.16:0.94,#A6
+Decoded message type: status_response from raw message: 450052,003,2012-11-20 02
+:29:09,STS,DC=711,PC=6185,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=22.3,DU=0.2,RU=0.5,XYZ=-0
+.06:-0.16:0.94,#A6
+--------------------------------------------------------------------------------
+Serial port servicer starting.
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] command preamble: *450052.0#16,
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] read: *450052.0#16[0014],0811,OK,#
+90
+450052,025,2012-11-20 02:42:50,A69-1601,31620,#BC
+*450052.0#16[0014],0811,OK,#90
+
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) attempting INFO co
+mmand with {0}INFO
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) attempting INFO co
+mmand with *450052.0#16,INFO
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) attempting INFO co
+mmand with {0}INFO
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) attempting INFO co
+mmand with *450052.0#16,INFO
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] Detected firmware version: 25
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] (receiver note) Successfully confi
+gured encoder with fw version = 0
+NOTE[PORT: COM1 SERIAL NUMBER: 450052MODEL: ] Read: *450052.0#16[0009],OK,#9A
+
+Receiver mounted on COM1
+ from receiver on COM1#9A
+Decoded message type: generic_response from raw message: *450052.0#16[0009],OK,#
+9A
+450052,000,2012-11-20 02:43:53,STS,DC=739,PC=6422,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=2
+ from receiver on COM1-0.06:-0.25:0.91,#A0
+ from receiver on COM102:43:34,A69-1601,31620,#B9
+ from receiver on COM102:43:49,A69-1601,31620,#C0
+Decoded message type: status_response from raw message: 450052,000,2012-11-20 02
+:43:53,STS,DC=739,PC=6422,LV=0.0,BV=3.2,BU=9.5,I=2.7,T=22.4,DU=0.2,RU=0.5,XYZ=-0
+.06:-0.25:0.91,#A0
+Decoded message type: detection_event from raw message: 450052,001,2012-11-20 02
+:43:34,A69-1601,31620,#B9
+Decoded message type: detection_event from raw message: 450052,002,2012-11-20 02
+:43:49,A69-1601,31620,#C0
+ from receiver on COM102:44:04,A69-1601,31620,#B9
+Decoded message type: detection_event from raw message: 450052,003,2012-11-20 02
+:44:04,A69-1601,31620,#B9
+ from receiver on COM102:44:19,A69-1601,31620,#C0
+Decoded message type: detection_event from raw message: 450052,004,2012-11-20 02
+:44:19,A69-1601,31620,#C0

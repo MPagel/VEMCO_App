@@ -127,8 +127,8 @@ namespace ReceiverSlice
         /// or info phase is not able to acquire the needed information</exception>
         public void init()
         {
-            Dictionary<Int32, List<dynamic>> discoveryMethods = new Dictionary<Int32, List<dynamic>>();
-            Dictionary<Int32, String> infoMethods = new Dictionary<Int32, String>();
+            Dictionary<Double, List<dynamic>> discoveryMethods = new Dictionary<Double, List<dynamic>>();
+            Dictionary<Double, String> infoMethods = new Dictionary<Double, String>();
             String discoveryReturns = "";
             
             var jsonParser = new JsonParser() { CamelizeProperties = false };
@@ -235,19 +235,14 @@ namespace ReceiverSlice
                     info_attempts++;
                 }
 
-                while (serialPort.BytesToRead > 0)
+                while (serialPort.BytesToRead > 0 && !(infoReturns.Contains(crlf[0]) || infoReturns.Contais(crlf[1]))
                 {
                     infoReturns = serialPort.ReadExisting();
 
                     foreach (string filename in System.IO.Directory.GetFiles(VR2C_COMMAND_FOLDER))
                     {
-                        List<String> wordExpansions = new List<String>();
                         dynamic config = jsonParser.Parse(System.IO.File.ReadAllText(filename));
-                        foreach (Object o in config.decoder.sentences["info_response"].word_order)
-                        {
-                            wordExpansions.Add(config.decoder.words[((String)o)]);
-                        }
-                        if (Regex.IsMatch(infoReturns, String.Format(config.decoder.sentences["info_response"].format, wordExpansions.ToArray<String>())))
+                        if (Regex.IsMatch(infoReturns, config.decoder.sentences["info_response"].format))
                         {
                             gotINFO = true;
                         }

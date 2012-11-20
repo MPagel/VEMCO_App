@@ -49,18 +49,18 @@
   <ItemGroup>
     <Reference Include="EventSlice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
+      <HintPath>..\..\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
     </Reference>
     <Reference Include="FridayThe13th">
       <HintPath>F:\FridayThe13th\FridayThe13th\obj\Debug\FridayThe13th.dll</HintPath>
     </Reference>
     <Reference Include="Receiver, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.dll</HintPath>
+      <HintPath>..\..\SerialPortComponents\Receiver\obj\Release\Receiver.dll</HintPath>
     </Reference>
     <Reference Include="SerialPortSlice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll</HintPath>
+      <HintPath>..\..\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

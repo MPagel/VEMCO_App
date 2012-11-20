@@ -5,3 +5,10 @@
 \\VBOXSVR\src\cecs491\Modules\ConsoleLogger\bin\Debug\EventSlice.pdb
 \\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.dll
 \\VBOXSVR\src\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.pdb
+C:\Users\Derek\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.dll
+C:\Users\Derek\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.pdb
+C:\Users\Derek\cecs491\Modules\ConsoleLogger\bin\Debug\EventSlice.dll
+C:\Users\Derek\cecs491\Modules\ConsoleLogger\bin\Debug\EventSlice.pdb
+C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.csprojResolveAssemblyReference.cache
+C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.dll
+C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.pdb
