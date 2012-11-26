@@ -22,6 +22,10 @@ namespace SerialPortSlice
     public class SerialPortService
     {
         private static SerialPortService iam = null;
+
+        /// <summary>
+        /// A reference to the real time event dispatcher.
+        /// </summary>
         public Dispatcher dispatcher { get; private set; }
 
         private Thread serviceThread = null;

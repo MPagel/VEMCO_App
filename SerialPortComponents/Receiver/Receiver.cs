@@ -235,7 +235,7 @@ namespace ReceiverSlice
                     info_attempts++;
                 }
 
-                while (serialPort.BytesToRead > 0 && !(infoReturns.Contains(crlf[0]) || infoReturns.Contais(crlf[1]))
+                while (serialPort.BytesToRead > 0 && !(infoReturns.Contains(crlf[0]) || infoReturns.Contains(crlf[1])))
                 {
                     infoReturns = serialPort.ReadExisting();
 

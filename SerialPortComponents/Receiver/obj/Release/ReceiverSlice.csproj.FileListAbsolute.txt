@@ -7,3 +7,13 @@ C:\Users\Derek\cecs491\SerialPortComponents\Receiver\bin\Release\FridayThe13th.d
 C:\Users\Derek\cecs491\SerialPortComponents\Receiver\bin\Release\EventSlice.pdb
 C:\Users\Derek\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.dll
 C:\Users\Derek\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\obj\Release\ReceiverSlice.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.XML
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\bin\Release\EventSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\bin\Release\FridayThe13th.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\bin\Release\EventSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\bin\Release\FridayThe13th.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.pdb

@@ -10,3 +10,16 @@ C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.csprojResolveAssemblyReference.cache
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll
 C:\Users\Derek\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\EventSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\FridayThe13th.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\FridayThe13th.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\Receiver.xml
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.csprojResolveAssemblyReference.cache
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.dll
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\obj\Release\SerialPortSlice.pdb
+\\VBOXSVR\src\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\EventSlice.pdb

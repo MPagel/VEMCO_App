@@ -60,10 +60,6 @@ namespace SerialPortSlice.RealTimeEvents
     /// This event fires when the server has stopped listening for new receivers and has
     /// also removed all configured receivers from the service so no more data is being read from the hardware.
     /// </summary>
-    /// <remarks>
-    /// At the time of writing, we anticipate that this should be the last event that the system sends before 
-    /// the process dies.
-    /// </remarks>
     public class ServerStopped : ServerRealTimeEvents
     {
         /// <summary>
