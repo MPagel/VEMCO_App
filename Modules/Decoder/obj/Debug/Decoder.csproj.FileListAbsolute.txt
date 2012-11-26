@@ -8,3 +8,12 @@ C:\Users\Derek\cecs491\Modules\Decoder\bin\Debug\Receiver.pdb
 C:\Users\Derek\cecs491\Modules\Decoder\obj\Debug\Decoder.csprojResolveAssemblyReference.cache
 C:\Users\Derek\cecs491\Modules\Decoder\obj\Debug\Decoder.dll
 C:\Users\Derek\cecs491\Modules\Decoder\obj\Debug\Decoder.pdb
+\\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\Decoder.dll
+\\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\Decoder.pdb
+\\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\EventSlice.dll
+\\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\Receiver.dll
+\\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\EventSlice.pdb
+\\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\Receiver.pdb
+\\VBOXSVR\src\cecs491\Modules\Decoder\obj\Debug\Decoder.dll
+\\VBOXSVR\src\cecs491\Modules\Decoder\obj\Debug\Decoder.pdb
+\\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\Decoder.XML

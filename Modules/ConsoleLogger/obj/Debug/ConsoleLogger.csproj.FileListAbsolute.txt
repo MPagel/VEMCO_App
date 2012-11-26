@@ -12,3 +12,4 @@ C:\Users\Derek\cecs491\Modules\ConsoleLogger\bin\Debug\EventSlice.pdb
 C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.csprojResolveAssemblyReference.cache
 C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.dll
 C:\Users\Derek\cecs491\Modules\ConsoleLogger\obj\Debug\ConsoleLogger.pdb
+\\VBOXSVR\src\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.XML
