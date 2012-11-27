@@ -418,5 +418,16 @@ namespace ReceiverSlice
             goState = -1;
         }
 
+        public override String ToString()
+        {
+            if ((VEMCO_SerialNumber != null) && (VEMCO_SerialNumber != ""))
+            {
+                return VEMCO_SerialNumber + " (" + portName + ")";
+            }
+            else
+            {
+                return "UNKNOWN/CONFIGURING (" + portName + ")";
+            }
+        }
     }
 }

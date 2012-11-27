@@ -28,13 +28,15 @@ namespace SerialPortSlice
         /// </summary>
         public Dispatcher dispatcher { get; private set; }
 
+        public Dictionary<String, Receiver> receivers { get; private set; }
+
         private Thread serviceThread = null;
-        private Dictionary<String, Receiver> receivers = new Dictionary<String, Receiver>();
         
         private int serviceTime = 0;
 
         private SerialPortService()
         {
+            this.receivers = new Dictionary<String, Receiver>();
             if (dispatcher == null)
             {
                 dispatcher = new Dispatcher();
@@ -181,8 +183,8 @@ namespace SerialPortSlice
             }
             serviceTime = -1;
         }
-    
-    
+
+        
         
     }
 
