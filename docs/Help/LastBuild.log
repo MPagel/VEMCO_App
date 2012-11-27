@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="1.9.5.0" projectFile="F:\cecs491\docs\MarineBiologyVR2C.shfbproj" started="11/5/2012 12:15:28 AM">
+<shfbBuild product="Sandcastle Help File Builder" version="1.9.5.0" projectFile="F:\cecs491\docs\MarineBiology-Modules.shfbproj" started="11/26/2012 11:10:05 AM">
 <buildStep step="Initializing">
 </buildStep>
 <buildStep step="ClearWorkFolder">
@@ -13,28 +13,28 @@ Found HTML Help 1 compiler in &#39;C:\Program Files\HTML Help Workshop\&#39;
 </buildStep>
 <buildStep step="ValidatingDocumentationSources">
 Validating and copying documentation source information
-Source: F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll
-    Found assembly &#39;F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.dll&#39;
-Source: F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.XML
-Source: F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.dll
-    Found assembly &#39;F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.dll&#39;
-Source: F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.XML
-Source: F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll
-    Found assembly &#39;F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.dll&#39;
-Source: F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML
+Source: F:\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.dll
+    Found assembly &#39;F:\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.dll&#39;
+Source: F:\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.xml
+Source: F:\cecs491\Modules\Database\bin\Debug\Database.dll
+    Found assembly &#39;F:\cecs491\Modules\Database\bin\Debug\Database.dll&#39;
+Source: F:\cecs491\Modules\Database\bin\Debug\Database.xml
+Source: F:\cecs491\Modules\Decoder\bin\Debug\Decoder.dll
+    Found assembly &#39;F:\cecs491\Modules\Decoder\bin\Debug\Decoder.dll&#39;
+Source: F:\cecs491\Modules\Decoder\bin\Debug\Decoder.xml
 
 Copying XML comments files
-    F:\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.XML -&gt; F:\cecs491\docs\Help\Working\EventSlice.XML
-    F:\cecs491\SerialPortComponents\Receiver\bin\Release\Receiver.XML -&gt; F:\cecs491\docs\Help\Working\Receiver.XML
-    F:\cecs491\SerialPortComponents\SerialPortSlice\bin\Release\SerialPortSlice.XML -&gt; F:\cecs491\docs\Help\Working\SerialPortSlice.XML
+    F:\cecs491\Modules\ConsoleLogger\bin\Debug\ConsoleLogger.XML -&gt; F:\cecs491\docs\Help\Working\ConsoleLogger.XML
+    F:\cecs491\Modules\Database\bin\Debug\Database.XML -&gt; F:\cecs491\docs\Help\Working\Database.XML
+    F:\cecs491\Modules\Decoder\bin\Debug\Decoder.XML -&gt; F:\cecs491\docs\Help\Working\Decoder.XML
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
-    Last step completed in 00:00:00.0701
+    Last step completed in 00:00:00.1756
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0300
+    Last step completed in 00:00:00.0092
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
@@ -42,11 +42,11 @@ Generating reflection information...
   MRefBuilder (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Loaded 3 assemblies for reflection and 1 dependency assemblies.
-  Info: Wrote information on 6 namespaces, 20 types, and 70 members
+  Info: Wrote information on 5 namespaces, 5 types, and 16 members
   XslTransform (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\MergeDuplicates.xsl&#39;.
-    Last step completed in 00:00:01.1116
+    Last step completed in 00:00:02.3009
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
@@ -57,7 +57,7 @@ Applying visibility properties to reflection information file
     0 attribute nodes removed
     0 explicit interface implementations removed
     0 local and base class EII elements removed
-    Last step completed in 00:00:00.0601
+    Last step completed in 00:00:00.0554
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
@@ -69,12 +69,12 @@ Transforming reflection output...
   XslTransform (v2.7.1.0)
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\ReflectionToManifest.xsl&#39;.
-    Last step completed in 00:00:01.3720
+    Last step completed in 00:00:00.9056
 </buildStep>
 <buildStep step="ModifyHelpTopicFilenames">
 Modifying help topic filenames in reflection information file
     No changes required
-    Last step completed in 00:00:00.0901
+    Last step completed in 00:00:00.0277
 </buildStep>
 <buildStep step="CopyStandardContent">
 Copying standard help content...
@@ -272,201 +272,7 @@ C:\Program Files\Sandcastle\Presentation\vs2010\branding -&gt; F:\cecs491\docs\H
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-instrumentedLink.xslt -> F:\cecs491\docs\Help\Working\branding\ps-instrumentedLink.xslt
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-languageSpecificText.xslt -> F:\cecs491\docs\Help\Working\branding\ps-languageSpecificText.xslt
     C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-codesnippet.xslt -> F:\cecs491\docs\Help\Working\branding\ps-codesnippet.xslt
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\1_404_bullet.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\1_404_bullet.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\2_404_bullet.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\2_404_bullet.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\alert_caution.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\alert_caution.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\alert_note.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\alert_note.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\alert_security.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\alert_security.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\CFW.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\CFW.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\close.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\close.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\favicon.ico -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\favicon.ico
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\footer_slice.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\footer_slice.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\info_icon.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\info_icon.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\note.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\note.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\online_icon.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\online_icon.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\open.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\open.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pencil.GIF -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pencil.GIF
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privclass.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privclass.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privdelegate.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privdelegate.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privenumeration.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privenumeration.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privevent.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privevent.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privextension.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privextension.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privfield.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privfield.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privinterface.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privinterface.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privmethod.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privmethod.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privproperty.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privproperty.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\privstructure.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\privstructure.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protclass.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protclass.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protdelegate.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protdelegate.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protenumeration.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protenumeration.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protevent.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protevent.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protextension.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protextension.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protfield.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protfield.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protinterface.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protinterface.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protmethod.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protmethod.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protoperator.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protoperator.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protproperty.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protproperty.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\protstructure.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\protstructure.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubclass.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubclass.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubdelegate.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubdelegate.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubenumeration.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubenumeration.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubevent.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubevent.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubextension.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubextension.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubfield.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubfield.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubinterface.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubinterface.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubmethod.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubmethod.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\puboperator.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\puboperator.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubproperty.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubproperty.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\pubstructure.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\pubstructure.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\search.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\search.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\search_bk.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\search_bk.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\security.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\security.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\slMobile.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\slMobile.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\static.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\static.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\tabLeftBG.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\tabLeftBG.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\tabRightBG.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\tabRightBG.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\ui_om_collapse.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\ui_om_collapse.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\ui_om_expand.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\ui_om_expand.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\icons\xna.gif -&gt; F:\cecs491\docs\Help\Working\Output\Website\icons\xna.gif
-C:\Program Files\Sandcastle\Presentation\vs2010\scripts\branding.js -&gt; F:\cecs491\docs\Help\Working\Output\Website\scripts\branding.js
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-cs-CZ.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-cs-CZ.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-de-DE.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-de-DE.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-en-US.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-en-US.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-es-ES.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-es-ES.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-fr-FR.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-fr-FR.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-it-IT.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-it-IT.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-ja-JP.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-ja-JP.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-ko-KR.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-ko-KR.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-pl-PL.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-pl-PL.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-pt-BR.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-pt-BR.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-ru-RU.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-ru-RU.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-tr-TR.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-tr-TR.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-zh-CN.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-zh-CN.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding-zh-TW.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding-zh-TW.css
-C:\Program Files\Sandcastle\Presentation\vs2010\styles\branding.css -&gt; F:\cecs491\docs\Help\Working\Output\Website\styles\branding.css
-Copying help branding...
-C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc -&gt; F:\cecs491\docs\Help\Working\Output\Website\branding\
-C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc -&gt; F:\cecs491\docs\Help\Working\branding
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/body.xslt -> F:\cecs491\docs\Help\Working\branding\body.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/head.xslt -> F:\cecs491\docs\Help\Working\branding\head.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/CodeSnippet.xslt -> F:\cecs491\docs\Help\Working\branding\CodeSnippet.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-cs-CZ.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-cs-CZ.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-de-DE.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-de-DE.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-en-US.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-en-US.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-es-ES.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-es-ES.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-fr-FR.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-fr-FR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-it-IT.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-it-IT.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-ja-JP.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-ja-JP.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-ko-KR.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-ko-KR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-pl-PL.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-pl-PL.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-pt-BR.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-pt-BR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-ru-RU.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-ru-RU.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-tr-TR.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-tr-TR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-zh-CN.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-zh-CN.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/codesnippet-zh-TW.xslt -> F:\cecs491\docs\Help\Working\branding\codesnippet-zh-TW.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/Identity.xslt -> F:\cecs491\docs\Help\Working\branding\Identity.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/InstrumentedLink.xslt -> F:\cecs491\docs\Help\Working\branding\InstrumentedLink.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-cs-CZ.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-cs-CZ.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-de-DE.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-de-DE.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-en-US.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-en-US.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-es-ES.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-es-ES.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-fr-FR.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-fr-FR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-it-IT.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-it-IT.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-ja-JP.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-ja-JP.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-ko-KR.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-ko-KR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-pl-PL.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-pl-PL.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-pt-BR.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-pt-BR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-ru-RU.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-ru-RU.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-tr-TR.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-tr-TR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-zh-CN.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-zh-CN.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/instrumentedlink-zh-TW.xslt -> F:\cecs491\docs\Help\Working\branding\instrumentedlink-zh-TW.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/LanguageSpecificText.xslt -> F:\cecs491\docs\Help\Working\branding\LanguageSpecificText.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-cs-CZ.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-cs-CZ.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-de-DE.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-de-DE.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-en-US.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-en-US.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-es-ES.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-es-ES.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-fr-FR.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-fr-FR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-it-IT.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-it-IT.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-ja-JP.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-ja-JP.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-ko-KR.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-ko-KR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-pl-PL.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-pl-PL.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-pt-BR.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-pt-BR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-ru-RU.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-ru-RU.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-tr-TR.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-tr-TR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-zh-CN.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-zh-CN.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/MultiViewTable-zh-TW.xslt -> F:\cecs491\docs\Help\Working\branding\MultiViewTable-zh-TW.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index.xslt -> F:\cecs491\docs\Help\Working\branding\index.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-cs-CZ.xslt -> F:\cecs491\docs\Help\Working\branding\index-cs-CZ.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-de-DE.xslt -> F:\cecs491\docs\Help\Working\branding\index-de-DE.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-en-US.xslt -> F:\cecs491\docs\Help\Working\branding\index-en-US.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-es-ES.xslt -> F:\cecs491\docs\Help\Working\branding\index-es-ES.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-fr-FR.xslt -> F:\cecs491\docs\Help\Working\branding\index-fr-FR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-it-IT.xslt -> F:\cecs491\docs\Help\Working\branding\index-it-IT.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-ja-JP.xslt -> F:\cecs491\docs\Help\Working\branding\index-ja-JP.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-ko-KR.xslt -> F:\cecs491\docs\Help\Working\branding\index-ko-KR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-pl-PL.xslt -> F:\cecs491\docs\Help\Working\branding\index-pl-PL.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-pt-BR.xslt -> F:\cecs491\docs\Help\Working\branding\index-pt-BR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-ru-RU.xslt -> F:\cecs491\docs\Help\Working\branding\index-ru-RU.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-tr-TR.xslt -> F:\cecs491\docs\Help\Working\branding\index-tr-TR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-zh-CN.xslt -> F:\cecs491\docs\Help\Working\branding\index-zh-CN.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/index-zh-TW.xslt -> F:\cecs491\docs\Help\Working\branding\index-zh-TW.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search.xslt -> F:\cecs491\docs\Help\Working\branding\search.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-cs-CZ.xslt -> F:\cecs491\docs\Help\Working\branding\search-cs-CZ.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-de-DE.xslt -> F:\cecs491\docs\Help\Working\branding\search-de-DE.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-en-US.xslt -> F:\cecs491\docs\Help\Working\branding\search-en-US.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-es-ES.xslt -> F:\cecs491\docs\Help\Working\branding\search-es-ES.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-fr-FR.xslt -> F:\cecs491\docs\Help\Working\branding\search-fr-FR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-it-IT.xslt -> F:\cecs491\docs\Help\Working\branding\search-it-IT.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-ja-JP.xslt -> F:\cecs491\docs\Help\Working\branding\search-ja-JP.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-ko-KR.xslt -> F:\cecs491\docs\Help\Working\branding\search-ko-KR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-pl-PL.xslt -> F:\cecs491\docs\Help\Working\branding\search-pl-PL.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-pt-BR.xslt -> F:\cecs491\docs\Help\Working\branding\search-pt-BR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-ru-RU.xslt -> F:\cecs491\docs\Help\Working\branding\search-ru-RU.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-tr-TR.xslt -> F:\cecs491\docs\Help\Working\branding\search-tr-TR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-zh-CN.xslt -> F:\cecs491\docs\Help\Working\branding\search-zh-CN.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/search-zh-TW.xslt -> F:\cecs491\docs\Help\Working\branding\search-zh-TW.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc.xslt -> F:\cecs491\docs\Help\Working\branding\toc.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-cs-CZ.xslt -> F:\cecs491\docs\Help\Working\branding\toc-cs-CZ.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-de-DE.xslt -> F:\cecs491\docs\Help\Working\branding\toc-de-DE.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-en-US.xslt -> F:\cecs491\docs\Help\Working\branding\toc-en-US.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-es-ES.xslt -> F:\cecs491\docs\Help\Working\branding\toc-es-ES.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-fr-FR.xslt -> F:\cecs491\docs\Help\Working\branding\toc-fr-FR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-it-IT.xslt -> F:\cecs491\docs\Help\Working\branding\toc-it-IT.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-ja-JP.xslt -> F:\cecs491\docs\Help\Working\branding\toc-ja-JP.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-ko-KR.xslt -> F:\cecs491\docs\Help\Working\branding\toc-ko-KR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-pl-PL.xslt -> F:\cecs491\docs\Help\Working\branding\toc-pl-PL.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-pt-BR.xslt -> F:\cecs491\docs\Help\Working\branding\toc-pt-BR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-ru-RU.xslt -> F:\cecs491\docs\Help\Working\branding\toc-ru-RU.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-tr-TR.xslt -> F:\cecs491\docs\Help\Working\branding\toc-tr-TR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-zh-CN.xslt -> F:\cecs491\docs\Help\Working\branding\toc-zh-CN.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\dev10.mshc/toc-zh-TW.xslt -> F:\cecs491\docs\Help\Working\branding\toc-zh-TW.xslt
-C:\Program Files\Sandcastle\Presentation\vs2010\branding -&gt; F:\cecs491\docs\Help\Working\Output\Website\branding\
-C:\Program Files\Sandcastle\Presentation\vs2010\branding -&gt; F:\cecs491\docs\Help\Working\branding
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding.xml -> F:\cecs491\docs\Help\Working\branding\branding.xml
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding.xslt -> F:\cecs491\docs\Help\Working\branding\branding.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-cs-CZ.xslt -> F:\cecs491\docs\Help\Working\branding\branding-cs-CZ.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-de-DE.xslt -> F:\cecs491\docs\Help\Working\branding\branding-de-DE.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-en-US.xslt -> F:\cecs491\docs\Help\Working\branding\branding-en-US.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-es-ES.xslt -> F:\cecs491\docs\Help\Working\branding\branding-es-ES.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-fr-FR.xslt -> F:\cecs491\docs\Help\Working\branding\branding-fr-FR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-it-IT.xslt -> F:\cecs491\docs\Help\Working\branding\branding-it-IT.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-ja-JP.xslt -> F:\cecs491\docs\Help\Working\branding\branding-ja-JP.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-ko-KR.xslt -> F:\cecs491\docs\Help\Working\branding\branding-ko-KR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-pl-PL.xslt -> F:\cecs491\docs\Help\Working\branding\branding-pl-PL.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-pt-BR.xslt -> F:\cecs491\docs\Help\Working\branding\branding-pt-BR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-ru-RU.xslt -> F:\cecs491\docs\Help\Working\branding\branding-ru-RU.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-tr-TR.xslt -> F:\cecs491\docs\Help\Working\branding\branding-tr-TR.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-zh-CN.xslt -> F:\cecs491\docs\Help\Working\branding\branding-zh-CN.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\branding-zh-TW.xslt -> F:\cecs491\docs\Help\Working\branding\branding-zh-TW.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-body.xslt -> F:\cecs491\docs\Help\Working\branding\ps-body.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-head.xslt -> F:\cecs491\docs\Help\Working\branding\ps-head.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-foot.xslt -> F:\cecs491\docs\Help\Working\branding\ps-foot.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-collapsibleArea.xslt -> F:\cecs491\docs\Help\Working\branding\ps-collapsibleArea.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-instrumentedLink.xslt -> F:\cecs491\docs\Help\Working\branding\ps-instrumentedLink.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-languageSpecificText.xslt -> F:\cecs491\docs\Help\Working\branding\ps-languageSpecificText.xslt
-    C:\Program Files\Sandcastle\Presentation\vs2010\branding\ps-codesnippet.xslt -> F:\cecs491\docs\Help\Working\branding\ps-codesnippet.xslt
-    Last step completed in 00:00:02.1331
+    Last step completed in 00:00:01.8019
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -484,17 +290,17 @@ Generating intermediate table of contents file...
   Copyright c 2006-2012, Microsoft Corporation, All Rights Reserved
   Info: Applying XSL transformation &#39;C:\Program Files\Sandcastle\ProductionTransforms\CreateVSToc.xsl&#39;.
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.5608
+    Last step completed in 00:00:00.3604
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.0501
+    Last step completed in 00:00:00.0832
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 F:\cecs491\docs\Help\Working\sandcastle.config
-    Last step completed in 00:00:00.0401
+    Last step completed in 00:00:00.0277
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
@@ -506,7 +312,7 @@ Building reference help topics...
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files\Sandcastle\Data\Reflection&#39;.
   Info: CopyFromIndexComponent: Searching for files that match &#39;reflection.xml&#39;.
-  Info: CopyFromIndexComponent: Indexed 194010 elements in 410 files.
+  Info: CopyFromIndexComponent: Indexed 193867 elements in 410 files.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
   Info: CopyFromIndexComponent: Instantiating component.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
@@ -549,12 +355,11 @@ Building reference help topics...
   Info: SyntaxComponent: Instantiating component.
   Info: SyntaxComponent: Loaded 3 syntax generators.
   Info: CopyFromIndexComponent: Instantiating component.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5&#39;.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0&#39;.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\EventSlice.XML&#39;.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\Receiver.XML&#39;.
-  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\SerialPortSlice.XML&#39;.
-  Info: CopyFromIndexComponent: Indexed 157866 elements in 125 files.
+  Info: CopyFromIndexComponent: Searching for files that match &#39;*.xml&#39; in &#39;C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0&#39;.
+  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\ConsoleLogger.XML&#39;.
+  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\Database.XML&#39;.
+  Info: CopyFromIndexComponent: Searching for files that match &#39;F:\cecs491\docs\Help\Working\Decoder.XML&#39;.
+  Info: CopyFromIndexComponent: Indexed 144662 elements in 115 files.
   Info: CopyFromIndexComponent: Loaded 0 copy components.
   Info: ForEachComponent: Instantiating component.
   Info: ForEachComponent: Loading subcomponents.
@@ -640,386 +445,325 @@ Building reference help topics...
   Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
   Info: ResolveReferenceLinksComponent2: Searching directory &#39;C:\Program Files\Sandcastle\Data\Reflection&#39; for targets files of the form &#39;*.xml&#39;.
   Info: ResolveReferenceLinksComponent2: Searching directory &#39;F:\cecs491\docs\Help\Working&#39; for targets files of the form &#39;reflection.xml&#39;.
-  Info: ResolveReferenceLinksComponent2: Loaded 194010 reference targets.
+  Info: ResolveReferenceLinksComponent2: Loaded 193867 reference targets.
   Info: BrandingComponent: Instantiating component.
   Info: BrandingComponent: Branding Transform &quot;F:\cecs491\docs\Help\Working\branding\branding-en-us.xslt&quot; catalogProductFamily=VS catalogProductVersion=100 catalogLocale=en-us
   Info: SaveComponent: Instantiating component.
-  Info: MultiFormatOutputComponent: Loading components for Website format
-  Info: SharedContentComponent: Instantiating component.
-  Info: SharedContentComponent: Searching for files that match &#39;C:\Program Files\Sandcastle\Presentation\vs2010\content\shared_content.xml&#39;.
-  Info: SharedContentComponent: Loading shared content file &#39;C:\Program Files\Sandcastle\Presentation\vs2010\content\shared_content.xml&#39;.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files\Sandcastle\Presentation\vs2010\content\shared_content.xml.
-  Info: SharedContentComponent: Searching for files that match &#39;C:\Program Files\Sandcastle\Presentation\vs2010\content\reference_content.xml&#39;.
-  Info: SharedContentComponent: Loading shared content file &#39;C:\Program Files\Sandcastle\Presentation\vs2010\content\reference_content.xml&#39;.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files\Sandcastle\Presentation\vs2010\content\reference_content.xml.
-  Info: SharedContentComponent: Searching for files that match &#39;C:\Program Files\Sandcastle\Presentation\shared\content\syntax_content.xml&#39;.
-  Info: SharedContentComponent: Loading shared content file &#39;C:\Program Files\Sandcastle\Presentation\shared\content\syntax_content.xml&#39;.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files\Sandcastle\Presentation\shared\content\syntax_content.xml.
-  Info: SharedContentComponent: Searching for files that match &#39;C:\Program Files\Sandcastle\Presentation\vs2010\content\feedback_content.xml&#39;.
-  Info: SharedContentComponent: Loading shared content file &#39;C:\Program Files\Sandcastle\Presentation\vs2010\content\feedBack_content.xml&#39;.
-  Info: SharedContentComponent: Found 1 files in C:\Program Files\Sandcastle\Presentation\vs2010\content\feedback_content.xml.
-  Info: SharedContentComponent: Searching for files that match &#39;SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Loading shared content file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;roottopictitle&#39; with value in file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;producttitle&#39; with value in file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;runningheadertext&#39; with value in file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;locationinformation&#39; with value in file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;assemblynameandmodule&#39; with value in file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;copycode&#39; with value in file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;preliminary&#39; with value in file &#39;F:\cecs491\docs\Help\Working\SharedBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Found 1 files in SharedBuilderContent.xml.
-  Info: SharedContentComponent: Searching for files that match &#39;PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Loading shared content file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;copyright_info&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;copyright_link&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;copyright_text&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;header&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;footer_text&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_alias&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_product&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_topic&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_text&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_footer_to&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_footer_text&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_footer_text_to&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Overriding shared content item &#39;fb_body&#39; with value in file &#39;F:\cecs491\docs\Help\Working\PresentationStyleBuilderContent.xml&#39;.
-  Info: SharedContentComponent: Found 1 files in PresentationStyleBuilderContent.xml.
-  Info: SharedContentComponent: Loaded 566 shared content items.
-  Info: ResolveConceptualLinksComponent: Instantiating component.
-  Info: ResolveConceptualLinksComponent: Collected 1 targets directories.
-  Info: ResolveReferenceLinksComponent2: Instantiating component.
-  Info: ResolveReferenceLinksComponent2: Creating MSDN URL resolver.
-  Info: ResolveReferenceLinksComponent2: Searching directory &#39;C:\Program Files\Sandcastle\Data\Reflection&#39; for targets files of the form &#39;*.xml&#39;.
-  Info: ResolveReferenceLinksComponent2: Searching directory &#39;F:\cecs491\docs\Help\Working&#39; for targets files of the form &#39;reflection.xml&#39;.
-  Info: ResolveReferenceLinksComponent2: Loaded 194010 reference targets.
-  Info: BrandingComponent: Instantiating component.
-  Info: BrandingComponent: Branding Transform &quot;F:\cecs491\docs\Help\Working\branding\branding-en-us.xslt&quot; catalogProductFamily=VS catalogProductVersion=100 catalogLocale=en-us
-  Info: SaveComponent: Instantiating component.
-  Info: BuildAssembler: Building topic N:EventSlice
-  Info: BuildAssembler: Building topic T:EventSlice.Dispatcher
-  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Dispatcher
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Dispatcher.#ctor
-  Info: BuildAssembler: Building topic Methods.T:EventSlice.Dispatcher
-  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.#ctor
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Dispatcher.#ctor
-  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)
-  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;realTimeEvent&quot;/&gt; documentation for M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)
-  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.remoteModule(EventSlice.Interfaces.Module)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.remoteModule(EventSlice.Interfaces.Module)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Dispatcher.remoteModule(EventSlice.Interfaces.Module)
-  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.run
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.run
-  Info: BuildAssembler: Building topic M:EventSlice.Dispatcher.stop
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Dispatcher.stop
-  Info: BuildAssembler: Building topic N:EventSlice.Interfaces
-  Info: BuildAssembler: Building topic T:EventSlice.Interfaces.Module
-  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Interfaces.Module
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.Module.#ctor
-  Info: BuildAssembler: Building topic Methods.T:EventSlice.Interfaces.Module
-  Info: BuildAssembler: Building topic Properties.T:EventSlice.Interfaces.Module
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.#ctor
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.Module.#ctor
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.Module.dispatcher
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.Module.dispatcher
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.getModuleName
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.Module.getModuleName
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Interfaces.Module.getModuleName
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;realTimeEvent&quot;/&gt; documentation for M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
-  Info: BuildAssembler: Building topic T:EventSlice.Interfaces.ModuleException
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:EventSlice.Interfaces.ModuleException
-  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Interfaces.ModuleException
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
-  Info: BuildAssembler: Building topic Methods.T:EventSlice.Interfaces.ModuleException
-  Info: BuildAssembler: Building topic Properties.T:EventSlice.Interfaces.ModuleException
-  Info: BuildAssembler: Building topic Events.T:EventSlice.Interfaces.ModuleException
-  Info: BuildAssembler: Building topic Overload:EventSlice.Interfaces.ModuleException.#ctor
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;exceptionText&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;module&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;exceptionText&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;originatingException&quot;/&gt; documentation for M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.ModuleException.exceptionText
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.ModuleException.exceptionText
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.ModuleException.module
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.ModuleException.module
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.ModuleException.originatingExecption
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.ModuleException.originatingExecption
-  Info: BuildAssembler: Building topic T:EventSlice.Interfaces.RealTimeEvent
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for T:EventSlice.Interfaces.RealTimeEvent
-  Info: BuildAssembler: Building topic AllMembers.T:EventSlice.Interfaces.RealTimeEvent
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.RealTimeEvent.#ctor
-  Info: BuildAssembler: Building topic Methods.T:EventSlice.Interfaces.RealTimeEvent
-  Info: BuildAssembler: Building topic Properties.T:EventSlice.Interfaces.RealTimeEvent
-  Info: BuildAssembler: Building topic Events.T:EventSlice.Interfaces.RealTimeEvent
-  Info: BuildAssembler: Building topic Fields.T:EventSlice.Interfaces.RealTimeEvent
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String,EventSlice.Interfaces.RealTimeEvent)
-  Info: ShowMissingComponent: Auto-documenting constructor M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String,EventSlice.Interfaces.RealTimeEvent)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;message&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String,EventSlice.Interfaces.RealTimeEvent)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;originatingEvent&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String,EventSlice.Interfaces.RealTimeEvent)
-  Info: BuildAssembler: Building topic F:EventSlice.Interfaces.RealTimeEvent._thisDict
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for F:EventSlice.Interfaces.RealTimeEvent._thisDict
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;key&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;value&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.RealTimeEvent.IsEmpty
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.RealTimeEvent.IsEmpty
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.RealTimeEvent.Item(System.String)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.RealTimeEvent.Item(System.String)
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.RealTimeEvent.Keys
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.RealTimeEvent.Keys
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;propertyName&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)
-  Info: BuildAssembler: Building topic E:EventSlice.Interfaces.RealTimeEvent.PropertyChanged
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for E:EventSlice.Interfaces.RealTimeEvent.PropertyChanged
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;key&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.RemoveAll
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.RemoveAll
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.ToString
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.ToString
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.ToString
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;binder&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;result&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)
-  Info: BuildAssembler: Building topic M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;binder&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)
-  Warn: ShowMissingComponent: Missing &lt;param name=&quot;value&quot;/&gt; documentation for M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)
-  Info: BuildAssembler: Building topic P:EventSlice.Interfaces.RealTimeEvent.Values
-  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:EventSlice.Interfaces.RealTimeEvent.Values
-  Info: BuildAssembler: Building topic N:ReceiverSlice
-  Info: BuildAssembler: Building topic T:ReceiverSlice.Encoder
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.Encoder
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.Encoder
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.Encoder
-  Info: BuildAssembler: Building topic Overload:ReceiverSlice.Encoder.build
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.#ctor(System.String,System.Object)
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.build(System.String)
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.build(System.String,System.Object[])
-  Info: BuildAssembler: Building topic P:ReceiverSlice.Encoder.encoderConfig
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Encoder.valid(System.String)
-  Info: BuildAssembler: Building topic T:ReceiverSlice.EncoderExceptions
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.EncoderExceptions
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.EncoderExceptions
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.EncoderExceptions
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.EncoderExceptions
-  Info: BuildAssembler: Building topic Overload:ReceiverSlice.EncoderExceptions.#ctor
-  Info: BuildAssembler: Building topic M:ReceiverSlice.EncoderExceptions.#ctor(System.String,System.String)
-  Info: BuildAssembler: Building topic M:ReceiverSlice.EncoderExceptions.#ctor(System.String,System.String,System.Exception)
-  Info: BuildAssembler: Building topic P:ReceiverSlice.EncoderExceptions.deviceSerial
-  Info: BuildAssembler: Building topic P:ReceiverSlice.EncoderExceptions.e
-  Info: BuildAssembler: Building topic P:ReceiverSlice.EncoderExceptions.text
-  Info: BuildAssembler: Building topic T:ReceiverSlice.Receiver
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.Receiver
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.Receiver
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.Receiver
-  Info: BuildAssembler: Building topic Overload:ReceiverSlice.Receiver.write
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.#ctor(System.IO.Ports.SerialPort,System.String,EventSlice.Dispatcher)
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.init
-  Info: BuildAssembler: Building topic P:ReceiverSlice.Receiver.portName
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.run
-  Warn: ShowMissingComponent: Missing &lt;returns&gt; documentation for M:ReceiverSlice.Receiver.run
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.shutdown
-  Info: BuildAssembler: Building topic P:ReceiverSlice.Receiver.TTL
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.write(System.String)
-  Info: BuildAssembler: Building topic M:ReceiverSlice.Receiver.write(System.String,System.Object[])
-  Info: BuildAssembler: Building topic T:ReceiverSlice.ReceiverExceptions
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.ReceiverExceptions
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.ReceiverExceptions
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.ReceiverExceptions
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.ReceiverExceptions
-  Info: BuildAssembler: Building topic Overload:ReceiverSlice.ReceiverExceptions.#ctor
-  Info: BuildAssembler: Building topic M:ReceiverSlice.ReceiverExceptions.#ctor(ReceiverSlice.Receiver,System.String,System.Boolean)
-  Info: BuildAssembler: Building topic M:ReceiverSlice.ReceiverExceptions.#ctor(ReceiverSlice.Receiver,System.String,System.Boolean,System.Exception)
-  Info: BuildAssembler: Building topic P:ReceiverSlice.ReceiverExceptions.fatal
-  Info: BuildAssembler: Building topic P:ReceiverSlice.ReceiverExceptions.originatingException
-  Info: BuildAssembler: Building topic P:ReceiverSlice.ReceiverExceptions.receiver
-  Info: BuildAssembler: Building topic P:ReceiverSlice.ReceiverExceptions.text
-  Info: BuildAssembler: Building topic M:ReceiverSlice.ReceiverExceptions.ToString
-  Info: BuildAssembler: Building topic N:ReceiverSlice.RealTimeEvents
-  Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Info: BuildAssembler: Building topic Fields.T:ReceiverSlice.RealTimeEvents.DelReceiver
-  Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.DelReceiver.#ctor(ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Info: BuildAssembler: Building topic Fields.T:ReceiverSlice.RealTimeEvents.ExcepReceiver
-  Info: BuildAssembler: Building topic Overload:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor
-  Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor(System.Boolean,System.String,ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.ExcepReceiver.#ctor(System.Exception,System.Boolean,ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Info: BuildAssembler: Building topic Fields.T:ReceiverSlice.RealTimeEvents.NewReceiver
-  Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.NewReceiver.#ctor(ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Info: BuildAssembler: Building topic Fields.T:ReceiverSlice.RealTimeEvents.NoteReceiver
-  Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor(System.String,ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.NoteReceiver.#ctor(System.String,ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.ReceiverEvent
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.ReceiverEvent
-  Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.ReceiverEvent.#ctor
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.ReceiverEvent
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.RealTimeEvents.ReceiverEvent
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.RealTimeEvents.ReceiverEvent
-  Info: BuildAssembler: Building topic Fields.T:ReceiverSlice.RealTimeEvents.ReceiverEvent
-  Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.ReceiverEvent.#ctor(System.String,ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Info: ShowMissingComponent: Auto-documenting constructor M:ReceiverSlice.RealTimeEvents.ReceiverEvent.#ctor(System.String,ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Info: BuildAssembler: Building topic T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Info: BuildAssembler: Building topic AllMembers.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Info: BuildAssembler: Building topic Methods.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Info: BuildAssembler: Building topic Properties.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Info: BuildAssembler: Building topic Events.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Info: BuildAssembler: Building topic Fields.T:ReceiverSlice.RealTimeEvents.UnparsedMessage
-  Info: BuildAssembler: Building topic M:ReceiverSlice.RealTimeEvents.UnparsedMessage.#ctor(System.String,ReceiverSlice.Receiver,System.String,System.String,System.String,FridayThe13th.JsonObject)
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:FridayThe13th.JsonObject&#39;.
-  Info: BuildAssembler: Building topic N:SerialPortSlice
-  Info: BuildAssembler: Building topic T:SerialPortSlice.SerialPortService
-  Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.SerialPortService
-  Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.SerialPortService
-  Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.getServicer
-  Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.run
-  Info: BuildAssembler: Building topic M:SerialPortSlice.SerialPortService.stop
-  Info: BuildAssembler: Building topic N:SerialPortSlice.RealTimeEvents
-  Info: BuildAssembler: Building topic T:SerialPortSlice.RealTimeEvents.ServerException
-  Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.RealTimeEvents.ServerException
-  Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.RealTimeEvents.ServerException
-  Info: BuildAssembler: Building topic Properties.T:SerialPortSlice.RealTimeEvents.ServerException
-  Info: BuildAssembler: Building topic Events.T:SerialPortSlice.RealTimeEvents.ServerException
-  Info: BuildAssembler: Building topic Fields.T:SerialPortSlice.RealTimeEvents.ServerException
-  Info: BuildAssembler: Building topic Overload:SerialPortSlice.RealTimeEvents.ServerException.#ctor
-  Info: BuildAssembler: Building topic M:SerialPortSlice.RealTimeEvents.ServerException.#ctor(System.Exception,System.Boolean)
-  Info: BuildAssembler: Building topic M:SerialPortSlice.RealTimeEvents.ServerException.#ctor(System.String,System.Boolean)
-  Info: BuildAssembler: Building topic T:SerialPortSlice.RealTimeEvents.ServerRealTimeEvents
-  Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.RealTimeEvents.ServerRealTimeEvents
-  Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.RealTimeEvents.ServerRealTimeEvents
-  Info: BuildAssembler: Building topic Properties.T:SerialPortSlice.RealTimeEvents.ServerRealTimeEvents
-  Info: BuildAssembler: Building topic Events.T:SerialPortSlice.RealTimeEvents.ServerRealTimeEvents
-  Info: BuildAssembler: Building topic Fields.T:SerialPortSlice.RealTimeEvents.ServerRealTimeEvents
-  Info: BuildAssembler: Building topic M:SerialPortSlice.RealTimeEvents.ServerRealTimeEvents.#ctor(System.String)
-  Info: BuildAssembler: Building topic T:SerialPortSlice.RealTimeEvents.ServerStartUp
-  Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.RealTimeEvents.ServerStartUp
-  Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.RealTimeEvents.ServerStartUp
-  Info: BuildAssembler: Building topic Properties.T:SerialPortSlice.RealTimeEvents.ServerStartUp
-  Info: BuildAssembler: Building topic Events.T:SerialPortSlice.RealTimeEvents.ServerStartUp
-  Info: BuildAssembler: Building topic Fields.T:SerialPortSlice.RealTimeEvents.ServerStartUp
-  Info: BuildAssembler: Building topic M:SerialPortSlice.RealTimeEvents.ServerStartUp.#ctor
-  Info: BuildAssembler: Building topic T:SerialPortSlice.RealTimeEvents.ServerStop
-  Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.RealTimeEvents.ServerStop
-  Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.RealTimeEvents.ServerStop
-  Info: BuildAssembler: Building topic Properties.T:SerialPortSlice.RealTimeEvents.ServerStop
-  Info: BuildAssembler: Building topic Events.T:SerialPortSlice.RealTimeEvents.ServerStop
-  Info: BuildAssembler: Building topic Fields.T:SerialPortSlice.RealTimeEvents.ServerStop
-  Info: BuildAssembler: Building topic M:SerialPortSlice.RealTimeEvents.ServerStop.#ctor
-  Info: BuildAssembler: Building topic T:SerialPortSlice.RealTimeEvents.ServerStopped
-  Info: BuildAssembler: Building topic AllMembers.T:SerialPortSlice.RealTimeEvents.ServerStopped
-  Info: BuildAssembler: Building topic Methods.T:SerialPortSlice.RealTimeEvents.ServerStopped
-  Info: BuildAssembler: Building topic Properties.T:SerialPortSlice.RealTimeEvents.ServerStopped
-  Info: BuildAssembler: Building topic Events.T:SerialPortSlice.RealTimeEvents.ServerStopped
-  Info: BuildAssembler: Building topic Fields.T:SerialPortSlice.RealTimeEvents.ServerStopped
-  Info: BuildAssembler: Building topic M:SerialPortSlice.RealTimeEvents.ServerStopped.#ctor
-  Info: Processed 188 topics
-    Last step completed in 00:02:05.1700
+  Info: BuildAssembler: Building topic N:ConsoleLogger
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:ConsoleLogger
+  Info: BuildAssembler: Building topic T:ConsoleLogger.ConsoleLogger
+  Warn: ResolveReferenceLinksComponent2: MSDN URL not found for target &#39;T:System.Object&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic AllMembers.T:ConsoleLogger.ConsoleLogger
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.getModuleName&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.Module.dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic Methods.T:ConsoleLogger.ConsoleLogger
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.getModuleName&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)&#39;.
+  Info: BuildAssembler: Building topic Properties.T:ConsoleLogger.ConsoleLogger
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.Module.dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic M:ConsoleLogger.ConsoleLogger.#ctor(EventSlice.Dispatcher)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Info: BuildAssembler: Building topic M:ConsoleLogger.ConsoleLogger.getModuleName
+  Info: BuildAssembler: Building topic M:ConsoleLogger.ConsoleLogger.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic N:Databases
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Databases
+  Info: BuildAssembler: Building topic T:Databases.Database
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic AllMembers.T:Databases.Database
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.getModuleName&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.Module.dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic Methods.T:Databases.Database
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.getModuleName&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)&#39;.
+  Info: BuildAssembler: Building topic Properties.T:Databases.Database
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.Module.dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic M:Databases.Database.#ctor(EventSlice.Dispatcher,System.Object,System.String,System.String,System.String,System.String)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;config&quot;/&gt; documentation for M:Databases.Database.#ctor(EventSlice.Dispatcher,System.Object,System.String,System.String,System.String,System.String)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Info: BuildAssembler: Building topic M:Databases.Database.getModuleName
+  Info: BuildAssembler: Building topic M:Databases.Database.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;realTimeEvent&quot;/&gt; documentation for M:Databases.Database.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic M:Databases.Database.updateSensorCalibrations(System.Object)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;config&quot;/&gt; documentation for M:Databases.Database.updateSensorCalibrations(System.Object)
+  Info: BuildAssembler: Building topic N:Databases.RealTimeEvents
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Databases.RealTimeEvents
+  Info: BuildAssembler: Building topic T:Databases.RealTimeEvents.DatabaseResponse
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic AllMembers.T:Databases.RealTimeEvents.DatabaseResponse
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.RemoveAll&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;F:EventSlice.Interfaces.RealTimeEvent._thisDict&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.IsEmpty&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Item(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Keys&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Values&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;E:EventSlice.Interfaces.RealTimeEvent.PropertyChanged&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Methods.T:Databases.RealTimeEvents.DatabaseResponse
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.RemoveAll&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Properties.T:Databases.RealTimeEvents.DatabaseResponse
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.IsEmpty&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Item(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Keys&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Values&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Events.T:Databases.RealTimeEvents.DatabaseResponse
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;E:EventSlice.Interfaces.RealTimeEvent.PropertyChanged&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Fields.T:Databases.RealTimeEvents.DatabaseResponse
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;F:EventSlice.Interfaces.RealTimeEvent._thisDict&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic M:Databases.RealTimeEvents.DatabaseResponse.#ctor(System.String,System.Int32,EventSlice.Interfaces.RealTimeEvent)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic P:Databases.RealTimeEvents.DatabaseResponse.response
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:Databases.RealTimeEvents.DatabaseResponse.response
+  Info: BuildAssembler: Building topic P:Databases.RealTimeEvents.DatabaseResponse.sql
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for P:Databases.RealTimeEvents.DatabaseResponse.sql
+  Info: BuildAssembler: Building topic M:Databases.RealTimeEvents.DatabaseResponse.ToString
+  Info: BuildAssembler: Building topic N:Decoder
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Decoder
+  Info: BuildAssembler: Building topic T:Decoder.Decoder
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic AllMembers.T:Decoder.Decoder
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.getModuleName&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.Module.dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic Methods.T:Decoder.Decoder
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.getModuleName&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)&#39;.
+  Info: BuildAssembler: Building topic Properties.T:Decoder.Decoder
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.Module.dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.Module&#39;.
+  Info: BuildAssembler: Building topic M:Decoder.Decoder.#ctor(EventSlice.Dispatcher)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;dispatcher&quot;/&gt; documentation for M:Decoder.Decoder.#ctor(EventSlice.Dispatcher)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Dispatcher&#39;.
+  Info: BuildAssembler: Building topic M:Decoder.Decoder.Decode(ReceiverSlice.RealTimeEvents.UnparsedMessage)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:ReceiverSlice.RealTimeEvents.UnparsedMessage&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:ReceiverSlice.RealTimeEvents.UnparsedMessage&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:ReceiverSlice.RealTimeEvents.UnparsedMessage&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:ReceiverSlice.RealTimeEvents.UnparsedMessage&#39;.
+  Info: BuildAssembler: Building topic M:Decoder.Decoder.getModuleName
+  Info: BuildAssembler: Building topic M:Decoder.Decoder.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ShowMissingComponent: Missing &lt;param name=&quot;rte&quot;/&gt; documentation for M:Decoder.Decoder.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic N:Decoder.RealTimeEvents
+  Warn: ShowMissingComponent: Missing &lt;summary&gt; documentation for N:Decoder.RealTimeEvents
+  Info: BuildAssembler: Building topic T:Decoder.RealTimeEvents.Decoded
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic AllMembers.T:Decoder.RealTimeEvents.Decoded
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.RemoveAll&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;F:EventSlice.Interfaces.RealTimeEvent._thisDict&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.IsEmpty&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Item(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Keys&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Values&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;E:EventSlice.Interfaces.RealTimeEvent.PropertyChanged&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Methods.T:Decoder.RealTimeEvents.Decoded
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.RemoveAll&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.ToString&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Properties.T:Decoder.RealTimeEvents.Decoded
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.IsEmpty&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Item(System.String)&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Keys&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;P:EventSlice.Interfaces.RealTimeEvent.Values&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Events.T:Decoder.RealTimeEvents.Decoded
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;E:EventSlice.Interfaces.RealTimeEvent.PropertyChanged&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic Fields.T:Decoder.RealTimeEvents.Decoded
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;F:EventSlice.Interfaces.RealTimeEvent._thisDict&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: BuildAssembler: Building topic M:Decoder.RealTimeEvents.Decoded.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},EventSlice.Interfaces.RealTimeEvent,System.String,System.String)
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Warn: ResolveReferenceLinksComponent2: Unknown reference link target &#39;T:EventSlice.Interfaces.RealTimeEvent&#39;.
+  Info: Processed 45 topics
+    Last step completed in 00:02:59.1418
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-
-Clearing any prior web output
-    Last step completed in 00:00:00.5708
+    Last step completed in 00:00:00.0701
 </buildStep>
-<buildStep step="Failed">
+<buildStep step="ExtractingHtmlInfo">
+Extracting HTML info for HTML Help 1 and/or website...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+Sandcastle Help File Builder, version 1.9.5.0
+Copyright c 2006-2012, Eric Woodruff, All Rights Reserved
+E-Mail: Eric@EWoodruff.us
 
-SHFB: Error BE0065: BUILD FAILED: The parameter is incorrect.
+Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
+Processing Help 1 files in F:\cecs491\docs\Help\Working\Output\HtmlHelp1
+Processed 45 HTML files
+Sorting keywords and generating See Also indices
+Saving HTML Help 1 keyword index to F:\cecs491\docs\Help\Working\Modules.hhk
+Saving HTML Help 1 table of contents to F:\cecs491\docs\Help\Working\Modules.hhc
+    Last step completed in 00:00:10.6253
+</buildStep>
+<buildStep step="GenerateHelpFormatTableOfContents">
+Generating HTML Help 1 table of contents file...
+    Last step completed in 00:00:00.0000
+</buildStep>
+<buildStep step="GenerateHelpFileIndex">
+Generating HTML Help 1 index file...
+    Last step completed in 00:00:00.0100
+</buildStep>
+<buildStep step="GenerateHelpProject">
+Generating HTML Help 1 project file...
+    Last step completed in 00:00:00.0801
+</buildStep>
+<buildStep step="CompilingHelpFile">
+Compiling HTML Help 1 file...
+[C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe]
+  Microsoft HTML Help Compiler 4.74.8702
+  
+  
+  
+  Compiling f:\cecs491\docs\Help\Working\Output\HtmlHelp1\Modules.chm
+  
+  
+  
+  
+  
+  Compile time: 0 minutes, 3 seconds
+  
+  47	Topics
+  
+  420	Local links
+  
+  0	Internet links
+  
+  0	Graphics
+  
+  
+  
+  
+  
+  Created f:\cecs491\docs\Help\Working\Output\HtmlHelp1\Modules.chm, 106,943 bytes
+  
+  Compression decreased file by 417,901 bytes.
+  
+    Last step completed in 00:00:07.3706
+</buildStep>
+<buildStep step="CleanIntermediates">
+Removing intermediate files...
+    Last step completed in 00:00:00.2003
+</buildStep>
+<buildStep step="Completed">
+
+Build completed successfully at 11/26/2012 11:13 AM.  Total time: 00:03:23.3668
 
 </buildStep>
 </shfbBuild>

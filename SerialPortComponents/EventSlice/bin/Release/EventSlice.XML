@@ -11,10 +11,213 @@
             for distribution.
             </summary>
         </member>
+        <member name="M:EventSlice.Dispatcher.#ctor">
+            <summary>
+            Default constructor examines the MODULES_PATH folder for DLL files.  The files are loaded and the
+            code attempts to intialize them as a module.  If successful, the module is added to the modules list
+            and real time events will be automatically dispatched to these modules.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)">
+            <summary>
+            Add modules not found in the MODULES_PATH folder.
+            </summary>
+            <param name="module">A reference to the module to be added.</param>
+        </member>
+        <member name="M:EventSlice.Dispatcher.removeModule(EventSlice.Interfaces.Module)">
+            <summary>
+            Remove a module from the list to which real time events are dispatched.
+            </summary>
+            <param name="module"></param>
+        </member>
+        <member name="M:EventSlice.Dispatcher.enqueueEvent(EventSlice.Interfaces.RealTimeEvent)">
+            <summary>
+            Adds a real time event to the queue to be dispatched in order of entry.
+            </summary>
+            <param name="realTimeEvent">The real time event to be dispatched</param>
+            <returns>The count of the number of events in the queue include the one just added or
+            -1 if the dispatcher is not accepting events.
+            </returns>
+        </member>
+        <member name="M:EventSlice.Dispatcher.service">
+            <summary>
+            Service runs inside the service thread and waits for events to show up in the queue.  It dispatches the
+            event in no particular module order, but does so serially.  The events are removed from the queue in FIFO
+            order.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Dispatcher.run">
+            <summary>
+            Begins the process of dispatching events by creating a service thread that concurrently consumes the
+            queue.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Dispatcher.stop">
+            <summary>
+            Sends the signal to stop the dispatcher from running.  Allows 2.5 seconds for the dispatcher to finish sending
+            events before forcing the thread to stop.
+            </summary>
+        </member>
         <member name="T:EventSlice.Interfaces.Module">
             <summary>
-            This class contains the specification all classes wishing to participate in the event system
+            This class contains the specification for all classes wishing to participate in the event system
             must implement.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Interfaces.Module.getModuleName">
+            <summary>
+            This should return a short, human-readable name for the module.  Note:  Not guaranteed to uniquely identify a
+            module in a running system.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Interfaces.Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)">
+            <summary>
+            This is the handler each module should implement for events sent from the event dispatcher.
+            </summary>
+            <param name="realTimeEvent">The real time event to be handled.</param>
+        </member>
+        <member name="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)">
+            <summary>
+            The default constructor.  
+            </summary>
+            <param name="dispatcher">A reference to the event dispatcher from which real time events will originate.</param>
+        </member>
+        <member name="P:EventSlice.Interfaces.Module.dispatcher">
+            <summary>
+            A reference to the real time event dispatcher where events will be dispatched.
+            </summary>
+        </member>
+        <member name="T:EventSlice.Interfaces.ModuleException">
+            <summary>
+            Exceptions generated in modules should be thrown from this class.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String,System.Exception)">
+            <summary>
+            Constructor for exception with an embedded originating exception.
+            </summary>
+            <param name="module">A reference to the module generating the exception.</param>
+            <param name="exceptionText">Human readable explanation of the exception condition.</param>
+            <param name="originatingException">Embedded exception</param>
+        </member>
+        <member name="M:EventSlice.Interfaces.ModuleException.#ctor(EventSlice.Interfaces.Module,System.String)">
+            <summary>
+            Constructor for exception without an embedded exception.
+            </summary>
+            <param name="module">A reference to the module generating the exception.</param>
+            <param name="exceptionText">Human readable explanation of the exception condition.</param>
+        </member>
+        <member name="P:EventSlice.Interfaces.ModuleException.exceptionText">
+            <summary>
+            Human readable explanation of the exception condition.
+            </summary>
+        </member>
+        <member name="P:EventSlice.Interfaces.ModuleException.module">
+            <summary>
+            A reference to the module generating the exception.
+            </summary>
+        </member>
+        <member name="P:EventSlice.Interfaces.ModuleException.originatingExecption">
+            <summary>
+            If the exception originated in libraries outside the module, then it can be optionally caught, 
+            added to a module exception and then thrown.
+            </summary>
+        </member>
+        <member name="T:EventSlice.Interfaces.RealTimeEvent">
+            <summary>
+            Events generated by the system should be derived from this class.
+            </summary>
+        </member>
+        <member name="F:EventSlice.Interfaces.RealTimeEvent._thisDict">
+            <summary>
+            This the core dictionary structure for the real time event class.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.#ctor(System.String,EventSlice.Interfaces.RealTimeEvent)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="message">Human readable description of this event</param>
+            <param name="originatingEvent">The causal event.</param>
+            <remarks>If this event is a consequence of an earlier event, it should be constructed
+            with a reference to originating event.  As the object is constructed, the key/value
+            pairs in the originating event are copied into this event and made available to
+            future consumers of the event.  In cases where key conflict, the newer
+            value will be used.
+            </remarks>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.Add(System.String,System.Object)">
+            <summary>
+            Add a key/value pair.
+            </summary>
+            <param name="key">The key</param>
+            <param name="value">The value</param>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.Remove(System.String)">
+            <summary>
+            Remove a key/value pair.
+            </summary>
+            <param name="key">The key to be removed with corresponding value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.RemoveAll">
+            <summary>
+            Clears the data payload.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            Try to get a member by binder name.
+            </summary>
+            <param name="binder">The binder</param>
+            <param name="result">The dynamic matching the binder</param>
+            <returns>true if member retrieval is successful</returns>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="binder"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.NotifyPropertyChanged(System.String)">
+            <summary>
+            handler for NotifyPropertyChanged event
+            </summary>
+            <param name="propertyName">the name of the property changed</param>
+        </member>
+        <member name="M:EventSlice.Interfaces.RealTimeEvent.ToString">
+            <summary>
+            Provides human-readable access to this event.
+            </summary>
+            <returns>the value contained in the message parameter</returns>
+        </member>
+        <member name="P:EventSlice.Interfaces.RealTimeEvent.IsEmpty">
+            <summary>
+            is true if there are no key/value pairs for this event
+            </summary>
+        </member>
+        <member name="P:EventSlice.Interfaces.RealTimeEvent.Keys">
+            <summary>
+            contains the keys for this event
+            </summary>
+        </member>
+        <member name="P:EventSlice.Interfaces.RealTimeEvent.Values">
+            <summary>
+            contains the values for this event
+            </summary>
+        </member>
+        <member name="P:EventSlice.Interfaces.RealTimeEvent.Item(System.String)">
+            <summary>
+            Allows dynamic access to the data payload.
+            </summary>
+            <param name="key">The key pointing to the desired value</param>
+            <returns>dynamic value</returns>
+        </member>
+        <member name="E:EventSlice.Interfaces.RealTimeEvent.PropertyChanged">
+            <summary>
+            event from PropertyChanged
             </summary>
         </member>
     </members>

@@ -47,10 +47,6 @@
             This event fires when the server has stopped listening for new receivers and has
             also removed all configured receivers from the service so no more data is being read from the hardware.
             </summary>
-            <remarks>
-            At the time of writing, we anticipate that this should be the last event that the system sends before 
-            the process dies.
-            </remarks>
         </member>
         <member name="M:SerialPortSlice.RealTimeEvents.ServerStopped.#ctor">
             <summary>
@@ -109,6 +105,11 @@
             <summary>
             This is the primary service loop which executes in its own thread.  It is started by run()
             and is destroyed by shutdown().
+            </summary>
+        </member>
+        <member name="P:SerialPortSlice.SerialPortService.dispatcher">
+            <summary>
+            A reference to the real time event dispatcher.
             </summary>
         </member>
     </members>

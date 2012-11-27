@@ -26,12 +26,24 @@ namespace Sandbox
         /// <param name="db">The name of the database to connect to.</param>
         /// <param name="user">The username of the database to connect to.</param>
         /// <param name="pass">The password for the user.</param>
-        public Database(Dispatcher dispatcher, dynamic config, string host = "localhost", string db = "csulbsha_sharktopus", string user = "testuser", string pass = "testpass")
+        public Database(Dispatcher dispatcher, dynamic config, string host = "localhost", string db = "csulbsha_sharktopus", string user = "csulbsha_shark", string pass = "acoustictelemetry")
             : base(dispatcher)
         {
+            if (config.database.use == "true")
+            {
+                host = config.database.host;
+                db = config.database.name;
+                user = config.database.user;
+                pass = config.database.pass;
+            }
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
             updateSensorCalibrations(config);
-            // logWriter = new System.IO.StreamWriter(config.log_file, true);
+            try
+            {
+                logWriter = new System.IO.StreamWriter(config.log_file, true);
+            }
+            catch (Exception e)
+            { }
         }
 
         /// <summary>
@@ -54,7 +66,7 @@ namespace Sandbox
                 if (temp.Count == 3)
                 {
                     double test;
-                    if(double.TryParse(temp[1], out test) && double.TryParse(temp[2], out test))
+                    if (double.TryParse(temp[1], out test) && double.TryParse(temp[2], out test))
                         sensor_calibrations.Add((string)transmitter, temp);
                 }
             }
@@ -188,11 +200,14 @@ namespace Sandbox
             }
             catch (Exception e)
             {
-                //logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
-                //logWriter.WriteLine("Statement: " + statement);
-                //logWriter.WriteLine("Error: " + e.Message);
-                //logWriter.WriteLine();
-                //logWriter.Flush();
+                if (logWriter != null)
+                {
+                    logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
+                    logWriter.WriteLine("Statement: " + statement);
+                    logWriter.WriteLine("Error: " + e.Message);
+                    logWriter.WriteLine();
+                    logWriter.Flush();
+                }
             }
             finally
             {
