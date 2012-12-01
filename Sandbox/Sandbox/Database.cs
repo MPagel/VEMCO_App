@@ -16,6 +16,8 @@ namespace Sandbox
         private Dictionary<string, List<string>> sensor_calibrations { get; set; }
         private string connectionString { get; set; }
         private System.IO.StreamWriter logWriter { get; set; }
+        private List<string> insertions;
+        private dynamic config;
 
         /// <summary>
         /// The constructor for the Database module.
@@ -29,6 +31,7 @@ namespace Sandbox
         public Database(Dispatcher dispatcher, dynamic config, string host = "localhost", string db = "csulbsha_sharktopus", string user = "csulbsha_shark", string pass = "acoustictelemetry")
             : base(dispatcher)
         {
+            this.config = config;
             if (config.database.use == "true")
             {
                 host = config.database.host;
@@ -38,9 +41,10 @@ namespace Sandbox
             }
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
             updateSensorCalibrations(config);
+            insertions = new List<string>();
             try
             {
-                logWriter = new System.IO.StreamWriter(config.log_file, true);
+                logWriter = new System.IO.StreamWriter(config.log_file, false);
             }
             catch (Exception e)
             { }
@@ -182,21 +186,19 @@ namespace Sandbox
         }
 
         /// <summary>
-        /// Attempts to make the actual insertion into the database.
+        /// Attempts to make the actual insertion into the database. Will also reattempt any previously failed insertions.
         /// </summary>
         /// <param name="statement">The SQL statement to be performed on the database.</param>
         /// <returns>The number of rows affected by the insertion.</returns>
         private int doInsert(string statement)
         {
             int response = -1;
+            insertions.Add(statement);
             MySqlConnection connection = new MySqlConnection(connectionString);
-            MySqlCommand command;
+            MySqlCommand command = connection.CreateCommand();
             try
             {
                 connection.Open();
-                command = connection.CreateCommand();
-                command.CommandText = statement;
-                response = command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -208,13 +210,46 @@ namespace Sandbox
                     logWriter.WriteLine();
                     logWriter.Flush();
                 }
+                return -1;
             }
-            finally
+            try
             {
-                if (connection.State == ConnectionState.Open)
+                if (logWriter != null)
+                    logWriter.Close();
+                logWriter = new System.IO.StreamWriter(config.log_file, false);
+            }
+            catch (Exception e)
+            { }
+            for (int i = insertions.Count - 1; i >= 0; --i)
+            {
+                string insertion = insertions[i];
+                try
                 {
-                    connection.Close();
+                    command.CommandText = insertion;
+                    response = command.ExecuteNonQuery();
+                    if (response != -1)
+                        insertions.Remove(insertion);
                 }
+                catch (Exception e)
+                {
+                    if (logWriter != null)
+                    {
+                        try
+                        {
+                            logWriter.WriteLine("Insertion failure at " + DateTime.Now + ':');
+                            logWriter.WriteLine("Statement: " + statement);
+                            logWriter.WriteLine("Error: " + e.Message);
+                            logWriter.WriteLine();
+                            logWriter.Flush();
+                        }
+                        catch (Exception e2)
+                        { }
+                    }
+                }
+            }
+            if (connection.State == ConnectionState.Open)
+            {
+                connection.Close();
             }
             return response;
         }
