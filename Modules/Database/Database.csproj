@@ -43,7 +43,7 @@
       <HintPath>..\..\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
     </Reference>
     <Reference Include="FridayThe13th">
-      <HintPath>F:\FridayThe13th\FridayThe13th\obj\Debug\FridayThe13th.dll</HintPath>
+      <HintPath>..\..\SerialPortComponents\Receiver\bin\Release\FridayThe13th.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

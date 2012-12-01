@@ -285,8 +285,7 @@ namespace ReceiverSlice
             int RECEIVER_FW_VERSION = -1;
             if (infoReturns != "")
             {
-                //!!! Need a method to read the model.
-                this.VEMCO_Model = null;
+                
                 int fw_start = infoReturns.IndexOf("FW=");
                 int fw_end = infoReturns.IndexOf(",", fw_start);
                 string fw_ver = infoReturns.Substring((fw_start + 3), (fw_end - fw_start - 3));
@@ -333,6 +332,8 @@ namespace ReceiverSlice
                 serialPort.Close();
                 throw re;
             }
+            Match matches = Regex.Match(infoReturns, encoder.encoderConfig.decoder.words["receiver_model"]);
+            VEMCO_Model = matches.Groups[1].ToString();
             dispatcher.enqueueEvent(new RealTimeEvents.NoteReceiver("(receiver note) Successfully configured encoder with fw version = " + encoder.encoderConfig.firmware_version,
                 this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
         }
