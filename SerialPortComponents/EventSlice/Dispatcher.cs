@@ -22,7 +22,7 @@ namespace EventSlice
         private int busyWaitTime = 0;
         private Thread serviceThread = null;
         private ConcurrentQueue<Interfaces.RealTimeEvent> realTimeEventQueue = new ConcurrentQueue<Interfaces.RealTimeEvent>();
-        private List<Interfaces.Module> modules = new List<Interfaces.Module>();
+        private List<Interfaces.i_Module> modules = new List<Interfaces.i_Module>();
         
         /// <summary>
         /// Default constructor examines the MODULES_PATH folder for DLL files.  The files are loaded and the
@@ -41,7 +41,7 @@ namespace EventSlice
                     Object[] p = {this};
                     try
                     {
-                        modules.Add(((Interfaces.Module)Activator.CreateInstance(classType,p)));
+                        modules.Add(((Interfaces.i_Module)Activator.CreateInstance(classType,p)));
                     }
                     catch(Exception e)
                     {
@@ -61,7 +61,7 @@ namespace EventSlice
         /// Add modules not found in the MODULES_PATH folder.
         /// </summary>
         /// <param name="module">A reference to the module to be added.</param>
-        public void addModule(Interfaces.Module module)
+        public void addModule(Interfaces.i_Module module)
         {
             modules.Add(module);
         }
@@ -70,7 +70,7 @@ namespace EventSlice
         /// Remove a module from the list to which real time events are dispatched.
         /// </summary>
         /// <param name="module"></param>
-        public void removeModule(Interfaces.Module module)
+        public void removeModule(Interfaces.i_Module module)
         {
             modules.Remove(module);
         }
@@ -110,7 +110,8 @@ namespace EventSlice
                 {
                     if (realTimeEventQueue.TryDequeue(out rte))
                     {
-                        foreach (Interfaces.Module m in modules)
+                        
+                        foreach (Interfaces.i_Module m in modules)
                         {
                             m.onRealTimeEvent(rte);
                         }

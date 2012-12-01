@@ -18,13 +18,13 @@
             and real time events will be automatically dispatched to these modules.
             </summary>
         </member>
-        <member name="M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.Module)">
+        <member name="M:EventSlice.Dispatcher.addModule(EventSlice.Interfaces.i_Module)">
             <summary>
             Add modules not found in the MODULES_PATH folder.
             </summary>
             <param name="module">A reference to the module to be added.</param>
         </member>
-        <member name="M:EventSlice.Dispatcher.removeModule(EventSlice.Interfaces.Module)">
+        <member name="M:EventSlice.Dispatcher.removeModule(EventSlice.Interfaces.i_Module)">
             <summary>
             Remove a module from the list to which real time events are dispatched.
             </summary>
@@ -58,11 +58,29 @@
             events before forcing the thread to stop.
             </summary>
         </member>
+        <member name="M:EventSlice.Interfaces.i_Module.getModuleName">
+            <summary>
+            This should return a short, human-readable name for the module.  Note:  Not guaranteed to uniquely identify a
+            module in a running system.
+            </summary>
+        </member>
+        <member name="M:EventSlice.Interfaces.i_Module.onRealTimeEvent(EventSlice.Interfaces.RealTimeEvent)">
+            <summary>
+            This is the handler each module should implement for events sent from the event dispatcher.
+            </summary>
+            <param name="realTimeEvent">The real time event to be handled.</param>
+        </member>
         <member name="T:EventSlice.Interfaces.Module">
             <summary>
             This class contains the specification for all classes wishing to participate in the event system
             must implement.
             </summary>
+        </member>
+        <member name="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)">
+            <summary>
+            The default constructor.  
+            </summary>
+            <param name="dispatcher">A reference to the event dispatcher from which real time events will originate.</param>
         </member>
         <member name="M:EventSlice.Interfaces.Module.getModuleName">
             <summary>
@@ -75,12 +93,6 @@
             This is the handler each module should implement for events sent from the event dispatcher.
             </summary>
             <param name="realTimeEvent">The real time event to be handled.</param>
-        </member>
-        <member name="M:EventSlice.Interfaces.Module.#ctor(EventSlice.Dispatcher)">
-            <summary>
-            The default constructor.  
-            </summary>
-            <param name="dispatcher">A reference to the event dispatcher from which real time events will originate.</param>
         </member>
         <member name="P:EventSlice.Interfaces.Module.dispatcher">
             <summary>

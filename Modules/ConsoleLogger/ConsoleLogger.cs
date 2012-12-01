@@ -35,7 +35,7 @@ namespace ConsoleLogger
         /// <returns>Name of this module.</returns>
         public override string getModuleName()
         {
-            return "ConsoleLogger";
+            return "Console Logger";
         }
     }
 }

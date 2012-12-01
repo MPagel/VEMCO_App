@@ -13,14 +13,18 @@ using FridayThe13th;
 using EventSlice;
 using System.Runtime.CompilerServices;
 using System.Runtime.Remoting;
+using System.ComponentModel;
 
 namespace ReceiverSlice
 {
+
+     public enum RunState {UNKNOWN,RUN,PAUSE,STORE};
+
     /// <summary>
     /// This class encompasses the functionality required to connect to and communicate with a VR2C
     /// receiver connected via serial port.
     /// </summary>
-    public class Receiver
+    public class Receiver: INotifyPropertyChanged
     {
         /// <summary>
         /// Human readable name for the port to which the Receiver is attached (i.e. COM1)
@@ -32,7 +36,11 @@ namespace ReceiverSlice
         /// and this object removed from the runtime.  
         /// </summary>
         public int TTL { get; private set; }
+        public RunState runState { get; private set; }
+        public String VEMCO_SerialNumber { get; private set; }
+        public String VEMCO_Model { get; private set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private const int DEFAULT_TTL = 10;
         private const int COM_READ_TIMEOUT_DEFAULT = 500; //milliseconds
@@ -47,8 +55,7 @@ namespace ReceiverSlice
         private TextReader textReader { get; set; }
         private int goState = 1;
         private int write_wait = 100;
-        private String VEMCO_SerialNumber { get; set; }
-        private String VEMCO_Model { get; set; }
+        
         /// <summary>
         /// Public constructor for the Receiver class.
         /// </summary>
@@ -322,11 +329,13 @@ namespace ReceiverSlice
         [MethodImpl(MethodImplOptions.Synchronized)]
         private void _write(string text)
         {
-            serialPort.Write(crlf, 0, 2);
-            Thread.Sleep(100);
-            serialPort.Write(text);
-            serialPort.Write(crlf, 0, 2);
-            Thread.Sleep(100);
+
+                serialPort.Write(crlf, 0, 2);
+                Thread.Sleep(write_wait);
+                serialPort.Write(text);
+                serialPort.Write(crlf, 0, 2);
+                Thread.Sleep(write_wait);
+            
             
         }
 
@@ -349,7 +358,8 @@ namespace ReceiverSlice
         [MethodImpl(MethodImplOptions.Synchronized)]
         public void write(string command)
         {
-            _write(encoder.build(command));
+            _write(encoder.build(command)); 
+            
         }
 
         /// <summary>
@@ -427,6 +437,41 @@ namespace ReceiverSlice
             else
             {
                 return "UNKNOWN/CONFIGURING (" + portName + ")";
+            }
+        }
+
+        public void changeRunMode(RunState r)
+        {
+            runState = r;
+            switch (r)
+            {
+                case RunState.UNKNOWN:
+                    break;
+                case RunState.RUN:
+                    write("RTMNOW");
+                    write("RTMPROFILE", new Object[] { "0" });
+                    write("START");
+                    write("RTMINFO");
+                    break;
+                case RunState.PAUSE:
+                    write("RTMPROFILE", new Object[] { "2" });
+                    write("RTMINFO");
+                    break;
+                case RunState.STORE:
+                    write("STOP");
+                    write("STORAGE");
+                    break;
+            }
+            dispatcher.enqueueEvent(new RealTimeEvents.RunStateChangedReceiver(r,this,this.portName,this.VEMCO_SerialNumber,this.VEMCO_Model,this.encoder.encoderConfig));
+           
+        }
+
+        protected void onPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
             }
         }
     }

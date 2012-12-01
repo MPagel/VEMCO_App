@@ -157,4 +157,13 @@ namespace ReceiverSlice.RealTimeEvents
             this["note"] = text;
         }
     }
+
+    public class RunStateChangedReceiver : ReceiverEvent
+    {
+        public RunStateChangedReceiver(ReceiverSlice.RunState r, Receiver receiver, string portName, string serialNumber, string model, FridayThe13th.JsonObject config)
+            :base("Receiver " + serialNumber + "on " + portName + " changed to run state " + r, receiver, portName, serialNumber, model, config)
+        {
+            this["runstate"] = r;
+        }
+    }
 }

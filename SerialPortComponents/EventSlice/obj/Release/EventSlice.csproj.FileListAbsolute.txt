@@ -12,3 +12,4 @@ C:\Users\Derek\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dl
 C:\Users\Derek\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.pdb
 \\VBOXSVR\src\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.XML
 C:\Users\Derek\cecs491\SerialPortComponents\EventSlice\bin\Release\EventSlice.XML
+\\VBOXSVR\src\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.csprojResolveAssemblyReference.cache

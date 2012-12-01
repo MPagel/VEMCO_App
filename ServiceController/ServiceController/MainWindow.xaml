@@ -1,14 +1,35 @@
-﻿<Window x:Class="ServiceController.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <TabControl HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
-            <TabItem Header="TabItem">
-                <ListBox x:Name="receiversListBox" HorizontalAlignment="Left" Width="490" Margin="0,0,-3,30"/>
+        xmlns:local1="clr-namespace:ServiceController;assembly=ServiceController" x:Class="ServiceController.MainWindow"
+        Title="MainWindow" Height="615" Width="830">
+
+        <Grid>
+        <TabControl HorizontalAlignment="Left" Height="565" Margin="10,10,0,0" VerticalAlignment="Top" Width="802">
+            
+            <TabItem Header="Console Log">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="ConsoleLog" Height="513" Margin="10,10,11,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" FontFamily="Global Monospace"/>
+                </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Receivers">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox x:Name="receiversListBox" Margin="0,0,549,55" SelectionChanged="receiversListBox_SelectionChanged" />
+                    <RadioButton x:Name="radioRun"  GroupName="RunState" HorizontalAlignment="Left" Margin="248,483,0,0" VerticalAlignment="Top" Checked="radioRun_Click" Content="Run"/>
+                    <RadioButton x:Name="radioPause" GroupName="RunState" HorizontalAlignment="Left" Margin="299,483,0,0" VerticalAlignment="Top" Checked="RadioButton_Pause" Content="Pause"/>
+                    <RadioButton x:Name="radioStop"  GroupName="RunState" HorizontalAlignment="Left" Margin="368,483,0,0" VerticalAlignment="Top" Checked="RadioButton_Stop" Content="Stop"/>
+
+                    <Grid x:Name="receiverDetails" HorizontalAlignment="Left" Height="468" Margin="248,10,0,0" VerticalAlignment="Top" Width="534"/>
+                    <TextBlock x:Name="tbSerialNumber" HorizontalAlignment="Left" Margin="468,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="229" FontSize="24"/>
+                    <TextBlock x:Name="tbPortNumber" HorizontalAlignment="Left" Margin="468,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="26"/>
+                    <TextBlock x:Name="tbModel" HorizontalAlignment="Left" Margin="468,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="26"/>
+                    <TextBlock x:Name="tbRunState" HorizontalAlignment="Left" Margin="468,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="26"/>
+                    <Label Content="Receiver Number:" HorizontalAlignment="Left" Margin="248,33,0,0" VerticalAlignment="Top" Height="44" Width="206" FontSize="24"/>
+                    <Label Content="Serial Port Number:" HorizontalAlignment="Left" Margin="332,95,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Receiver Model:" HorizontalAlignment="Left" Margin="332,121,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Run/Pause/Stop:" HorizontalAlignment="Left" Margin="332,147,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
             </TabItem>
         </TabControl>
 

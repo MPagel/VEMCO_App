@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.IO.Ports;
 using System.IO;
 using System.Threading;
+using System.Collections.ObjectModel;
 
 using ReceiverSlice;
 using EventSlice;
 
 namespace SerialPortSlice
 {
-    
+
     /// <summary>
     /// This class monitors the system for changes in the serial port enumeration (new or removed serial ports).  
     /// When a new serial port is discovered a Receiver is created.  When the serial
@@ -28,30 +29,32 @@ namespace SerialPortSlice
         /// </summary>
         public Dispatcher dispatcher { get; private set; }
 
-        public Dictionary<String, Receiver> receivers { get; private set; }
+        //public Dictionary<String, Receiver> receivers { get; private set; }
+        public System.Collections.ObjectModel.ObservableCollection<Receiver> receivers { get; private set; }
 
         private Thread serviceThread = null;
-        
+
         private int serviceTime = 0;
 
         private SerialPortService()
         {
-            this.receivers = new Dictionary<String, Receiver>();
+            //this.receivers = new Dictionary<String, Receiver>();
+            this.receivers = new ObservableCollection<Receiver>();
             if (dispatcher == null)
             {
                 dispatcher = new Dispatcher();
             }
         }
-    
+
         /// <summary>
         /// The Serial Port Service is a singleton.
         /// </summary>
         /// <returns>A static reference to the singleton SerialPortService</returns>
-        public static SerialPortService getServicer() 
+        public static SerialPortService getServicer()
         {
             if (iam == null)
             {
-                    iam = new SerialPortService();
+                iam = new SerialPortService();
             }
             System.Diagnostics.Debug.Assert(iam != null);
             return iam;
@@ -67,7 +70,7 @@ namespace SerialPortSlice
                 serviceThread = new Thread(new ThreadStart(this.serialPortsService));
             }
             serviceThread.Start();
-            while (!serviceThread.IsAlive);
+            while (!serviceThread.IsAlive) ;
             dispatcher.run();
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStartUp());
         }
@@ -82,10 +85,10 @@ namespace SerialPortSlice
         /// </remarks>
         public void stop()
         {
-            
+
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStop());
 
-            foreach (Receiver r in receivers.Values.ToList<Receiver>())
+            foreach (Receiver r in receivers)
             {
                 r.shutdown();
             }
@@ -106,7 +109,7 @@ namespace SerialPortSlice
                 serviceThread.Abort();
                 serviceThread = null;
             }
-            
+
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStopped());
             dispatcher.stop();
         }
@@ -119,20 +122,29 @@ namespace SerialPortSlice
         private void serialPortsService()
         {
             serviceTime = 1000;
-            do {
+            do
+            {
                 //check for new COM ports... if there's one that we don't have check to see if it is really a VR2C receiver attached or something else
                 foreach (string c in System.IO.Ports.SerialPort.GetPortNames())
                 {
-                    if (!receivers.ContainsKey(c))
+                    bool r_contains = false;
+                    foreach (Receiver x in receivers)
+                    {
+                        if (x.portName.Equals(c))
+                        {
+                            r_contains = true;
+                        }
+                    }
+                    if (!r_contains)
                     {
                         //!!! We need the default values for the serial port.
                         SerialPort availableCOMPort = new SerialPort(c, 9600);
                         try
                         {
                             Receiver r = new Receiver(availableCOMPort, c, dispatcher);
-                            receivers.Add(c, r);
+                            receivers.Add(r);
                         }
-                        
+
                         catch (Exception e)
                         {
                             dispatcher.enqueueEvent(new RealTimeEvents.ServerException(e, false));
@@ -143,18 +155,14 @@ namespace SerialPortSlice
 
                 //check for COM ports that have disappeared or have TTL = 0
 
-                foreach (String r in receivers.Keys.ToList<String>())
-
+                foreach (Receiver r in receivers.ToArray<Receiver>())
                 {
-                    if (Array.IndexOf(SerialPort.GetPortNames(), r) == -1)
+                    if (Array.IndexOf(SerialPort.GetPortNames(), r.portName) == -1)
                     {
-                        
-                        Receiver tbr;
-                        if (receivers.TryGetValue(r, out tbr))
-                        {
-                            dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(
-                                tbr, tbr.portName, null, null, null));
-                        }
+
+                        dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(
+                            r, r.portName, null, null, null));
+
                         receivers.Remove(r);
                     }
                 }
@@ -162,12 +170,11 @@ namespace SerialPortSlice
                 //if TTL = 0, it means that this port has been misbehaving consistently
                 //removing it now effectively restarts it during the next service loop
 
-                foreach (Receiver r in receivers.Values.ToList<Receiver>())
-
+                foreach (Receiver r in receivers.ToList<Receiver>())
                 {
                     if (r.TTL <= 0)
                     {
-                        receivers.Remove(r.portName);
+                        receivers.Remove(r);
                         dispatcher.enqueueEvent(new ReceiverSlice.RealTimeEvents.DelReceiver(
                                 r, r.portName, null, null, null));
                     }
@@ -175,19 +182,18 @@ namespace SerialPortSlice
                 Thread.Sleep(serviceTime);
             } while (serviceTime > 0);
 
-            foreach (Receiver r in receivers.Values.ToList<Receiver>())
-
+            foreach (Receiver r in receivers.ToList<Receiver>())
             {
                 r.shutdown();
-                receivers.Remove(r.portName);
+                receivers.Remove(r);
             }
             serviceTime = -1;
         }
 
-        
-        
+            
+
     }
 
-    
-    
+
+
 }
