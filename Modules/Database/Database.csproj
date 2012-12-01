@@ -7,7 +7,7 @@
     <ProjectGuid>{30231B33-86BB-476A-A725-E35187541402}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Databases</RootNamespace>
+    <RootNamespace>Database</RootNamespace>
     <AssemblyName>Database</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,9 @@
     </Reference>
     <Reference Include="EventSlice">
       <HintPath>..\..\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
+    </Reference>
+    <Reference Include="FridayThe13th">
+      <HintPath>F:\FridayThe13th\FridayThe13th\obj\Debug\FridayThe13th.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Databases.RealTimeEvents
+namespace Database.RealTimeEvents
 {
     /// <summary>
     /// Contains the response from the database after an attempted insertion as well as the command.
@@ -28,6 +28,9 @@ namespace Databases.RealTimeEvents
             this.response = response;
         }
 
+        
+    
+
         /// <summary>
         /// A string representation of this event.
         /// </summary>
@@ -36,5 +39,11 @@ namespace Databases.RealTimeEvents
         {
             return sql + '\n' + response + " rows affected.";
         }
+    }
+
+    public class DatabaseException : RealTimeEvent
+    {
+        public DatabaseException(Exception e, RealTimeEvent originatingEvent)
+            : base("Database module exception " + e.Message, originatingEvent) { }
     }
 }

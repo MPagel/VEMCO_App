@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServerControl
+namespace WatchDogs
 {
-    class Program
+    public class WatchDog
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }

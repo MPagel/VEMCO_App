@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4CF8AC44-BF3E-4EAC-8470-83A3E894A4CF}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{09E2F204-A3B6-4161-BD42-619CF7E670ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ServiceControl</RootNamespace>
-    <AssemblyName>ServiceControl</AssemblyName>
+    <RootNamespace>WatchDogs</RootNamespace>
+    <AssemblyName>WatchDog</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,9 +33,6 @@
     <Reference Include="EventSlice">
       <HintPath>F:\cecs491\SerialPortComponents\EventSlice\obj\Release\EventSlice.dll</HintPath>
     </Reference>
-    <Reference Include="FridayThe13th">
-      <HintPath>F:\FridayThe13th\FridayThe13th\obj\Debug\FridayThe13th.dll</HintPath>
-    </Reference>
     <Reference Include="Receiver">
       <HintPath>F:\cecs491\SerialPortComponents\Receiver\obj\Release\Receiver.dll</HintPath>
     </Reference>
@@ -46,54 +41,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RRServiceControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RRServiceControl.Designer.cs">
-      <DependentUpon>RRServiceControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="WatchDog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="RRServiceControl.resx">
-      <DependentUpon>RRServiceControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\RRCS.datasource" />
-    <None Include="Properties\DataSources\SerialPortSlice.SerialPortService.datasource" />
-    <None Include="Properties\DataSources\ServiceControl.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\ServiceControl.Properties.Settings.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

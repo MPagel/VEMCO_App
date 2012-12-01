@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ServiceControl")]
+[assembly: AssemblyTitle("WatchDog")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ServiceControl")]
+[assembly: AssemblyProduct("WatchDog")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5c6db7fe-1b50-44fd-b6ce-f0c00514be1c")]
+[assembly: Guid("cd3588d4-bc8e-4c5f-a7ec-6414ac8d6ae9")]
 
 // Version information for an assembly consists of the following four values:
 //

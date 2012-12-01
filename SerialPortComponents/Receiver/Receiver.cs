@@ -30,12 +30,27 @@ namespace ReceiverSlice
         /// Human readable name for the port to which the Receiver is attached (i.e. COM1)
         /// </summary>
         public string portName { get; private set; }
+
+        private int _TTL = DEFAULT_TTL;
         /// <summary>
         /// Time-To-Live is a relative measure of the number of serious errors this object
         /// has received in its lifetime.  When TTL = 0, the serial port should be closed 
         /// and this object removed from the runtime.  
         /// </summary>
         public int TTL { get; private set; }
+        //public int TTL
+        //{
+        //    get
+        //    {
+        //        return _TTL;
+        //    }
+        //    set
+        //    {
+        //        serialPort.ReadTimeout += COM_READ_TIMEOUT_SPRIAL;
+        //        serialPort.WriteTimeout += COM_READ_TIMEOUT_SPRIAL;
+                
+        //    }
+        //}
         public RunState runState { get; private set; }
         public String VEMCO_SerialNumber { get; private set; }
         public String VEMCO_Model { get; private set; }

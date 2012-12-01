@@ -7,33 +7,33 @@ using EventSlice.Interfaces;
 using EventSlice;
 using MySql.Data.MySqlClient;
 using System.Data;
+using FridayThe13th;
 
-namespace Databases
+namespace Database
 {
     /// <summary>
     /// This module handles the insertion of detections and status events into the database.
     /// </summary>
     public class Database : Module
     {
+        private const string DATABASE_CONFIG_FILE = "database\\database.txt";
         private Dictionary<string, List<string>> sensor_calibrations { get; set; }
         private string connectionString { get; set; }
         private System.IO.StreamWriter logWriter { get; set; }
         private List<string> insertions;
         private dynamic config;
-
+        string host = "csulbsharklab.com", db = "csulbsha_sharktopus", user = "csulbsha_shark", pass = "acoustictelemetry"; // Default values for connecting to database
         /// <summary>
         /// The constructor for the Database module.
         /// </summary>
         /// <param name="dispatcher">The Dispatcher this object will receive messages from.</param>
-        /// <param name="transmitters">The JSON file containing the sensor tag calibrations.</param>
-        /// <param name="host">The host name of the database to connect to.</param>
-        /// <param name="db">The name of the database to connect to.</param>
-        /// <param name="user">The username of the database to connect to.</param>
-        /// <param name="pass">The password for the user.</param>
-        public Database(Dispatcher dispatcher, dynamic config, string host = "csulbsharklab.com", string db = "csulbsha_sharktopus", string user = "csulbsha_shark", string pass = "acoustictelemetry")
+        public Database(Dispatcher dispatcher)
             :base(dispatcher)
         {
-            this.config = config;
+            
+            var jsonParser = new JsonParser() { CamelizeProperties = false };
+            this.config = jsonParser.Parse(System.IO.File.ReadAllText(DATABASE_CONFIG_FILE));
+
             if (config.database.use == "true")
             {
                 host = config.database.host;
@@ -135,7 +135,7 @@ namespace Databases
             string statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
                     date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", " + sensor_type + ", '" + receiver_model_id + "');";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, detection));
+            dispatcher.enqueueEvent(new RealTimeEvents.DatabaseResponse(statement, response, detection));
             return response;
         }
 
@@ -183,7 +183,7 @@ namespace Databases
             string statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
                         receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bv + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ", " + xyz + ");";
             int response = doInsert(statement);
-            dispatcher.enqueueEvent(new Databases.RealTimeEvents.DatabaseResponse(statement, response, status));
+            dispatcher.enqueueEvent(new RealTimeEvents.DatabaseResponse(statement, response, status));
             return response;
         }
 

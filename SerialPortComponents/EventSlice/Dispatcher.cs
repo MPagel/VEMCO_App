@@ -43,7 +43,7 @@ namespace EventSlice
                     {
                         modules.Add(((Interfaces.i_Module)Activator.CreateInstance(classType,p)));
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         Console.Write(e);
                     }
