@@ -18,14 +18,17 @@ using System.ComponentModel;
 namespace ReceiverSlice
 {
 
-     public enum RunState {UNKNOWN,RUN,PAUSE,STORE};
-
+    public enum RunState { RUN, PAUSE, STORE };
+    
     /// <summary>
     /// This class encompasses the functionality required to connect to and communicate with a VR2C
     /// receiver connected via serial port.
     /// </summary>
     public class Receiver: INotifyPropertyChanged
     {
+
+        
+
         /// <summary>
         /// Human readable name for the port to which the Receiver is attached (i.e. COM1)
         /// </summary>
@@ -37,21 +40,46 @@ namespace ReceiverSlice
         /// has received in its lifetime.  When TTL = 0, the serial port should be closed 
         /// and this object removed from the runtime.  
         /// </summary>
-        public int TTL { get; private set; }
-        //public int TTL
-        //{
-        //    get
-        //    {
-        //        return _TTL;
-        //    }
-        //    set
-        //    {
-        //        serialPort.ReadTimeout += COM_READ_TIMEOUT_SPRIAL;
-        //        serialPort.WriteTimeout += COM_READ_TIMEOUT_SPRIAL;
-                
-        //    }
-        //}
-        public RunState runState { get; private set; }
+
+        public int TTL
+        {
+            get
+            {
+                return _TTL;
+            }
+            set
+            {
+                if (_TTL > value)
+                {
+                    serialPort.ReadTimeout += COM_READ_TIMEOUT_SPRIAL;
+                    serialPort.WriteTimeout += COM_READ_TIMEOUT_SPRIAL;
+                }
+
+                _TTL = value;
+
+                if (_TTL <= 0)
+                {
+                    shutdown();
+                }
+                else if(_TTL <= 5)
+                {
+                    changeRunMode(runState);
+                }
+
+            }
+        }
+
+        private RunState _runState;
+        public RunState runState { 
+            get {
+                return _runState;
+            }
+            set {
+                _runState = value;
+                changeRunMode(value);
+                //RaisePropertyChanged("runState");
+            }
+        }
         public String VEMCO_SerialNumber { get; private set; }
         public String VEMCO_Model { get; private set; }
 
@@ -101,9 +129,6 @@ namespace ReceiverSlice
             {
                 
                 this.textReader = new StreamReader(serialPort.BaseStream, serialPort.Encoding);
-                Object[] r = {"0"};
-                write("RTMPROFILE", r);
-                write("START");
                 Thread.Sleep(500);
                 while (serialPort.BytesToRead > 0)
                 {
@@ -111,6 +136,7 @@ namespace ReceiverSlice
                         this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
                 }
                 run();
+                runState = RunState.RUN;
                 dispatcher.enqueueEvent(new RealTimeEvents.NewReceiver(this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
             }
             else
@@ -430,6 +456,7 @@ namespace ReceiverSlice
                         ReceiverExceptions re = new ReceiverExceptions(this,"End of stream reached on serial port.",true,eose);
                         dispatcher.enqueueEvent(new RealTimeEvents.ExcepReceiver(re, re.fatal,
                             this, this.portName, this.VEMCO_SerialNumber, this.VEMCO_Model, this.encoder.encoderConfig));
+                        TTL = 0;
                         throw re;
                     }
                     ret += buffer[0];
@@ -458,11 +485,9 @@ namespace ReceiverSlice
 
         public void changeRunMode(RunState r)
         {
-            runState = r;
             switch (r)
             {
-                case RunState.UNKNOWN:
-                    break;
+
                 case RunState.RUN:
                     write("RTMNOW");
                     write("RTMPROFILE", new Object[] { "0" });

@@ -49,7 +49,10 @@ namespace Database
                 logWriter = new System.IO.StreamWriter(config.log_file, false);
             }
             catch (Exception e)
-            { }
+            {
+                dispatcher.enqueueEvent(new RealTimeEvents.DatabaseException(e, 
+                    " exception occured creating StreamWriter for log file", null));
+            }
         }
 
         /// <summary>
@@ -134,7 +137,7 @@ namespace Database
             }
             string statement = "INSERT INTO vue (date, time, frequency_codespace, transmitter_id, sensor_value, sensor_unit, receivers_id) VALUES ('" +
                     date + "', '" + time + "', '" + frequency_codespace + "', " + transmitter_id + ", " + sensor_value + ", " + sensor_type + ", '" + receiver_model_id + "');";
-            int response = doInsert(statement);
+            int response = doInsert(statement, detection);
             dispatcher.enqueueEvent(new RealTimeEvents.DatabaseResponse(statement, response, detection));
             return response;
         }
@@ -182,7 +185,7 @@ namespace Database
                 xyz = '\'' + xyz + '\'';
             string statement = "INSERT INTO receiver_status (id, date, time, detection_count, ping_count, line_voltage, battery_voltage, battery_used, current, temperature, detection_memory, raw_memory, xyz_orientation) VALUES ('" +
                         receiver_model_id + "', '" + date + "', '" + time + "', " + dc + ", " + pc + ", " + lv + ", " + bv + ", " + bu + ", " + i + ", " + t + ", " + du + ", " + ru + ", " + xyz + ");";
-            int response = doInsert(statement);
+            int response = doInsert(statement, status);
             dispatcher.enqueueEvent(new RealTimeEvents.DatabaseResponse(statement, response, status));
             return response;
         }
@@ -192,7 +195,7 @@ namespace Database
         /// </summary>
         /// <param name="statement">The SQL statement to be performed on the database.</param>
         /// <returns>The number of rows affected by the insertion.</returns>
-        private int doInsert(string statement)
+        private int doInsert(string statement, RealTimeEvent originatingEvent)
         {
             int response = -1;
             insertions.Add(statement);
@@ -212,6 +215,7 @@ namespace Database
                     logWriter.WriteLine();
                     logWriter.Flush();
                 }
+                dispatcher.enqueueEvent(new RealTimeEvents.DatabaseException(e, "Connection error while trying to doInsert.", originatingEvent); 
                 return -1;
             }
             try

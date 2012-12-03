@@ -44,6 +44,17 @@ namespace Database.RealTimeEvents
     public class DatabaseException : RealTimeEvent
     {
         public DatabaseException(Exception e, RealTimeEvent originatingEvent)
-            : base("Database module exception " + e.Message, originatingEvent) { }
+            : base("Database module exception " + e.Message, originatingEvent) 
+        {
+            this["exception"] = e;
+        }
+
+        public DatabaseException(Exception e, String additionalInfo, RealTimeEvent originatingEvent)
+            : base("Database module exception " + e.Message + " additional information: " + additionalInfo, originatingEvent)
+        {
+            this["exception"] = e;
+            this["additionalinformation"] = additionalInfo;
+        }
+
     }
 }

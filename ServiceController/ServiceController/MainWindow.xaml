@@ -4,12 +4,13 @@
         xmlns:local1="clr-namespace:ServiceController;assembly=ServiceController" x:Class="ServiceController.MainWindow"
         Title="MainWindow" Height="615" Width="830">
 
+
         <Grid>
         <TabControl HorizontalAlignment="Left" Height="565" Margin="10,10,0,0" VerticalAlignment="Top" Width="802">
             
             <TabItem Header="Console Log">
                 <Grid Background="#FFE5E5E5">
-                    <TextBox x:Name="ConsoleLog" Height="513" Margin="10,10,11,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" FontFamily="Global Monospace"/>
+                    <TextBox x:Name="ConsoleLog" Height="513" Margin="10,10,11,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" IsUndoEnabled="False" VerticalScrollBarVisibility="Auto" FontFamily="Global Monospace" IsReadOnlyCaretVisible="True" MaxLines="16384"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Receivers">

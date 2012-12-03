@@ -60,6 +60,8 @@ namespace SerialPortSlice
             return iam;
         }
 
+
+
         /// <summary>
         /// Instructs the service to begin listening for VEMCO receivers attached to serial ports.
         /// </summary>
@@ -112,6 +114,7 @@ namespace SerialPortSlice
 
             dispatcher.enqueueEvent(new RealTimeEvents.ServerStopped());
             dispatcher.stop();
+            iam = null;
         }
 
 
@@ -124,7 +127,7 @@ namespace SerialPortSlice
             serviceTime = 1000;
             do
             {
-                //check for new COM ports... if there's one that we don't have check to see if it is really a VR2C receiver attached or something else
+                //check for new COM ports... if there's one that we don't have, check to see if it is really a VR2C receiver attached or something else
                 foreach (string c in System.IO.Ports.SerialPort.GetPortNames())
                 {
                     bool r_contains = false;
@@ -137,7 +140,6 @@ namespace SerialPortSlice
                     }
                     if (!r_contains)
                     {
-                        //!!! We need the default values for the serial port.
                         SerialPort availableCOMPort = new SerialPort(c, 9600);
                         try
                         {

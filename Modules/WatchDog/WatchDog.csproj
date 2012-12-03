@@ -7,7 +7,7 @@
     <ProjectGuid>{09E2F204-A3B6-4161-BD42-619CF7E670ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WatchDogs</RootNamespace>
+    <RootNamespace>WatchDog</RootNamespace>
     <AssemblyName>WatchDog</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
