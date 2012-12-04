@@ -73,8 +73,25 @@ namespace ServiceController2
                     statusText.Text = rte.ToString();
                 }));
             }
+
+            appendToConsoleLog(rte.ToString());
         }
 
+        public void appendToConsoleLog(string text)
+        {
+            text += '\n';
+            if (ConsoleLog.Dispatcher.CheckAccess())
+            {
+                ConsoleLog.AppendText(text);
+            }
+            else
+            {
+                ConsoleLog.Dispatcher.Invoke(DispatcherPriority.Normal, (Action)(() =>
+                {
+                    ConsoleLog.AppendText(text);
+                }));
+            }
+        }
         private void service()
         {
             while (true)

@@ -215,7 +215,7 @@ namespace Database
                     logWriter.WriteLine();
                     logWriter.Flush();
                 }
-                dispatcher.enqueueEvent(new RealTimeEvents.DatabaseException(e, "Connection error while trying to doInsert.", originatingEvent); 
+                dispatcher.enqueueEvent(new RealTimeEvents.DatabaseException(e, "Connection error while trying to doInsert.", originatingEvent)); 
                 return -1;
             }
             try

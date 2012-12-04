@@ -9,3 +9,6 @@ F:\cecs491\VR2C Client\VR2C Client\obj\Debug\VR2C Client.csprojResolveAssemblyRe
 F:\cecs491\VR2C Client\VR2C Client\obj\Debug\VR2C_Client.CLientForm.resources
 F:\cecs491\VR2C Client\VR2C Client\obj\Debug\VR2C_Client.Properties.Resources.resources
 F:\cecs491\VR2C Client\VR2C Client\obj\Debug\VR2C Client.csproj.GenerateResource.Cache
+C:\Users\Derek\cecs491\VR2C Client\VR2C Client\bin\Debug\VR2C Client.exe.config
+C:\Users\Derek\cecs491\VR2C Client\VR2C Client\obj\Debug\VR2C Client.exe
+C:\Users\Derek\cecs491\VR2C Client\VR2C Client\obj\Debug\VR2C Client.pdb

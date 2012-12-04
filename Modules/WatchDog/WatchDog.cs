@@ -53,7 +53,7 @@ namespace WatchDog
             }
         }
 
-        public void onRealTimeEvent(RealTimeEvent rte)
+        public override void onRealTimeEvent(RealTimeEvent rte)
         {
             Type eventType = rte.GetType();
             if(eventType == typeof(ReceiverSlice.RealTimeEvents.NewReceiver))
@@ -82,6 +82,6 @@ namespace WatchDog
             }
         }
 
-        public string getModuleName() { return "Receiver WatchDog"; }
+        public override string getModuleName() { return "Receiver WatchDog"; }
     }
 }

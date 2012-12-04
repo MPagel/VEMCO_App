@@ -30,7 +30,7 @@
                 </TabItem>
                 
             </TabControl>
-            <StatusBar x:Name="status" Margin="0,571,0,-85">
+            <StatusBar x:Name="status" Margin="0,566,0,-80">
                 <TextBlock x:Name="statusText" />
             </StatusBar>
         </Grid>

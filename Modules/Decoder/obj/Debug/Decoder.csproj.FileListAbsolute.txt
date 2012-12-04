@@ -17,3 +17,4 @@ C:\Users\Derek\cecs491\Modules\Decoder\obj\Debug\Decoder.pdb
 \\VBOXSVR\src\cecs491\Modules\Decoder\obj\Debug\Decoder.pdb
 \\VBOXSVR\src\cecs491\Modules\Decoder\bin\Debug\Decoder.XML
 C:\Users\Derek\cecs491\Modules\Decoder\bin\Debug\Decoder.XML
+C:\Users\Derek\cecs491\Modules\Decoder\bin\Debug\Receiver.pdb

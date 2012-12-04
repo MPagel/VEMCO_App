@@ -77,6 +77,7 @@ namespace ReceiverSlice
             set {
                 _runState = value;
                 changeRunMode(value);
+                
                 //RaisePropertyChanged("runState");
             }
         }
