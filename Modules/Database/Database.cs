@@ -30,10 +30,7 @@ namespace Database
         public Database(Dispatcher dispatcher)
             :base(dispatcher)
         {
-            
-            var jsonParser = new JsonParser() { CamelizeProperties = false };
-            this.config = jsonParser.Parse(System.IO.File.ReadAllText(DATABASE_CONFIG_FILE));
-
+            updateSensorCalibrations();
             if (config.database.use == "true")
             {
                 host = config.database.host;
@@ -42,7 +39,6 @@ namespace Database
                 pass = config.database.pass;
             }
             connectionString = "Server=" + host + ";Database=" + db + ";Uid=" + user + ";Pwd=" + pass + ";";
-            updateSensorCalibrations(config);
             insertions = new List<string>();
             try
             {
@@ -66,8 +62,10 @@ namespace Database
         /// Updates the list of of sensor tag calibrations from the JSON file. This should be called when the JSON file is updated.
         /// </summary>
         /// <param name="calibrations">The JSON file containing the calibration values.</param>
-        public void updateSensorCalibrations(dynamic config)
+        public void updateSensorCalibrations()
         {
+            var jsonParser = new JsonParser() { CamelizeProperties = false };
+            this.config = jsonParser.Parse(System.IO.File.ReadAllText(DATABASE_CONFIG_FILE));
             this.sensor_calibrations = new Dictionary<string, List<string>>();
             foreach (string transmitter in config.transmitters.Keys)
             {
@@ -117,6 +115,7 @@ namespace Database
         /// <returns>The number of rows affected by the insertion.</returns>
         private int detectionInsert(Decoder.RealTimeEvents.Decoded detection)
         {
+            updateSensorCalibrations();
             string date = detection["decodedmessage"]["date"];
             string time = detection["decodedmessage"]["time"];
             string frequency_codespace = detection["decodedmessage"]["frequency_codespace"];
@@ -154,10 +153,10 @@ namespace Database
         {
             double calibratedValue = raw_value;
             sensor_type = sensor_type.ToLower();
-            if (sensor_type == "t" || sensor_type == "m") //linear -- ax + b
-                calibratedValue = a * raw_value + b;
-            else if (sensor_type == "p") //quadratic -- ax² + b
+            if (sensor_type == "p") //quadratic -- ax² + b
                 calibratedValue = a * raw_value * raw_value + b;
+            else //if (sensor_type == "t" || sensor_type == "m") //linear -- ax + b
+                calibratedValue = a * raw_value + b;
             return calibratedValue;
         }
 
