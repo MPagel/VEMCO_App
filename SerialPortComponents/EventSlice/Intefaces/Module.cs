@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EventSlice.Interfaces
+﻿namespace EventSlice.Interfaces
 {
     /// <summary>
     /// This class contains the specification for all classes wishing to participate in the event system
