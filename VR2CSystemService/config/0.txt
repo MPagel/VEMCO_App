@@ -1,0 +1,88 @@
+{
+   "firmware_version":0,
+   "discovery_commands":[
+      "*BROADC.A#ST,QUIT",
+      "*BROADC.A#ST,DISCOVERY",
+      "*DISCOV.E#RY,DISCOVERY"
+   ],
+   "encoder":{
+      "INFO":"{0}INFO",
+      "START":"{0}START",
+      "STOP":"{0}STOP",
+      "ERASE":"{0}ERASE",
+      "RTMNOW":"{0}RTMNOW",
+      "RTMINFO":"{0}RTMINFO",
+      "RTMOFF":"{0}RTMOFF",
+      "RTM232":"{0}RTM232",
+      "RTM485":"{0}RTM485",
+      "RTMPROFILE":"{0}RTMPROFILE={1}",
+      "RTMAUTOERASE":"{0}RTMAUTOERASE={1}",
+      "STORAGE":"{0}STORAGE",
+      "TIME":"{0}TIME={1}-{2}-{3} {4}:{5}:{6} {7}",
+      "RESET":"{0}RESET",
+      "QUIT":"{0}QUIT",
+      "RESETBATTERY":"{0}RESETBATTERY"
+   },
+   "decoder": {
+		"words": {
+			"date":"([0-9]{4}-[0-9]{2}-[0-9]{2})",
+			"time":"([0-9]{2}:[0-9]{2}:[0-9]{2})",
+			"receivers_id":"([0-9]{6})",
+			"frequency_codespace":"([A-Z0-9]{3}-[A-Z0-9]{4})",
+			"transmitter_id":"[A-Z0-9]{3}-[A-Z0-9]{4},([0-9]+),"
+			"sensor_value":"[A-Z0-9]{3}-[A-Z0-9]{4},[0-9]+,([0-9]+),",
+			"detection_counter":"[0-9]{6},([0-9]{3}),[0-9]{4}",
+			"hexsum":"#([A-F0-9]{2})",
+			"status":"(OK|FAILURE|INVALID)",
+			"p":"[0-9]{6}.([0-9])",
+			"decimal_sum":"#([0-9]{2})",
+			"byte_count":"\\[([0-9]{4})\\]",
+			"receiver_model":"([0-9A-Z]+-[0-9A-Z]+):",
+			"study_name":"'([0-9A-Z]*)'",
+			"map":"',([A-Z0-9]+-[0-9]+)",
+			"code_space":"\\[ (([0-9]{4}[ /])*[0-9]{4}) \\]",
+			"firmware_version":"FW=(([0-9]+\\.)*[0-9]+)",
+			"hardware_version":"HW=([0-9]+)",
+			"dc":"DC=([0-9]+)",
+			"pc":"PC=([0-9]+)",
+			"lv":"LV=([0-9]+\\.[0-9]+)",
+			"bv":"BV=([0-9]+\\.[0-9]+)",
+			"bu":"BU=([0-9]+\\.[0-9]+)",
+			"i":"I=([0-9]+\\.[0-9]+)",
+			"t":"T=([0-9]+\\.[0-9]+)",
+			"du":"DU=([0-9]+\\.[0-9]+)",
+			"ru":"RU=([0-9]+\\.[0-9]+)",
+			"xyz":"XYZ=(-?[0-9]+\\.[0-9]+:-?[0-9]+\\.[0-9]+:-?[0-9]+\\.[0-9]+)",
+			"state":":-?[0-9]+\\.[0-9]+,([A-Z]+)",
+			"rtm_mode":",(OFF|232|485),",
+			"si":"SI=(POLL|[0-9]+)",
+			"bl":"BL=(U|[0-9]+)",
+			"bi":"BI=(WFS|[0-9]+)",
+			"ma":"MA=(U|[0-9]+)",
+			"fmt":"FMT=([A-Z_ ])*",
+			"endline":"(\\r\\n)"
+		},
+		"sentences": {
+			"detection_event": {
+				"format":"([0-9]{6}),([0-9]{3}),([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}),([A-Z0-9]{3}-[A-Z0-9]{4}),([0-9]+)",
+				"word_order":["receivers_id","detection_counter","date","time","frequency_codespace","transmitter_id","sensor_value"]
+			},
+			"generic_response": {
+				"format":"\\*([0-9]{6})\\.([0-9])#([0-9]{2})\\[([0-9]{4})\\],(OK|FAILURE|INVALID),#([A-F0-9]{2})",
+				"word_order":["receivers_id","p","decimal_sum","byte_count","status","hexsum"]
+			},
+			"rtm_info_response": {
+				"format":"(OFF|232|485),SI=(POLL|[0-9]+),BL=(U|[0-9]+),BI=(WFS|[0-9]+),MA=(U|[0-9]+),FMT=([A-Z_ ])*",
+				"word_order":["receivers_id","p","decimal_sum","byte_count","rtm_mode","si","bl","bi","ma","fmt"]
+			},
+			"info_response": {
+				"format":"([0-9A-Z]+-[0-9A-Z]+):([0-9]{6}),'([0-9A-Z]*)',([A-Z0-9]+-[0-9]+)",
+				"word_order":["receiver_model","receivers_id","study_name","map","code_space","firmware_version","hardware_version"]
+			},
+			"status_response": {
+				"format":"STS,DC=([0-9]+),PC=([0-9]+)",
+				"word_order":["receivers_id","date","time","dc","pc","lv","bv","bu","i","t","du","ru","xyz"]
+			}	
+		}
+   }
+}
